@@ -1,7 +1,7 @@
 # Inverse Robot
 - Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start
 
-**Task described**
+## The task
 Situs inversus
 Transposition of internal organs is a variant of internal anatomy, when
 the organs are located in a mirror image.
