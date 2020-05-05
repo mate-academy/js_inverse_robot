@@ -13,7 +13,7 @@
  *
  * @param {object} robot
  *
- * @return {number}
+ * @return {object}
  */
 function inverseRobot(robot) {
   // write code here
