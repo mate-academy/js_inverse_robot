@@ -8,20 +8,14 @@
 function inverseRobot(robot) {
   // write code here
 
-  const copyRobot = {
-    ...robot,
-  };
   const repaireRobot = {};
-  let newKey;
 
-  for (const detail in copyRobot) {
-    repaireRobot[copyRobot[detail]] = detail;
-
-    if (newKey === copyRobot[detail]) {
+  for (const detail in robot) {
+    if (repaireRobot.hasOwnProperty(robot[detail])) {
       return null;
     }
 
-    newKey = copyRobot[detail];
+    repaireRobot[robot[detail]] = detail;
   }
 
   return repaireRobot;
