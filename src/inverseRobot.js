@@ -23,22 +23,18 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  const fixedRob = {};
-  const valu = Object.values(robot);
+  const fixedRobot = {};
 
-  for (let i = 0; i < valu.length; i++) {
-    for (let k = i + 1; k < valu.length; k++) {
-      if (valu[i] === valu[k]) {
-        return null;
-      }
+  for (const key in robot) {
+    if (Object.keys(fixedRobot).includes(robot[key])) {
+      return null;
     }
-
-    fixedRob[valu[i]] = Object.keys(robot).find((key) => robot[key] === valu[i]
-    );
+    fixedRobot[robot[key]] = key;
   }
 
-  return fixedRob;
+  return fixedRobot;
 }
 
 module.exports = inverseRobot;
