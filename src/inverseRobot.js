@@ -6,7 +6,7 @@
  * the organs are located in a mirror image.
  * Something similar happened to our robot Kolli. His keys became values,
  * and values became keys. Help to repair the robot. Create a 'inverseRobot'
- * function that takes 'robot' as a parameter and returns a new object in which
+ * function that takes 'robot' as a parameter and returns a new object in which/
  * keys will change places with values.
  *
  * If any of the object values are repeated, return 'null'.
@@ -24,7 +24,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  for (const key in robot) {
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    newRobot[robot[key]] = key;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
