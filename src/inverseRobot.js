@@ -23,8 +23,26 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const values = Object.values(robot);
+  const uniqeValues = [];
+
+  values.forEach((value) => {
+    if (!uniqeValues.includes(value)) {
+      uniqeValues.push(value);
+    }
+  });
+
+  if (values.length !== uniqeValues.length) {
+    return null;
+  }
+
+  return Object.entries(robot).reduce((accum, [key, value]) => {
+    accum[value] = key;
+
+    return accum;
+  }, {});
 }
 
 module.exports = inverseRobot;
