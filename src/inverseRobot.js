@@ -24,28 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let fixedR = {};
-  let arrKeys = [];
-  let arrValues = [];
+  let fixedRobot = {};
 
-  arrKeys = Object.values(robot);
-  arrValues = Object.keys(robot);
+  for (const key in robot) {
+    if (fixedRobot.hasOwnProperty(robot[key])) {
+      fixedRobot = null;
 
-  for (let i = 0; i < arrKeys.length; i++) {
-    fixedR[arrKeys[i]] = arrValues[i];
-  }
-
-  for (let i = 0; i < arrKeys.length; i++) {
-    for (let j = 0; j < arrKeys.length; j++) {
-      if (i !== j) {
-        if ((arrKeys[i] === arrKeys[j]) || (arrValues[i] === arrValues[j])) {
-          fixedR = null;
-        }
-      }
+      return fixedRobot;
     }
+    fixedRobot[robot[key]] = key;
   }
 
-  return fixedR;
+  return fixedRobot;
 }
 
 module.exports = inverseRobot;
