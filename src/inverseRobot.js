@@ -23,8 +23,23 @@
  *
  * @return {object}
  */
-function inverseRobot(robot) {
-  // write code here
+function inverseRobot(obj) {
+  const ret = {};
+  const objValues = Object.values(obj);
+
+  const checkIfDuplicateExists = (w) => {
+    return new Set(w).size !== w.length;
+  };
+
+  if (checkIfDuplicateExists(objValues)) {
+    return null;
+  } else {
+    Object.keys(obj).forEach(key => {
+      ret[obj[key]] = key;
+    });
+  }
+
+  return ret;
 }
 
 module.exports = inverseRobot;
