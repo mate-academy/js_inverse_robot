@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 
 /**
@@ -18,13 +19,35 @@
  * inverseRobot(robert) === null
  * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
- *
  * @param {object} robot
  *
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
-}
+  let obj = {};
+  let count = 0;
+  const propertyObj = Object.values(robot);
 
+  for (const key of propertyObj) {
+    for (const key2 of propertyObj) {
+      if (key === key2) {
+        count++;
+      }
+
+      if (count >= 2) {
+        obj = null;
+        break;
+      };
+    }
+    break;
+  }
+
+  if (count < 2) {
+    for (const key in robot) {
+      obj[robot[key]] = key;
+    }
+  }
+
+  return obj;
+};
 module.exports = inverseRobot;
