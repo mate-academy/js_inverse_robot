@@ -24,6 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
+  for (let keys in robot) {
+    const keysOfRobot = keys;
+
+    keys = robot[keys];
+    robot[keys] = keysOfRobot;
+  }
+
+  return robot;
   // write code here
 }
 
