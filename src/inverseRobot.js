@@ -25,6 +25,24 @@
  */
 function inverseRobot(robot) {
   // write code here
+  let reversed = {};
+  const arrayOfProp = [];
+
+  for (const prop in robot) {
+    arrayOfProp.push(robot[prop]);
+
+    if (robot.hasOwnProperty(prop)) {
+      reversed[robot[prop]] = prop;
+    }
+  }
+
+  for (const elem of arrayOfProp) {
+    if (arrayOfProp.indexOf(elem) !== arrayOfProp.lastIndexOf(elem)) {
+      reversed = null;
+    }
+  }
+
+  return reversed;
 }
 
 module.exports = inverseRobot;
