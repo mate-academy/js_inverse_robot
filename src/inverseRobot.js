@@ -29,11 +29,11 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const value = robot[key];
 
-    if (reversed[value] !== undefined) {
+    if (value in reversed) {
       return null;
-    } else {
-      reversed[value] = key;
     }
+
+    reversed[value] = key;
   }
 
   return reversed;
