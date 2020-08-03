@@ -24,7 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const twin = {};
+
+  // Iterate through robot's keys and copy all props to twin
+  for (const key in robot) {
+    twin[robot[key]] = key;
+  }
+
+  const allKeys = Object.keys(robot);
+  const uniqueKeys = Object.keys(twin);
+
+  // Check for duplicate keys and return null if found
+  if (allKeys.length !== uniqueKeys.length) {
+    return null;
+  }
+
+  // Return twin object if all values are unique
+  return twin;
 }
 
 module.exports = inverseRobot;
