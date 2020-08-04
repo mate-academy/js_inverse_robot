@@ -31,9 +31,7 @@ function inverseRobot(robot) {
   for (const prop in robot) {
     arrayOfProp.push(robot[prop]);
 
-    if (robot.hasOwnProperty(prop)) {
-      reversed[robot[prop]] = prop;
-    }
+    reversed[robot[prop]] = prop;
   }
 
   for (const elem of arrayOfProp) {
