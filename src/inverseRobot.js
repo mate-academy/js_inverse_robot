@@ -26,19 +26,13 @@
 
 function inverseRobot(robot) {
   const reversedObj = {};
-  const properties = Object.keys(robot);
-  const values = Object.values(robot);
 
-  for (let i = 0; i < properties.length; i++) {
-    reversedObj[values[i]] = properties[i];
-  }
-
-  const sortedValues = values.sort();
-
-  for (let i = 0; i < sortedValues.length; i++) {
-    if (sortedValues[i] === sortedValues[i + 1]) {
-      return null;
-    }
+  for (const properties in robot) {
+    for (const reversedProp in reversedObj) {
+      if (robot[properties] === reversedProp) {
+        return null;
+      }
+    } reversedObj[robot[properties]] = properties;
   }
 
   return reversedObj;
