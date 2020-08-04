@@ -35,7 +35,7 @@ function inverseRobot(robot) {
   const inverse = {};
 
   for (const key in robot) {
-    inverse[robot[`${key}`]] = `${key}`;
+    inverse[robot[key]] = key;
   }// write code here
 
   return inverse;
