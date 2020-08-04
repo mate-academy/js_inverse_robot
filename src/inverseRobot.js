@@ -30,9 +30,7 @@ function inverseRobot(robot) {
   const values = Object.values(robot);
 
   for (let i = 0; i < properties.length; i++) {
-    for (let j = 0; j < values.length; j++) {
-      reversedObj[values[j]] = properties[j];
-    }
+    reversedObj[values[i]] = properties[i];
   }
 
   const sortedValues = values.sort();
