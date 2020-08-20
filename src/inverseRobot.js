@@ -35,7 +35,9 @@ function inverseRobot(robot) {
   }
 
   for (const key in invRobot) {
-    count2++;
+    if (key) {
+      count2++;
+    }
   }
 
   if (count1 !== count2) {
