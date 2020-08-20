@@ -26,21 +26,20 @@
 function inverseRobot(robot) {
   // write code here
   let invRobot = {};
-  let count1 = 0;
-  let count2 = 0;
+  let count = 0;
 
   for (const key in robot) {
     invRobot[robot[key]] = key;
-    count1++;
+    count++;
   }
 
   for (const key in invRobot) {
     if (key) {
-      count2++;
+      count--;
     }
   }
 
-  if (count1 !== count2) {
+  if (count !== 0) {
     invRobot = null;
   }
 
