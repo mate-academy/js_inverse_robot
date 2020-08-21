@@ -25,22 +25,15 @@
  */
 function inverseRobot(robot) {
   // write code here
-  let invRobot = {};
-  let count = 0;
+  const invRobot = {};
+  // let count = 0;
 
   for (const key in robot) {
-    invRobot[robot[key]] = key;
-    count++;
-  }
-
-  for (const key in invRobot) {
-    if (key) {
-      count--;
+    if (Object.keys(invRobot).includes(robot[key])) {
+      return null;
+    } else {
+      invRobot[robot[key]] = key;
     }
-  }
-
-  if (count !== 0) {
-    invRobot = null;
   }
 
   return invRobot;
