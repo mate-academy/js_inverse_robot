@@ -24,30 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // const arr = Object.entries(robot).reverse();
-  //
-  // for (let i = 0; i < arr.length - 1; i++) {
-  //   if (arr[i][1] === arr[i + 1][1]) {
-  //     return null;
-  //   }
-  // }
-  //
-  // arr.forEach(subArr => subArr.reverse());
-  //
-  // return Object.fromEntries(arr);
-  const inverse = {};
+  const mirrorObject = {};
 
   for (const robotKey in robot) {
-    const robotVal = robot[robotKey];
-
-    if (inverse.hasOwnProperty(robotVal)) {
+    if (mirrorObject.hasOwnProperty(robot[robotKey])) {
       return null;
     }
 
-    inverse[robotVal] = robotKey;
+    mirrorObject[robot[robotKey]] = robotKey;
   }
 
-  return inverse;
+  return mirrorObject;
 }
 
 module.exports = inverseRobot;
