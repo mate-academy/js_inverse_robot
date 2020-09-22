@@ -37,5 +37,4 @@ function inverseRobot(robot) {
   return result;
 }
 
-
 module.exports = inverseRobot;
