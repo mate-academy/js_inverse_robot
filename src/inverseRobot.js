@@ -24,7 +24,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const robotOldValues = Object.values(robot);
+
+  if (robotOldValues
+    .find((item, index, arr) => index !== arr.indexOf(item))) {
+    return null;
+  }
+
+  const inverseArrFromObj = Object.entries(robot).map(i => [i[1], i[0]]);
+
+  return Object.fromEntries(inverseArrFromObj);
 }
 
 module.exports = inverseRobot;
