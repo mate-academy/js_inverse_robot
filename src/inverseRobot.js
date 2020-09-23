@@ -31,7 +31,8 @@ function inverseRobot(robot) {
     return null;
   }
 
-  const inverseArrFromObj = Object.entries(robot).map(i => [i[1], i[0]]);
+  const inverseArrFromObj = Object.entries(robot)
+    .map(arrKeyValue => [arrKeyValue[1], arrKeyValue[0]]);
 
   return Object.fromEntries(inverseArrFromObj);
 }
