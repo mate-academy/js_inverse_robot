@@ -4,7 +4,7 @@ describe('inverseRobot', () => {
   const inverseRobot = require('./inverseRobot');
 
   it(`Function 'inverseRobot' should be declared`, () => {
-    expect(inverseRobot).toBeInstanceOf(Number);
+    expect(inverseRobot).toBeInstanceOf(Function);
   });
 
   it(`Function 'inverseRobot' should return 'object'`, () => {
