@@ -26,27 +26,11 @@
 function inverseRobot(robot) {
   // write code here
   const robotInverse = {};
-  let arrKeys = [];
-  let arrValues = [];
 
-  arrKeys = Object.keys(robot);
-  arrValues = Object.values(robot);
-
-  let arrKeysWithoutDublicates = [];
-  let arrValuesWithoutDublicates = [];
-
-  arrKeysWithoutDublicates = [...new Set(arrKeys)];
-  arrValuesWithoutDublicates = [...new Set(arrValues)];
-
-  const a = arrKeys.length;
-  const b = arrKeysWithoutDublicates.length;
-  const c = arrValues.length;
-  const d = arrValuesWithoutDublicates.length;
-
-  if (a !== b || c !== d) {
-    return null;
-  } else {
-    for (const key in robot) {
+  for (const key in robot) {
+    if (robotInverse.hasOwnProperty(robot[key])) {
+      return null;
+    } else {
       robotInverse[robot[key]] = key;
     }
   }
