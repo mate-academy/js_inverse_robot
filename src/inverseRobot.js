@@ -24,22 +24,6 @@
  * @return {object}
  */
 
-function inverseRobot(robot) {
-  const arr = Object.entries(robot);
-  const obj = {};
-
-  for (const i in arr) {
-    const key = arr[i][0];
-    const value = arr[i][1];
-
-    if (!(value in obj)) {
-      obj[value] = key;
-    } else {
-      return null;
-    }
-  }
-
-  return obj;
-}
+function inverseRobot(robot) {}
 
 module.exports = inverseRobot;
