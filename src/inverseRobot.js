@@ -36,12 +36,10 @@ function inverseRobot(robot) {
     newObj[keys] = values;
   }
 
-  const robotValues = Object.values(robot);
+  const newEntries = Object.entries(newObj);
 
-  for (let i = 0; i < robotValues.length; i++) {
-    if (robotValues[i] === robotValues[i + 1]) {
-      return null;
-    }
+  if (newEntries.length !== entries.length) {
+    return null;
   }
 
   return newObj;
