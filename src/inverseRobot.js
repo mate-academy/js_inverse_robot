@@ -32,9 +32,10 @@ function inverseRobot(robot) {
   const reversedRobot = {};
 
   for (let j = 0; j < robotKeys.length; j++) {
-    if (robotValues[j] === robotValues[j + 1]) {
+    if (reversedRobot.hasOwnProperty(robotValues[j])) {
       return null;
     }
+
     reversedRobot[robotValues[j]] = String(robotKeys[j]);
   }
 
