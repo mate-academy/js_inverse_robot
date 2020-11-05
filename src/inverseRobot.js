@@ -31,13 +31,10 @@ function inverseRobot(robot) {
 
   const reversedRobot = {};
 
-  for (let i = 0; i < robotKeys.length; i++) {
-    if (robotValues[i] === robotValues[i + 1]) {
+  for (let j = 0; j < robotKeys.length; j++) {
+    if (robotValues[j] === robotValues[j + 1]) {
       return null;
     }
-  }
-
-  for (let j = 0; j < robotKeys.length; j++) {
     reversedRobot[robotValues[j]] = String(robotKeys[j]);
   }
 
