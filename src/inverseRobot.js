@@ -25,10 +25,42 @@
  */
 function inverseRobot(robot) {
   // write code here
-  // eslint-disable-next-line max-len
-  const res = Object.fromEntries(Object.entries(robot).map(([key, value]) => [value, key]));
 
-  return Object.keys(res).length < Object.values(robot).length ? null : res;
+  const result = {};
+
+  for (const key in robot) {
+    const value = robot[key];
+
+    if (result.hasOwnProperty(value)) {
+      return null;
+    } else {
+      result[value] = key;
+    }
+  }
+
+  return result;
 }
 
 module.exports = inverseRobot;
+
+// просто один цикл і Object.hasOwnProperty
+
+// eslint-disable-next-line max-len
+// const res = Object.fromEntries(Object.entries(robot).map(([key, value]) => [value, key]));
+//  return Object.keys(res).length < Object.values(robot).length ? null : res;
+
+// eslint-disable-next-line max-len
+// const result = {}; // порожній об'єкт, щоб містити зворотні пари ключ/значення
+
+// // const keys = Object.keys(robot); // отримати всі ключі в масиві
+// for (const key in robot) {
+//   const value = robot[key]; // отримуємо значення для поточного ключа
+
+//   if (result.hasOwnProperty(value)) {
+//     result[value] = key; // ключі міняються місцями з властивостями
+//   } else {
+//     return null;
+//   }
+// }
+
+// return result;
