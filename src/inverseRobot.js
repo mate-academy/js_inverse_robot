@@ -26,24 +26,12 @@
 function inverseRobot(robot) {
   const inversedRobot = {};
 
-  //  Retrieving roperties and values
+  for (const key in robot) {
+    if (inversedRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
 
-  const rightValues = Object.keys(robot);
-  const rightKeys = Object.values(robot);
-
-  //  Checking for the repeats
-
-  const repeatedKey = new Set(rightKeys).size !== rightValues.length;
-  const repeatedValues = new Set(rightValues).size !== rightValues.length;
-
-  if (repeatedKey || repeatedValues) {
-    return null;
-  }
-
-  //  Swapping properties and values
-
-  for (let i = 0; i < rightKeys.length; i++) {
-    inversedRobot[rightKeys[i]] = rightValues[i];
+    inversedRobot[robot[key]] = key;
   }
 
   return inversedRobot;
