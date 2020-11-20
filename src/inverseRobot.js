@@ -24,7 +24,20 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  let key;
+  const newObj = {};
+
+  for (key in robot) {
+    // use RegEx without flags to test only first character
+    if (/[A-Z0-9]/.test(key.toString)) {
+      if (newObj.hasOwnProperty(robot[key])) {
+        return null;
+      }
+      newObj[robot[key]] = key;
+    }
+  }
+
+  return newObj;
 }
 
 module.exports = inverseRobot;
