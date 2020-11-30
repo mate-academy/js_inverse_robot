@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 /**
@@ -24,7 +25,24 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const reverseRobot = {};
+  const uniqCheck = [];
+
+  for (const key in robot) {
+    reverseRobot[robot[key]] = key;
+  }
+
+  for (const key of Object.values(robot)) {
+    if (!uniqCheck.includes(key)) {
+      uniqCheck.push(key);
+    }
+  }
+
+  if (uniqCheck.length < (Object.values(robot)).length) {
+    return null;
+  }
+
+  return reverseRobot;
 }
 
 module.exports = inverseRobot;
