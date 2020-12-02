@@ -24,12 +24,12 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const chekArray = Object.values(robot);
+  const checkArray = Object.values(robot);
 
-  chekArray.sort();
+  checkArray.sort();
 
-  for (let i = 0; i < chekArray.length; i++) {
-    if (chekArray[i] === chekArray[i + 1]) {
+  for (let i = 0; i < checkArray.length; i++) {
+    if (checkArray[i] === checkArray[i + 1]) {
       return null;
     }
   }
