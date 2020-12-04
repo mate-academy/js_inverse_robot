@@ -25,6 +25,31 @@
  */
 function inverseRobot(robot) {
   // write code here
+
+  /* Мені здається, що в мене якийсь говнокод, прошу поясніть
+    будь-ласка як це можна переробити через Object.hasOwnProperty,
+     якщо так можна. Бо до мене ніяк не доходить */
+
+  const res = {};
+
+  for (const key in robot) {
+    res[robot[key]] = key;
+  }
+
+  const arr = Object.keys(robot).concat(Object.values(robot));
+  const result = [];
+
+  for (const item of arr) {
+    if (!result.includes(item)) {
+      result.push(item);
+    }
+  }
+
+  if (result.length !== arr.length) {
+    return null;
+  }
+
+  return res;
 }
 
 module.exports = inverseRobot;
