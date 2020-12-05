@@ -1,4 +1,5 @@
-'use strict';
+// eslint-disable-next-line
+"use strict";
 
 /**
  * Situs inversus
@@ -24,7 +25,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  for (const [key, value] of Object.entries(robot)) {
+    if (newRobot.hasOwnProperty(value)) {
+      return null;
+    } else {
+      newRobot[value] = key;
+    }
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
