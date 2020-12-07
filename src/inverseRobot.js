@@ -40,19 +40,6 @@ function inverseRobot(robot) {
     }
   }
 
-  // const arr = Object.keys(robot).concat(Object.values(robot));
-  // const result = [];
-
-  // for (const item of arr) {
-  //   if (!result.includes(item)) {
-  //     result.push(item);
-  //   }
-  // }
-
-  // if (result.length !== arr.length) {
-  //   return null;
-  // }
-
   return res;
 }
 
