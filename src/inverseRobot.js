@@ -26,10 +26,6 @@
 function inverseRobot(robot) {
   // write code here
 
-  /* Мені здається, що в мене якийсь говнокод, прошу поясніть
-    будь-ласка як це можна переробити через Object.hasOwnProperty,
-     якщо так можна. Бо до мене ніяк не доходить */
-
   const res = {};
 
   for (const key in robot) {
