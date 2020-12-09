@@ -24,17 +24,15 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let i = 0;
+  let counter = 0;
   const newRobot = {};
 
-  for (const each in robot) {
-    newRobot[robot[each]] = each;
-    i++;
+  for (const value in robot) {
+    newRobot[robot[value]] = value;
+    counter++;
   }
 
-  const a = Object.keys(newRobot).length;
-
-  if (a !== i) {
+  if (Object.keys(newRobot).length !== counter) {
     return null;
   }
 
