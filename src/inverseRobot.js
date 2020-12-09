@@ -24,20 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let duplicate = Object.values(robot);
+  const val = Object.values(robot);
   const obj = {};
 
-  duplicate = duplicate.some((e, i, a) => a.indexOf(e) !== a.lastIndexOf(e));
-
-  if (duplicate) {
-    return null;
-  } else {
-    Object.keys(robot).forEach(e => {
-      obj[robot[e]] = e;
-    });
-
-    return obj;
+  for (const key in robot) {
+    if ([...new Set(val)].length < val.length) {
+      return null;
+    } else {
+      obj[robot[key]] = key;
+    }
   }
+
+  return obj;
 }
 
 module.exports = inverseRobot;
