@@ -24,22 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arrKeys = [];
-  const arrValues = [];
   const repearedRobot = {};
 
-  for (const i in robot) {
-    arrKeys.push(robot[i]);
-    arrValues.push(i);
-  }
-
-  for (let i = 0; i < arrKeys.length; i++) {
-    for (let j = i + 1; j < arrKeys.length; j++) {
-      if (arrKeys[i] === arrKeys[j]) {
-        return null;
-      }
+  for (const key in robot) {
+    if (repearedRobot.hasOwnProperty(robot[key])) {
+      return null;
     }
-    repearedRobot[arrKeys[i]] = arrValues[i];
+
+    repearedRobot[robot[key]] = key;
   }
 
   return repearedRobot;
