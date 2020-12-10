@@ -23,6 +23,7 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
   const result = {};
 
