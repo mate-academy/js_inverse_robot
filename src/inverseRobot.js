@@ -15,6 +15,7 @@
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
  * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
+ *
  * inverseRobot(robert) === null
  * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
@@ -24,7 +25,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const inRobot = {};
+
+  const entries = Object.entries(robot);
+
+  for (let i = 0; i < entries.length; i++) {
+    if (inRobot.hasOwnProperty(entries[i][1])) {
+      return null;
+    }
+    inRobot[entries[i][1]] = entries[i][0];
+  }
+
+  return inRobot;
 }
 
 module.exports = inverseRobot;
