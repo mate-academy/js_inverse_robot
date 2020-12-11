@@ -25,14 +25,12 @@
  */
 function inverseRobot(robot) {
   const inversed = {};
-  const values = Object.values(robot);
-
-  // Check for duplicate values
-  if (new Set(values).size !== values.length) {
-    return null;
-  }
 
   for (const key in robot) {
+    if (inversed.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
     inversed[robot[key]] = key;
   }
 
