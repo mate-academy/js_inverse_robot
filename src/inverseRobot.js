@@ -29,9 +29,8 @@ function inverseRobot(robot) {
   for (const key in robot) {
     if (repairedRobot.hasOwnProperty([robot[key]])) {
       return null;
-    } else {
-      repairedRobot[robot[key]] = key;
     }
+    repairedRobot[robot[key]] = key;
   }
 
   return repairedRobot;
