@@ -19,12 +19,22 @@
  * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
  *
- * @param {object} robot
+ * @param {object} robot the robot to be inversed.
  *
- * @return {object}
+ * @return {object} inversed robot.
  */
 function inverseRobot(robot) {
-  // write code here
+  const inversed = {};
+
+  for (const key in robot) {
+    if (inversed.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
+    inversed[robot[key]] = key;
+  }
+
+  return inversed;
 }
 
 module.exports = inverseRobot;
