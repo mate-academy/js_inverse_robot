@@ -25,16 +25,14 @@
  */
 function inverseRobot(robot) {
   const invRobot = {};
-  const nameDouble = [];
-  // write code here
 
-  for (const key in robot) {
-    nameDouble.push(robot[key]);
+  Object.entries(robot).forEach((item) => {
+    invRobot[item[1]] = item[0];
+  });
 
-    invRobot[robot[key]] = key;
-  }
+  const keyArr = Object.keys(invRobot);
 
-  if (Object.values(invRobot).length < nameDouble.length) {
+  if (keyArr.length < Object.keys(robot).length) {
     return null;
   }
 
