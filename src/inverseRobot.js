@@ -23,8 +23,22 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const result = {};
+  const arr = [];
+
+  for (const keys in robot) {
+    arr.push(robot[keys]);
+
+    if (arr.sort()[0] === arr.sort()[1]) {
+      return null;
+    }
+
+    result[robot[keys]] = keys;
+  }
+
+  return result;
 }
 
 module.exports = inverseRobot;
