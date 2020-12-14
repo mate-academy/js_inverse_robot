@@ -25,7 +25,7 @@
  */
 function inverseRobot(robot) {
   const temp = Object.entries(robot);
-  const obj = Object.create({});
+  const obj = {};
 
   for (let i = 0; i < temp.length; i++) {
     for (let j = i + 1; j < temp.length; j++) {
