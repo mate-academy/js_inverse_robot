@@ -11,9 +11,7 @@
  *
  * If any of the object values are repeated, return 'null'.
  *
- * Example:
- *
- * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
+ * Example:  'chipVer', 3: 'wheels' };
  * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
  * inverseRobot(robert) === null
  * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
@@ -24,7 +22,12 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  for (const key of Object.keys(robot)) {
+    robot[robot[key]] = key;
+    delete robot[key];
+  }
+
+  return robot;
 }
 
 module.exports = inverseRobot;
