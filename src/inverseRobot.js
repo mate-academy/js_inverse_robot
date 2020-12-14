@@ -26,12 +26,9 @@
 
 function inverseRobot(robot) {
   const result = {};
-  const arr = [];
 
   for (const keys in robot) {
-    arr.push(robot[keys]);
-
-    if (arr.sort()[0] === arr.sort()[1]) {
+    if (result.hasOwnProperty(robot[keys])) {
       return null;
     }
 
