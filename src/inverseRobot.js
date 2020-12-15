@@ -25,37 +25,35 @@
  */
 function inverseRobot(robot) {
   let res = {};
-  let arrProperties = [];
-  let arrValues = [];
-  let i = 0;
-  
-  for (let key in robot) {
-    arrProperties[i] = key;
-    arrValues[i] = robot[key];
-  
-    i++;
+  const arrProperties = [];
+  const arrValues = [];
+  let count = 0;
+
+  for (const key in robot) {
+    arrProperties[count] = key;
+    arrValues[count] = robot[key];
+
+    count++;
   }
 
-  let buffer = arrValues[0];
+  const buffer = arrValues[0];
 
   for (let i = 1; i < arrValues.length; i++) {
     if (buffer === arrValues[i]) {
       res = null;
       break;
     }
-  } 
+  }
 
-  let j = 0;
+  if (res !== null) {
+    for (let i = 0; i < arrProperties.length; i++) {
+      const key = arrValues[i];
+      const value = arrProperties[i];
 
-  if (res === null) {
-    for (let key in res) {
-      key = arrValues[j];
-      key[res] = arrProperties[j];
-
-      j++;
+      res[key] = value;
     }
   }
-  
+
   return res;
 }
 
