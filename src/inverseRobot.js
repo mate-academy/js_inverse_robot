@@ -1,16 +1,17 @@
 'use strict';
 
 function inverseRobot(robot) {
+  const newRobot = {};
+
   for (const key of Object.keys(robot)) {
-    if (robot.hasOwnProperty(robot[key])) {
+    if (newRobot.hasOwnProperty(robot[key])) {
       return null;
     }
 
-    robot[robot[key]] = key;
-    delete robot[key];
+    newRobot[robot[key]] = key;
   }
 
-  return robot;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
