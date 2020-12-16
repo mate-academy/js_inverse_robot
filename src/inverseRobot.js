@@ -24,37 +24,21 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let res = {};
-  const arrProperties = [];
-  const arrValues = [];
-  let count = 0;
+  let obj = {};
 
-  for (const key in robot) {
-    arrProperties[count] = key;
-    arrValues[count] = robot[key];
+  for (const p in robot) {
+    const key = robot[p];
+    const value = p;
 
-    count++;
-  }
-
-  const buffer = arrValues[0];
-
-  for (let i = 1; i < arrValues.length; i++) {
-    if (buffer === arrValues[i]) {
-      res = null;
+    if (obj.hasOwnProperty(key)) {
+      obj = null;
       break;
     }
+
+    obj[key] = value;
   }
 
-  if (res !== null) {
-    for (let i = 0; i < arrProperties.length; i++) {
-      const key = arrValues[i];
-      const value = arrProperties[i];
-
-      res[key] = value;
-    }
-  }
-
-  return res;
+  return obj;
 }
 
 module.exports = inverseRobot;
