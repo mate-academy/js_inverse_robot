@@ -24,30 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // Итак, задача стоит следующая:
-  // поменять местами ключи обьекта и значания объекта, причем если свойства
-  // объекта будут повторяться, нужно будет вернуть null/
-  // Пойдем через массивы.
-
   const robotKeys = Object.values(robot);
   const robotValues = Object.keys(robot);
   let newRobot = {};
 
-  // Для начала определим, повторяются ли ключи, и если да, то по условию задачи
-  // мы должны вернуть NULL
+  for (let i = 0; i < robotKeys.length; i++) {
+    const key = robotKeys[i];
 
-  for (let i = 0; i < robotKeys.length - 1; i++) {
-    if (robotKeys[i] === robotKeys[i + 1]) {
+    if (newRobot.hasOwnProperty(robotKeys[i])) {
       newRobot = null;
 
       return newRobot;
-      // то есть, если условие верно, мы выходим из функции
-      // со значением newRobot = null;
     }
-  }
-
-  for (let i = 0; i < robotKeys.length; i++) {
-    const key = robotKeys[i];
 
     newRobot[key] = robotValues[i];
   }
