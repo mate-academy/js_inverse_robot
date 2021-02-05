@@ -25,11 +25,11 @@
  */
 function inverseRobot(robot) {
   const entries = Object.entries(robot);
-  const rev = [];
+  const reversedRobotArray = [];
   const keys = Object.keys(robot);
 
   for (let i = 0; i < entries.length; i++) {
-    rev.push(entries[i].reverse());
+    reversedRobotArray.push(entries[i].reverse());
   }
 
   for (let i = 0; i < keys.length; i++) {
