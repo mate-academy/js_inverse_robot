@@ -24,7 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  for (const schema in robot) {
+    if (robot.hasOwnProperty(robot[schema])) {
+      return null;
+    }
+    robot[robot[schema]] = schema;
+    // Создаем новые ключи с названиями старых values => robot[schema];
+    // Присваиваем им значения как schema = oldKey;
+    delete robot[schema]; // удаляем старые ключи с перепутанными значениями;
+  }
+
+  return robot;
 }
 
 module.exports = inverseRobot;
