@@ -24,7 +24,27 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const values = Object.values(robot);
+  const keys = Object.keys(robot);
+  const newRobot = {};
+
+  if (!isUnique(values) || !isUnique(keys)) {
+    return null;
+  }
+
+  values.forEach((value, index) => {
+    newRobot[value] = keys[index];
+  });
+
+  return newRobot;
+}
+
+function isUnique(list) {
+  const isUniqueList = new Set();
+
+  list.forEach(item => isUniqueList.add(item));
+
+  return isUniqueList.size === list.length;
 }
 
 module.exports = inverseRobot;
