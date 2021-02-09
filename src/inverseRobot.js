@@ -24,9 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let key = '';
-
-  for (key in robot) {
+  for (const key in robot) {
     const value = robot[key];
 
     if (robot[value] !== undefined) {
