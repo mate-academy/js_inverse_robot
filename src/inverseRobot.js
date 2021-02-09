@@ -30,10 +30,10 @@ function inverseRobot(robot) {
 
   if (values.length !== uniqValues.size) {
     return null;
-  } else {
-    for (const part in robot) {
-      newRobot[robot[part]] = part;
-    }
+  }
+
+  for (const part in robot) {
+    newRobot[robot[part]] = part;
   }
 
   return newRobot;
