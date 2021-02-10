@@ -1,5 +1,5 @@
 'use strict';
-
+/* eslint-disable */
 describe('inverseRobot', () => {
   const inverseRobot = require('./inverseRobot');
 
