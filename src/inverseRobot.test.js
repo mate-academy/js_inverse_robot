@@ -1,5 +1,5 @@
 'use strict';
-/* eslint-disable */
+
 describe('inverseRobot', () => {
   const inverseRobot = require('./inverseRobot');
 
@@ -130,15 +130,15 @@ describe('inverseRobot', () => {
     nickname: 'Bob'
   }
   expected output: null`, () => {
-  expect(
-    inverseRobot({
-      name: 'Bob',
-      fullName: 'Bob Acad',
-      age: 32,
-      gender: 'male',
-      interests: 'music',
-      nickname: 'Bob',
-    })
-  ).toEqual(null);
-});
+    expect(
+      inverseRobot({
+        name: 'Bob',
+        fullName: 'Bob Acad',
+        age: 32,
+        gender: 'male',
+        interests: 'music',
+        nickname: 'Bob',
+      })
+    ).toEqual(null);
+  });
 });
