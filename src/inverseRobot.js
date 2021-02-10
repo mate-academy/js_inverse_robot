@@ -27,17 +27,17 @@ function inverseRobot(robot) {
   const uniqueKeys = Object.keys(robot).reverse();
   const uniqueValues = Object.values(robot).reverse();
 
-  const inversedRobot = {};
+  const inversedRobor = {};
 
   for (let i = 0; i < uniqueKeys.length; i++) {
-    if (uniqueValues[i] in inversedRobot) {
+    if (uniqueValues[i] in inversedRobor) {
       return null;
     } else {
-      inverseRobot[uniqueValues[i]] = uniqueKeys[i];
+      inversedRobor[uniqueValues[i]] = uniqueKeys[i];
     }
   }
 
-  return inversedRobot;
+  return inversedRobor;
 }
 
 module.exports = inverseRobot;
