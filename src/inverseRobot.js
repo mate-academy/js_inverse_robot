@@ -24,16 +24,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const keys = Object.keys(robot).reverse();
-  const values = Object.values(robot).reverse();
+  const uniqueKeys = Object.keys(robot).reverse();
+  const uniqueValues = Object.values(robot).reverse();
 
-  let newObj = {};
+  const newObj = {};
 
-  for (let i = 0; i < keys.length; i++) {
-    if (values[i] in newObj) {
-      newObj = null;
+  for (let i = 0; i < uniqueKeys.length; i++) {
+    if (uniqueValues[i] in newObj) {
+      return null;
     } else {
-      newObj[values[i]] = keys[i];
+      newObj[uniqueValues[i]] = uniqueKeys[i];
     }
   }
 
