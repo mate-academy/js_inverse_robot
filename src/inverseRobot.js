@@ -25,20 +25,17 @@
  */
 function inverseRobot(robot) {
   let invertedRobot = {};
-  const arr = [];
-  const arr1 = [];
+  const originalValues = [];
 
   for (const key in robot) {
-    if (arr.indexOf(robot[key]) < 0) {
-      arr.push(robot[key]);
+    if (originalValues.indexOf(robot[key]) < 0) {
+      originalValues.push(robot[key]);
     } else {
       invertedRobot = null;
       break;
     }
 
-    if (arr1.indexOf(key) < 0) {
-      arr1.push(key);
-    } else {
+    if (Object.keys(invertedRobot).indexOf(key) > -1) {
       invertedRobot = null;
       break;
     }
