@@ -20,7 +20,7 @@ describe('inverseRobot', () => {
     expect(
       inverseRobot({
         Robert: 'name', 123: 'chipVer', 113: 'chipVer',
-      })
+      }),
     ).toBe(null);
   });
 
@@ -37,7 +37,7 @@ describe('inverseRobot', () => {
     expect(
       inverseRobot({
         Kolli: 'name', 123: 'chipVer', 3: 'wheels',
-      })
+      }),
     ).toEqual({
       chipVer: '123', name: 'Kolli', wheels: '3',
     });
@@ -61,7 +61,7 @@ describe('inverseRobot', () => {
     expect(
       inverseRobot({
         Robert: 'name', 123: 'chipVerPro', 113: 'chipVer',
-      })
+      }),
     ).toEqual({
       chipVer: '113', chipVerPro: '123', name: 'Robert',
     });
@@ -77,7 +77,7 @@ describe('inverseRobot', () => {
     expect(
       inverseRobot({
         Kolli: 'name', 123: 'chipVer', 3: 'wheels', 2: 'wheels',
-      })
+      }),
     ).toEqual(null);
   });
 
@@ -96,7 +96,7 @@ describe('inverseRobot', () => {
     expect(
       inverseRobot({
         name: 'Bob', age: 32, gender: 'male', interests: 'music',
-      })
+      }),
     ).toEqual({
       Bob: 'name', 32: 'age', male: 'gender', music: 'interests',
     });
@@ -117,7 +117,7 @@ describe('inverseRobot', () => {
         age: 32,
         gender: 'male',
         interests: 'music',
-      })
+      }),
     ).toEqual(null);
   });
 
@@ -130,15 +130,15 @@ describe('inverseRobot', () => {
     nickname: 'Bob'
   }
   expected output: null`, () => {
-  expect(
-    inverseRobot({
-      name: 'Bob',
-      fullName: 'Bob Acad',
-      age: 32,
-      gender: 'male',
-      interests: 'music',
-      nickname: 'Bob',
-    })
-  ).toEqual(null);
-});
+    expect(
+      inverseRobot({
+        name: 'Bob',
+        fullName: 'Bob Acad',
+        age: 32,
+        gender: 'male',
+        interests: 'music',
+        nickname: 'Bob',
+      }),
+    ).toEqual(null);
+  });
 });
