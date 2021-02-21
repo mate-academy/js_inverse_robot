@@ -24,7 +24,30 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  let robotInversed = {};
+
+  // Checking for repeated values inside a source object
+  for (const key2 in robot) {
+    for (const key3 in robot) {
+      if (key2 !== key3 && robot[key2] === robot[key3]) {
+        robotInversed = null;
+
+        return robotInversed;
+      }
+    }
+  }
+
+  // Changing places of keys and their values in a target object
+  let objKey;
+  let objValue;
+
+  for (const key in robot) {
+    objKey = robot[key];
+    objValue = key;
+    robotInversed[objKey] = objValue;
+  }
+
+  return robotInversed;
 }
 
 module.exports = inverseRobot;
