@@ -27,13 +27,15 @@ function inverseRobot(robot) {
   let robotInversed = {};
 
   // Checking for repeated values inside a source object
-  for (const key2 in robot) {
-    for (const key3 in robot) {
-      if (key2 !== key3 && robot[key2] === robot[key3]) {
-        robotInversed = null;
+  const robotValuesArray = Object.values(robot);
 
-        return robotInversed;
-      }
+  robotValuesArray.sort();
+
+  for (let i = 1; i < robotValuesArray.length; i++) {
+    if (robotValuesArray[i - 1] === robotValuesArray[i]) {
+      robotInversed = null;
+
+      return robotInversed;
     }
   }
 
