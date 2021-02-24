@@ -23,8 +23,25 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  const robotArr = Object.values(robot);
+
+  const duplicates = (new Set(robotArr).size === robotArr.length);
+
+  if (duplicates === false) {
+    return null;
+  }
+
+  for (const prop in robot) {
+    if (robot.hasOwnProperty(prop)) {
+      newRobot[robot[prop]] = prop;
+    }
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
