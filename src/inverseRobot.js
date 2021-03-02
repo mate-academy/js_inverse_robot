@@ -25,20 +25,19 @@
  */
 function inverseRobot(robot) {
   // write code here
-  let inverse = {};
+  const newRobot = {};
   let listOfValue = '';
 
   for (const key in robot) {
     if (!listOfValue.includes(robot[key])) {
       listOfValue += robot[key];
-      inverse[robot[key]] = key;
+      newRobot[robot[key]] = key;
     } else {
-      inverse = null;
-      break;
+      return null;
     }
   }
 
-  return inverse;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
