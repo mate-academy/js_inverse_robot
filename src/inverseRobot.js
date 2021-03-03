@@ -34,8 +34,8 @@ function inverseRobot(robot) {
 
   result = Object.entries(robot);
 
-  for (let a of result) {
-    a = a.reverse();
+  for (const a of result) {
+    a.reverse();
   }
 
   return Object.fromEntries(result);
