@@ -27,10 +27,10 @@
 function inverseRobot(robot) {
   // write code here
   const inversedRobot = {};
-  const robotKey = Object.keys(robot);
+  const robotKeys = Object.keys(robot);
 
-  for (let i = 0; i < robotKey.length; i++) {
-    const key = robotKey[i];
+  for (let i = 0; i < robotKeys.length; i++) {
+    const key = robotKeys[i];
     const value = robot[key];
 
     if (!inversedRobot[value]) {
