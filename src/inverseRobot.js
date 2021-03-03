@@ -26,9 +26,9 @@
 function inverseRobot(robot) {
   let result = [];
   const values = Object.values(robot);
-  const check = new Set(values);
+  const uniqueValues = new Set(values);
 
-  if (check.size !== values.length) {
+  if (uniqueValues.size !== values.length) {
     return null;
   }
 
