@@ -11,7 +11,7 @@
  *
  * If any of the object values are repeated, return 'null'.
  *
- * Example:
+ * Example
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
  * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
@@ -23,8 +23,24 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
   // write code here
+  const inversedRobot = {};
+  const robotKeys = Object.keys(robot);
+
+  for (let i = 0; i < robotKeys.length; i++) {
+    const key = robotKeys[i];
+    const value = robot[key];
+
+    if (!inversedRobot[value]) {
+      inversedRobot[value] = key;
+    } else {
+      return null;
+    }
+  }
+
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
