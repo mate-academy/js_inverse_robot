@@ -24,15 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const tempk = Object.keys(robot);
-  const tempv = Object.values(robot);
   const obj = {};
 
-  for (let i = 0; i < tempk.length; i++) {
-    if (tempv.includes((tempv[i]), i + 1)) {
+  for (const element in robot) {
+    if (robot[element] in obj) {
       return null;
     }
-    obj[`${tempv[i]}`] = tempk[i];
+    obj[robot[element]] = element;
   }
 
   return obj;
