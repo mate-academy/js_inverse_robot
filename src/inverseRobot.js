@@ -24,7 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const arrProperties = Object.values(robot);
+  const set = new Set(arrProperties);
+
+  if (arrProperties.length !== set.size) {
+    return null;
+  }
+
+  const arrEntries = Object.entries(robot);
+
+  for (let i = 0; i < arrEntries.length; i++) {
+    const bubble = arrEntries[i][0];
+
+    arrEntries[i][0] = arrEntries[i][1];
+    arrEntries[i][1] = bubble;
+  }
+
+  return Object.fromEntries(arrEntries);
 }
 
 module.exports = inverseRobot;
