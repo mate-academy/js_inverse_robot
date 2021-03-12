@@ -24,23 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arrProperties = Object.values(robot);
-  const set = new Set(arrProperties);
+  const result = {};
 
-  if (arrProperties.length !== set.size) {
-    return null;
+  for (const swapKey in robot) {
+    if (result.hasOwnProperty(robot[swapKey])) {
+      return null;
+    }
+
+    result[robot[swapKey]] = swapKey;
   }
 
-  const arrEntries = Object.entries(robot);
-
-  for (let i = 0; i < arrEntries.length; i++) {
-    const bubble = arrEntries[i][0];
-
-    arrEntries[i][0] = arrEntries[i][1];
-    arrEntries[i][1] = bubble;
-  }
-
-  return Object.fromEntries(arrEntries);
+  return result;
 }
 
 module.exports = inverseRobot;
