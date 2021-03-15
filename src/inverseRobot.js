@@ -25,6 +25,21 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const fixed = {};
+
+  for (const key in robot) {
+    if (robot[key] in fixed) {
+      return null;
+    }
+    fixed[robot[key]] = key;
+  }
+
+  return fixed;
 }
+
+// const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
+// const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
+// console.log(inverseRobot(kolli));
+// console.log(inverseRobot(robert));
 
 module.exports = inverseRobot;
