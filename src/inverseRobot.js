@@ -26,12 +26,11 @@
 function inverseRobot(robot) {
   const rightRobot = {};
 
-  for (let i = 0; i < Object.values(robot).length; i++) {
-    if (Object.values(robot)[i] in rightRobot) {
+  for (const key in robot) {
+    if (robot[key] in rightRobot) {
       return null;
     }
-
-    rightRobot[Object.values(robot)[i]] = Object.keys(robot)[i];
+    rightRobot[robot[key]] = key;
   }
 
   return rightRobot;
