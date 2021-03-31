@@ -7,3 +7,22 @@ node_modules
 
 # MacOS
 .DS_Store
+src/inverseRobot.test.js
+.gitignore
+.prettierrc.js
+package-lock.json
+package.json
+coverage/clover.xml
+coverage/coverage-final.json
+coverage/lcov.info
+coverage/lcov-report/base.css
+coverage/lcov-report/block-navigation.js
+coverage/lcov-report/index.html
+coverage/lcov-report/inverseRobot.js.html
+coverage/lcov-report/prettify.css
+coverage/lcov-report/prettify.js
+coverage/lcov-report/sort-arrow-sprite.png
+coverage/lcov-report/sorter.js
+package-lock.json
+package.json
+package-lock.json
