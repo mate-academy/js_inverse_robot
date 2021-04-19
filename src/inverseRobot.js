@@ -25,23 +25,16 @@
  */
 function inverseRobot(robot) {
   // write code here
-  const robotArr = Object.entries(robot);
-  let dublikatePairs = [];
-  let robotFixed = {};
+  const robotAfterInverse = {};
 
-  for (let val of robotArr) {
-    val = val.reverse();
+  for (const key in robot) {
+    if (robot[key] in robotAfterInverse) {
+      return null;
+    }
+    robotAfterInverse[robot[key]] = key;
   }
 
-  robotFixed = Object.fromEntries(robotArr);
-
-  dublikatePairs = Object.entries(robotFixed);
-
-  if (robotArr.length !== dublikatePairs.length) {
-    return null;
-  } else {
-    return robotFixed;
-  }
+  return robotAfterInverse;
 }
 
 module.exports = inverseRobot;
