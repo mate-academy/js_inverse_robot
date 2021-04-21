@@ -29,16 +29,15 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const keys = key;
 
-    for (const k in reversRobot) {
-      if (robot[key] === (Object.keys(reversRobot))
-        .find(element => element === k)) {
+    
+      if (reversRobot.hasOwnProperty(robot[key])) {
         return null;
       }
-    }
-    reversRobot[robot[key]] = keys;
+
+      reversRobot[robot[key]] = keys;
+    
+  }
+    return reversRobot;
   }
 
-  return reversRobot;
-}
-
-module.exports = inverseRobot;
+  module.exports = inverseRobot;
