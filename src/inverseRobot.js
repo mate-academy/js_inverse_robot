@@ -23,8 +23,39 @@
  *
  * @return {object}
  */
+
+function checkUniqueVals(arr) {
+  let duplicate = null;
+
+  arr.forEach((item, indx, self) => {
+    if (self.indexOf(item) !== indx) {
+      duplicate = item;
+
+      return 0;
+    }
+  });
+
+  return duplicate === null;
+}
+
+function modifyToNumer(value) {
+  const parsedValue = Number.parseFloat(value);
+
+  return Number.isNaN(parsedValue) ? value : parsedValue;
+}
+
 function inverseRobot(robot) {
-  // write code here
+  const arrOfVals = Object.values(robot);
+
+  if (!checkUniqueVals(arrOfVals)) {
+    return null;
+  }
+
+  const rightKeysRobot = {};
+
+  for (const [key, value] of Object.entries(robot)) {
+    rightKeysRobot[value] = modifyToNumer(key);
+  }
 }
 
 module.exports = inverseRobot;
