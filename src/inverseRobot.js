@@ -24,7 +24,19 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const duplicates = Object.values(robot);
+  const repairedRobot = {};
+
+  if (duplicates.filter((item, index) =>
+    duplicates.indexOf(item) !== index).length) {
+    return null;
+  }
+
+  for (const [key, value] of Object.entries(robot)) {
+    repairedRobot[value] = key;
+  }
+
+  return repairedRobot;
 }
 
 module.exports = inverseRobot;
