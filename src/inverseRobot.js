@@ -38,12 +38,6 @@ function checkUniqueVals(arr) {
   return duplicate === null;
 }
 
-function modifyToNumer(value) {
-  const parsedValue = Number.parseFloat(value);
-
-  return Number.isNaN(parsedValue) ? value : parsedValue;
-}
-
 function inverseRobot(robot) {
   const arrOfVals = Object.values(robot);
 
@@ -54,8 +48,10 @@ function inverseRobot(robot) {
   const rightKeysRobot = {};
 
   for (const [key, value] of Object.entries(robot)) {
-    rightKeysRobot[value] = modifyToNumer(key);
+    rightKeysRobot[value] = key;
   }
+
+  return rightKeysRobot;
 }
 
 module.exports = inverseRobot;
