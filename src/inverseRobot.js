@@ -23,8 +23,35 @@
  *
  * @return {object}
  */
+
+function checkUniqueVals(arr) {
+  let duplicate = null;
+
+  arr.forEach((item, indx, self) => {
+    if (self.indexOf(item) !== indx) {
+      duplicate = item;
+
+      return 0;
+    }
+  });
+
+  return duplicate === null;
+}
+
 function inverseRobot(robot) {
-  // write code here
+  const arrOfVals = Object.values(robot);
+
+  if (!checkUniqueVals(arrOfVals)) {
+    return null;
+  }
+
+  const rightKeysRobot = {};
+
+  for (const [key, value] of Object.entries(robot)) {
+    rightKeysRobot[value] = key;
+  }
+
+  return rightKeysRobot;
 }
 
 module.exports = inverseRobot;
