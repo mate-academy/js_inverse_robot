@@ -24,16 +24,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const copyRobot = {};
+  const robotMirrorImage = {};
 
   for (const key of Object.keys(robot)) {
-    if (copyRobot.hasOwnProperty(robot[key])) {
+    if (robotMirrorImage.hasOwnProperty(robot[key])) {
       return null;
     }
-    copyRobot[robot[key]] = key;
+    robotMirrorImage[robot[key]] = key;
   }
 
-  return copyRobot;
+  return robotMirrorImage;
 }
 
 module.exports = inverseRobot;
