@@ -26,13 +26,16 @@
 function inverseRobot(robot) {
   // write code here
   const values = Object.values(robot);
+  const uniqueValues = [];
 
-  for (let i = 0; i < values.length; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[i] === values[j]) {
-        return null;
-      }
+  values.forEach(item => {
+    if (uniqueValues.indexOf(item) === -1) {
+      uniqueValues.push(item);
     }
+  });
+
+  if (uniqueValues.length !== values.length) {
+    return null;
   }
 
   const repaired = {};
