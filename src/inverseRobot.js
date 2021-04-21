@@ -25,6 +25,16 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const robotRepaired = {};
+
+  for (const key in robot) {
+    if (robotRepaired[robot[key]]) {
+      return null; // If any of the object values are repeated, return 'null'.
+    }
+    robotRepaired[robot[key]] = key;
+  }
+
+  return robotRepaired;
 }
 
 module.exports = inverseRobot;
