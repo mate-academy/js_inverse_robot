@@ -25,6 +25,26 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const values = Object.values(robot);
+  const uniqueValues = [];
+
+  values.forEach(item => {
+    if (uniqueValues.indexOf(item) === -1) {
+      uniqueValues.push(item);
+    }
+  });
+
+  if (uniqueValues.length !== values.length) {
+    return null;
+  }
+
+  const repaired = {};
+
+  for (const key in robot) {
+    repaired[robot[key]] = key;
+  }
+
+  return repaired;
 }
 
 module.exports = inverseRobot;
