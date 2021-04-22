@@ -27,13 +27,12 @@ function inverseRobot(robot) {
   const duplicates = Object.values(robot);
   const repairedRobot = {};
 
-  if (duplicates.filter((item, index) =>
-    duplicates.indexOf(item) !== index).length) {
+  if (duplicates.some((item, index) => duplicates.indexOf(item) !== index)) {
     return null;
   }
 
-  for (const [key, value] of Object.entries(robot)) {
-    repairedRobot[value] = key;
+  for (const key in robot) {
+    repairedRobot[robot[key]] = key;
   }
 
   return repairedRobot;
