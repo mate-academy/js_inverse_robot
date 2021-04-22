@@ -27,7 +27,7 @@ function inverseRobot(robot) {
   const fixedRobot = {};
 
   for (const key in robot) {
-    if (fixedRobot[robot[key]] !== undefined) {
+    if (fixedRobot[robot[key]]) {
       return null;
     }
     fixedRobot[robot[key]] = key;
