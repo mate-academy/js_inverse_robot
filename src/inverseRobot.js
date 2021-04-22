@@ -26,27 +26,11 @@
 function inverseRobot(robot) {
   // write code here
   const reverseRobot = {};
-  const robotValues = Object.values(robot);
-  let count = 0;
-  let wordRepeat = 0;
-
-  while (count < robotValues.length) {
-    const value = robotValues[count];
-
-    for (let i = 0; i < robotValues.length; i++) {
-      if (value === robotValues[i]) {
-        wordRepeat++;
-      }
-    }
-    count++;
-
-    if (wordRepeat >= 2) {
-      return null;
-    }
-    wordRepeat = 0;
-  }
 
   for (const key in robot) {
+    if (robot[key] in reverseRobot) {
+      return null;
+    }
     reverseRobot[robot[key]] = key;
   }
 
