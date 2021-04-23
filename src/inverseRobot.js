@@ -23,8 +23,26 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const mirrorRobot = {};
+
+  for (const key in robot) {
+    if (mirrorRobot.hasOwnProperty(robot[key]) === true) {
+      return null;
+    }
+
+    mirrorRobot[robot[key]] = key;
+  }
+
+  return mirrorRobot;
 }
+
+inverseRobot({
+  name: 'Bob',
+  age: 32,
+  gender: 'male',
+  interests: 'music',
+});
 
 module.exports = inverseRobot;
