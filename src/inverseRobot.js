@@ -28,7 +28,7 @@ function inverseRobot(robot) {
   const mirrorRobot = {};
 
   for (const key in robot) {
-    if (mirrorRobot.hasOwnProperty(robot[key]) === true) {
+    if (mirrorRobot.hasOwnProperty(robot[key])) {
       return null;
     }
 
