@@ -26,14 +26,12 @@
 function inverseRobot(robot) {
   const copyRobot = {};
 
-  for (const key of Object.keys(robot)) {
-    const value = robot[key];
-
-    if (copyRobot[value] !== undefined) {
+  for (const key in robot) {
+    if (copyRobot[robot[key]]) {
       return null;
     }
 
-    copyRobot[value] = key;
+    copyRobot[robot[key]] = key;
   }
 
   return copyRobot;
