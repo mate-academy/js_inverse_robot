@@ -23,8 +23,28 @@
  *
  * @return {object}
  */
+const hasDuplicates = arr => arr.some((item, index) =>
+  arr.indexOf(item) !== index);
+
 function inverseRobot(robot) {
-  // write code here
+  const values = [];
+  const result = {};
+
+  for (const key in robot) {
+    values.push(robot[key]);
+  };
+
+  if (hasDuplicates(values)) {
+    return null;
+  } else {
+    Object.keys(robot).forEach(function(value) {
+      const key = robot[value];
+
+      result[key] = value;
+    });
+
+    return result;
+  };
 }
 
 module.exports = inverseRobot;
