@@ -24,7 +24,20 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const swapObj = {};
+  const arr = Object.values(robot).sort();
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i + 1] === arr[i]) {
+      return null;
+    }
+  }
+
+  Object.entries(robot).forEach(([key, value]) => {
+    swapObj[value] = key;
+  });
+
+  return swapObj;
 }
 
 module.exports = inverseRobot;
