@@ -29,12 +29,11 @@ function inverseRobot(robot) {
   for (const key in robot) {
     if (robotInv.hasOwnProperty(robot[key])) {
       return null;
-    } else {
-      robotInv[robot[key]] = key;
     }
-
-    return robotInv;
+    robotInv[robot[key]] = key;
   }
+
+  return robotInv;
 }
 
 module.exports = inverseRobot;
