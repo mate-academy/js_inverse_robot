@@ -32,6 +32,8 @@ function inverseRobot(robot) {
     } else {
       robotInv[robot[key]] = key;
     }
+
+    return robotInv;
   }
 }
 
