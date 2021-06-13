@@ -32,8 +32,6 @@ function inverseRobot(robot) {
 
   if (Object.keys(newRobot).length !== Object.keys(robot).length) {
     newRobot = null;
-
-    return newRobot;
   }
 
   return newRobot;
