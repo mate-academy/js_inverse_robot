@@ -33,9 +33,9 @@ function inverseRobot(robot) {
   }
 
   for (const keys in robot) {
-    const k = robot[keys];
+    const valuesObj = robot[keys];
 
-    obj[k] = keys;
+    obj[valuesObj] = keys;
   }
 
   return obj;
