@@ -24,7 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const obj = {};
+  const result = {};
   const arrValues = Object.values(robot);
   const uniqueKeys = [...new Set(arrValues)];
 
@@ -35,10 +35,10 @@ function inverseRobot(robot) {
   for (const keys in robot) {
     const valuesObj = robot[keys];
 
-    obj[valuesObj] = keys;
+    result[valuesObj] = keys;
   }
 
-  return obj;
+  return result;
 }
 
 module.exports = inverseRobot;
