@@ -25,7 +25,6 @@
  */
 function inverseRobot(robot) {
   const inverseObj = {};
-  // const arrValues = [];
 
   for (const key in robot) {
     const value = robot[key];
