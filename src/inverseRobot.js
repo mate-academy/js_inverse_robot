@@ -24,24 +24,15 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const twins = (Object.values(robot));
+  const result = {};
 
-  for (let i = 0; i < twins.length; i++) {
-    for (let j = i + 1; j < twins.length; j++) {
-      if (twins[i] === twins[j]) {
-        return null;
-      }
+  for (const [key, value] of Object.entries(robot)) {
+    if (result.hasOwnProperty(value)) {
+      return null;
     }
+    result[value] = key;
   }
 
-  const repair = {};
-
-  Object.keys(robot).forEach(function(value) {
-    const key = robot[value];
-
-    repair[key] = value;
-  });
-
-  return repair;
+  return result;
 };
 module.exports = inverseRobot;
