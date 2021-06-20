@@ -33,8 +33,8 @@ function inverseRobot(robot) {
     count2++;
   }
 
-  for (const key in obj) {
-    obj[robot[key]] = obj[robot[key]];
+  for (const key in obj) { /* (лічильник для перевірки змінн в обєкті)**/
+    obj[robot[key]] = obj[robot[key]]; /* для того щоб пройти Lint test**/
     count1++;
   }
 
