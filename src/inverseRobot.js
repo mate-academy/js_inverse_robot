@@ -24,22 +24,22 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const t = {};
-  const tt = {};
+  const arr1 = {};
+  const arr2 = {};
 
   for (const value in robot) {
-    if (t[robot[value]] === undefined) {
-      t[robot[value]] = 1;
+    if (arr1[robot[value]] === undefined) {
+      arr1[robot[value]] = 1;
     } else {
       return null;
     }
   }
 
-  for (const val in robot) {
-    tt[robot[val]] = val;
+  for (const value in robot) {
+    arr2[robot[value]] = value;
   }
 
-  return tt;
+  return arr2;
 }
 
 module.exports = inverseRobot;
