@@ -24,25 +24,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const obj = {};
-  let count1 = 0;
-  let count2 = 0;
+  const buildRobots = {};
 
   for (const key in robot) {
-    obj[robot[key]] = key;
-    count2++;
+    if (buildRobots.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    buildRobots[robot[key]] = key;
   }
 
-  for (const key in obj) { /* (лічильник для перевірки змінн в обєкті)**/
-    obj[robot[key]] = obj[robot[key]]; /* для того щоб пройти Lint test**/
-    count1++;
-  }
-
-  if (count1 !== count2) {
-    return null;
-  }
-
-  return obj;
+  return buildRobots;
 }
 
 module.exports = inverseRobot;
