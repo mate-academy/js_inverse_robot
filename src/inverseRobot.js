@@ -24,30 +24,15 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let newRobot = {};
-  const check = Object.values(robot);
+  const newRobot = {};
 
-  check.sort();
+  for (const key in robot) {
+    const keyOfRobot = robot[key];
 
-  let repeatedValues = false;
-
-  for (let checkIteration = 0; checkIteration < check.length;
-    checkIteration++) {
-    if (!check[checkIteration + 1]) {
-      continue;
+    if (newRobot.hasOwnProperty(keyOfRobot)) {
+      return null;
     }
-
-    if (check[checkIteration] === check[checkIteration + 1]) {
-      repeatedValues = true;
-    }
-  }
-
-  if (repeatedValues === false) {
-    for (const key in robot) {
-      newRobot[robot[key]] = key;
-    }
-  } else {
-    newRobot = null;
+    newRobot[keyOfRobot] = key;
   }
 
   return newRobot;
