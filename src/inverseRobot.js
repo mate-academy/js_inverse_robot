@@ -24,7 +24,11 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  return Object.entries(robot).reduce(
+    (accum, [key, value]) =>
+      !accum || accum[value] ? null : Object.assign(accum, { [value]: key })
+    , {}
+  );
 }
 
 module.exports = inverseRobot;
