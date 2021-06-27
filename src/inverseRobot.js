@@ -9,7 +9,7 @@
  * function that takes 'robot' as a parameter and returns a new object in which
  * keys will change places with values.
  *
- * If any of the object values are repeated, return 'null'.
+ *  .
  *
  * Example:
  *
@@ -25,6 +25,19 @@
  */
 function inverseRobot(robot) {
   // write code here
+  let inversedRobot = {};
+
+  for (const key in robot) {
+    if (inversedRobot.hasOwnProperty(robot[key])) {
+      inversedRobot = null;
+
+      return inversedRobot;
+    }
+
+    inversedRobot[robot[key]] = key;
+  }
+
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
