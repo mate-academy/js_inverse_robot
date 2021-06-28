@@ -24,7 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  return Object.entries(robot).reduce(
+    (accumulator, [key, value]) =>
+      !accumulator || accumulator[value]
+        ? null
+        : Object.assign(accumulator, { [value]: key })
+    , {}
+  );
 }
 
 module.exports = inverseRobot;
