@@ -26,19 +26,14 @@
 
 function inverseRobot(robot) {
   const result = {};
-  const val = Object.values(robot);
-
-  for (let i = 0; i < val.length - 1; i++) {
-    for (let j = i + 1; j < val.length; j++) {
-      if (val[i] === val[j]) {
-        return null;
-      }
+ 
+  for (const key in robot) {
+    if (result.hasOwnProperty(robot[key])) {
+      return null;
     }
-  }
 
-  Object.entries(robot).forEach(([key, value]) => {
-    result[value] = key;
-  });
+    result[robot[key]] = key;
+  }
 
   return result;
 }
