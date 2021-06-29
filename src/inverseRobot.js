@@ -25,20 +25,18 @@
  */
 function inverseRobot(robot) {
   const result = {};
-  let nullResult = false;
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (result[value] === undefined) {
-      result[value] = key;
-    } else {
-      nullResult = true;
-      break;
+    if (result[value]) {
+      return null;
     }
+
+    result[value] = key;
   }
 
-  return nullResult === false ? result : null;
+  return result;
 }
 
 module.exports = inverseRobot;
