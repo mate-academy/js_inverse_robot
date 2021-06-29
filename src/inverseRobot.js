@@ -28,10 +28,6 @@ function inverseRobot(robot) {
   for (let i = 0; i < Object.values(robot).length - 1; i++) {
     for (let ii = i + 1; ii < Object.values(robot).length; ii++) {
       if (Object.values(robot)[i] === Object.values(robot)[ii]) {
-        // console.log(robot);
-        // console.log(`${Object.values(robot)[i]}
-        // === ${Object.values(robot)[ii]}`);
-
         return null;
       }
     }
