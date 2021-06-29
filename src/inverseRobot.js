@@ -23,8 +23,27 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  for (let i = 0; i < Object.values(robot).length - 1; i++) {
+    for (let ii = i + 1; ii < Object.values(robot).length; ii++) {
+      if (Object.values(robot)[i] === Object.values(robot)[ii]) {
+        // console.log(robot);
+        // console.log(`${Object.values(robot)[i]}
+        // === ${Object.values(robot)[ii]}`);
+
+        return null;
+      }
+    }
+  }
+
+  const newRobot = {};
+
+  for (const [key, value] of Object.entries(robot)) {
+    newRobot[value] = key;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
