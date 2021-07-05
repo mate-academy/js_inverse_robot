@@ -19,12 +19,25 @@
  * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
  *
+ *
  * @param {object} robot
  *
  * @return {object}
  */
 function inverseRobot(robot) {
   // write code here
+  const inversedRobot = {};
+
+  Object.entries(robot).forEach(entry => {
+    inversedRobot[entry[1]] = entry[0];
+  });
+
+  return isValuesUnique(robot, inversedRobot)
+    ? inversedRobot : null;
+}
+
+function isValuesUnique(robot, inversedRobot) {
+  return Object.keys(robot).length === Object.keys(inversedRobot).length;
 }
 
 module.exports = inverseRobot;
