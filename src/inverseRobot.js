@@ -24,7 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const mirrorObject = {};
+
+  for (const robotKey in robot) {
+    if (mirrorObject.hasOwnProperty(robot[robotKey])) {
+      return null;
+    }
+
+    mirrorObject[robot[robotKey]] = robotKey;
+  }
+
+  return mirrorObject;
 }
 
 module.exports = inverseRobot;
