@@ -32,6 +32,19 @@ function inverseRobot(robot) {
     };
     res[robot[key]] = key;
   };
+  
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
+  console.log(res);
 
   return res;
 }
