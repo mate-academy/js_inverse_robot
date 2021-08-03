@@ -25,14 +25,12 @@
  */
 function inverseRobot(robot) {
   const inversedRobot = {};
-  const robotValues = [];
 
   for (const key in robot) {
-    if (robotValues.includes(robot[key])) {
+    if (inversedRobot[robot[key]]) {
       return null;
     }
 
-    robotValues.push(robot[key]);
     inversedRobot[robot[key]] = key;
   }
 
