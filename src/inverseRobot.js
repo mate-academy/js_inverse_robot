@@ -24,30 +24,12 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const robotKeys = Object.keys(robot);
-
-  if (robotKeys.length === 0) {
-    return robot;
-  }
-
-  const robotValues = Object.values(robot);
-  const haveRobotKaysDuplicate = robotKeys.filter((key, index) =>
-    robotKeys.indexOf(key) === index);
-
-  const haveRobotValuesDuplicate = robotValues.filter((values, index) =>
-    robotValues.indexOf(values) === index);
-
-  if (robotKeys.length !== haveRobotKaysDuplicate.length) {
-    return null;
-  }
-
-  if (robotValues.length !== haveRobotValuesDuplicate.length) {
-    return null;
-  }
-
   const newRobot = {};
 
   for (const key in robot) {
+    if (newRobot[robot[key]]) {
+      return null;
+    }
     newRobot[robot[key]] = key;
   }
 
