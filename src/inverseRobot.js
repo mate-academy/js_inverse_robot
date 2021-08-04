@@ -31,9 +31,7 @@ function inverseRobot(robot) {
       return null;
     }
 
-    const tempArray = [key, robot[key]];
-
-    inverseObject[tempArray[1]] = tempArray[0];
+    inverseObject[robot[key]] = key;
   }
 
   return inverseObject;
