@@ -24,7 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const FirstLength = Object.keys(robot).length;
+  const firstLength = Object.keys(robot).length;
 
   for (const key in robot) {
     const boxForKey = key;
@@ -37,7 +37,7 @@ function inverseRobot(robot) {
 
   const secondLength = Object.keys(robot).length;
 
-  if (secondLength !== FirstLength) {
+  if (secondLength !== firstLength) {
     return null;
   }
 
