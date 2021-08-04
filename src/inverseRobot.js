@@ -26,27 +26,15 @@
 function inverseRobot(robot) {
   const inverseObj = {};
 
-  const keys = Object.keys(robot);
-  const values = Object.values(robot);
-
-  keys.reverse();
-  values.reverse();
-
-  for (let j = 0; j < values.length; j++) {
-    for (let n = j + 1; n < values.length; n++) {
-      if (values[n] === values[j]) {
-        return null;
-      } else {
-        continue;
-      }
-    }
-  }
-
-  for (let i = 0; i < keys.length; i++) {
-    inverseObj[values[i]] = keys[i];
-  }
+  for (const char in robot) {
+    if (inverseObj.hasOwnProperty(robot[char])) {
+      return null;
+    } else {
+      inverseObj[robot[char]] = char;
+    };
+  };
 
   return inverseObj;
-}
+};
 
 module.exports = inverseRobot;
