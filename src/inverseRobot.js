@@ -24,7 +24,20 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const res = {};
+
+  const objKeys = Object.keys(robot);
+  const objValues = Object.values(robot);
+
+  for (let i = objKeys.length - 1; i >= 0; i--) {
+    res[objValues[i]] = objKeys[i];
+  }
+
+  if (Object.keys(res).length !== Object.keys(robot).length) {
+    return null;
+  } else {
+    return res;
+  }
 }
 
 module.exports = inverseRobot;
