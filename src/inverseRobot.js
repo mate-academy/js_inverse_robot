@@ -24,7 +24,29 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const robotValues = Object.values(robot);
+  const robotKeys = Object.keys(robot);
+
+  // if unique-Values-count is less than the given - there are duplicates
+  if ([...new Set(robotValues)].length < robotValues.length) {
+    return null;
+  }
+
+  // build new object by swapping each `key: value` pair
+  const robotInversed = {};
+
+  for (let i = 0; i < robotKeys.length; i++) {
+    robotInversed[robotValues[i]] = robotKeys[i];
+  }
+  /**
+   * below does the job too, which of two is practically preferable?
+   * >>
+   * for(const key in robot) {
+   *   robotInversed[robot[key]] = key
+   * }
+   */
+
+  return robotInversed;
 }
 
 module.exports = inverseRobot;
