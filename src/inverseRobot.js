@@ -25,6 +25,18 @@
  */
 function inverseRobot(robot) {
   // write code here
+  let reversObj = {};
+
+  for (const key in robot) {
+    if (reversObj[robot[key]]) {
+      reversObj = null;
+
+      return reversObj;
+    }
+    reversObj[robot[key]] = key;
+  }
+
+  return reversObj;
 }
 
 module.exports = inverseRobot;
