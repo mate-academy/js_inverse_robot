@@ -23,8 +23,41 @@
  *
  * @return {object}
  */
+const kolli = {
+  Kolli: 'name',
+  123: 'chipVer',
+  3: 'wheels',
+};
+
+const robert = {
+  Robert: 'name',
+  123: 'chipVer',
+  113: 'chipVer',
+};
+
 function inverseRobot(robot) {
   // write code here
+  const arrKeys = [];
+  const arrValues = [];
+  const rightRobot = {};
+
+  for (const value in robot) {
+    arrValues.unshift(value);
+    arrKeys.unshift(robot[value]);
+  }
+
+  for (let i = 0; i < arrKeys.length; i++) {
+    rightRobot[`${arrKeys[i]}`] = arrValues[i];
+  }
+
+  if (arrKeys.length !== Object.keys(rightRobot).length) {
+    return null;
+  } else {
+    return rightRobot;
+  }
 }
 
 module.exports = inverseRobot;
+
+inverseRobot(kolli);
+inverseRobot(robert);
