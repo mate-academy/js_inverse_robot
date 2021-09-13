@@ -25,13 +25,11 @@
  */
 function inverseRobot(robot) {
   // write code here
-  let reversObj = {};
+  const reversObj = {};
 
   for (const key in robot) {
     if (reversObj[robot[key]]) {
-      reversObj = null;
-
-      return reversObj;
+      return null;
     }
     reversObj[robot[key]] = key;
   }
