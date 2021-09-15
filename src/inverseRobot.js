@@ -24,23 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const isUnique = Object
-    .values(robot)
-    .every((v, i, a) => {
-      return i === a.lastIndexOf(v);
-    });
-
-  if (!isUnique) {
-    return null;
-  }
-
   const res = {};
 
-  Object
-    .entries(robot)
-    .map((val) => {
-      res[val[1]] = val[0];
-    });
+  for (const key in robot) {
+    if (res.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    res[robot[key]] = key;
+  }
 
   return res;
 }
