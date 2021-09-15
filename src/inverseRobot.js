@@ -24,7 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const isUnique = Object
+    .values(robot)
+    .every((v, i, a) => {
+      return i === a.lastIndexOf(v);
+    });
+
+  if (!isUnique) {
+    return null;
+  }
+
+  const res = {};
+
+  Object.entries(robot).forEach((val, i, arr) => {
+    res[val[1]] = val[0];
+  });
+
+  return res;
 }
 
 module.exports = inverseRobot;
