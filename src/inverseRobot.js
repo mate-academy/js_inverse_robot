@@ -27,28 +27,13 @@ function inverseRobot(robot) {
   const obj = {};
   const values = Object.values(robot);
   const keys = Object.keys(robot);
-  const valuesClone = [];
-  const keysClone = [];
-
-  for (const key of values) {
-    if (!valuesClone.includes(key)) {
-      valuesClone.push(key);
-    }
-  }
-
-  for (const key of keys) {
-    if (!keysClone.includes(key)) {
-      keysClone.push(key);
-    }
-  }
-
-  if (
-    values.length !== valuesClone.length || keys.length !== keysClone.length) {
-    return null;
-  }
 
   for (let i = 0; i < values.length; i++) {
     obj[values[i]] = keys[i];
+  }
+
+  if (Object.keys(obj).length !== Object.keys(robot).length) {
+    return null;
   }
 
   return obj;
