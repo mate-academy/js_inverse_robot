@@ -24,6 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
+  const result = {};
+  const values = Object.values(robot);
+  const uniqueValues = [];
+
+  for (const v of values) {
+    if (!uniqueValues.includes(v)) {
+      uniqueValues.push(v);
+    } else {
+      return null;
+    }
+  }
+
+  for (const key in robot) {
+    result[robot[key]] = key;
+  }
+
+  return result;
   // write code here
 }
 
