@@ -23,8 +23,12 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const keyCount = (obj) => Object.keys(obj).length;
+  const inv = Object.fromEntries(Object.entries(robot).map(a => a.reverse()));
+
+  return keyCount(inv) === keyCount(robot) ? inv : null;
 }
 
 module.exports = inverseRobot;
