@@ -25,12 +25,10 @@
  */
 function inverseRobot(robot) {
   const data = Object.entries(robot);
-
   const res = {};
-
   const set = new Set(Object.values(robot));
 
-  if ([...set].length !== data.length) {
+  if (set.size !== data.length) {
     return null;
   }
 
