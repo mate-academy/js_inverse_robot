@@ -36,9 +36,11 @@ function inverseRobot(robot) {
 
   const res = {};
 
-  Object.entries(robot).forEach((val, i, arr) => {
-    res[val[1]] = val[0];
-  });
+  Object
+    .entries(robot)
+    .map((val) => {
+      res[val[1]] = val[0];
+    });
 
   return res;
 }
