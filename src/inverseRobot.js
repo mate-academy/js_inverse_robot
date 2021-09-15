@@ -25,19 +25,16 @@
  */
 function inverseRobot(robot) {
   const reverseObj = {};
-  const arrRobKeysLen = Object.keys(robot).length;
 
   for (const key in robot) {
+    if (reverseObj[robot[key]]) {
+      return null;
+    };
+
     reverseObj[robot[key]] = key;
   };
 
-  const arrRevRobKeysLen = Object.keys(reverseObj).length;
-
-  if (arrRobKeysLen !== arrRevRobKeysLen) {
-    return null;
-  } else {
-    return reverseObj;
-  };
+  return reverseObj;
 };
 
 module.exports = inverseRobot;
