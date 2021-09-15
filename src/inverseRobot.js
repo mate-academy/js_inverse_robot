@@ -26,18 +26,13 @@
 function inverseRobot(robot) {
   const res = {};
 
-  const objKeys = Object.keys(robot);
-  const objValues = Object.values(robot);
-
-  for (let i = objKeys.length - 1; i >= 0; i--) {
-    res[objValues[i]] = objKeys[i];
+  for (const key in robot) {
+    if (res[robot[key]]) {
+      return null;
+    }
+    res[robot[key]] = key;
   }
 
-  if (Object.keys(res).length !== Object.keys(robot).length) {
-    return null;
-  } else {
-    return res;
-  }
+  return res;
 }
-
 module.exports = inverseRobot;
