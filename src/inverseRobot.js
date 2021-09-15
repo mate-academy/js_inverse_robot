@@ -29,7 +29,7 @@ function inverseRobot(robot) {
 
   for (const key in robot) {
     reverseObj[robot[key]] = key;
-  }
+  };
 
   const arrRevRobKeysLen = Object.keys(reverseObj).length;
 
@@ -37,7 +37,7 @@ function inverseRobot(robot) {
     return null;
   } else {
     return reverseObj;
-  }
-}
+  };
+};
 
 module.exports = inverseRobot;
