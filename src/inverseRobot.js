@@ -23,17 +23,6 @@
  *
  * @return {object}
  */
-const kolli = {
-  Kolli: 'name',
-  123: 'chipVer',
-  3: 'wheels',
-};
-
-const robert = {
-  Robert: 'name',
-  123: 'chipVer',
-  113: 'chipVer',
-};
 
 function inverseRobot(robot) {
   // write code here
@@ -50,6 +39,3 @@ function inverseRobot(robot) {
 }
 
 module.exports = inverseRobot;
-
-inverseRobot(kolli);
-inverseRobot(robert);
