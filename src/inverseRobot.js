@@ -24,16 +24,19 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const data = Object.entries(robot);
   const res = {};
-  const set = new Set(Object.values(robot));
+  const filteredArray = [];
 
-  if (set.size !== data.length) {
-    return null;
+  for (const i in robot) {
+    if (filteredArray.includes(robot[i])) {
+      return null;
+    } else {
+      filteredArray.push(robot[i]);
+    }
   }
 
-  for (let i = 0; i < data.length; i++) {
-    res[data[i][1]] = data[i][0];
+  for (const keys in robot) {
+    res[robot[keys]] = keys;
   }
 
   return res;
