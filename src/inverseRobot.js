@@ -37,24 +37,16 @@ const robert = {
 
 function inverseRobot(robot) {
   // write code here
-  const arrKeys = [];
-  const arrValues = [];
   const rightRobot = {};
 
-  for (const value in robot) {
-    arrValues.unshift(value);
-    arrKeys.unshift(robot[value]);
+  for (const i in robot) {
+    if (rightRobot.hasOwnProperty(robot[i])) {
+      return null;
+    }
+    rightRobot[robot[i]] = i;
   }
 
-  for (let i = 0; i < arrKeys.length; i++) {
-    rightRobot[`${arrKeys[i]}`] = arrValues[i];
-  }
-
-  if (arrKeys.length !== Object.keys(rightRobot).length) {
-    return null;
-  } else {
-    return rightRobot;
-  }
+  return rightRobot;
 }
 
 module.exports = inverseRobot;
