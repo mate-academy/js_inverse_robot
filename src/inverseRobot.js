@@ -26,11 +26,11 @@
 function inverseRobot(robot) {
   const newRobot = {};
 
-  for (const prop of Object.entries(robot)) {
-    if (prop[1] in newRobot) {
+  for (const prop in robot) {
+    if (robot[prop] in newRobot) {
       return null;
     } else {
-      newRobot[prop[1]] = prop[0];
+      newRobot[robot[prop]] = prop;
     }
   }
 
