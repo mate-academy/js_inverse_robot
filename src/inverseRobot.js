@@ -27,11 +27,10 @@ const inverseRobot = (robot) => {
   const result = {};
 
   for (const key in robot) {
+    if (robot[key] in result) {
+      return null;
+    }
     result[robot[key]] = key;
-  }
-
-  if (Object.keys(robot).length !== Object.keys(result).length) {
-    return null;
   }
 
   return result;
