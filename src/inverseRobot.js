@@ -25,14 +25,12 @@
  */
 const inverseRobot = (robot) => {
   const result = {};
-  let x = 0;
 
   for (const key in robot) {
     result[robot[key]] = key;
-    x++;
   }
 
-  if (x !== Object.keys(result).length) {
+  if (Object.keys(robot).length !== Object.keys(result).length) {
     return null;
   }
 
