@@ -25,18 +25,13 @@
  */
 function inverseRobot(robot) {
   const res = {};
-  const filteredArray = [];
-
-  for (const i in robot) {
-    if (filteredArray.includes(robot[i])) {
-      return null;
-    } else {
-      filteredArray.push(robot[i]);
-    }
-  }
 
   for (const keys in robot) {
-    res[robot[keys]] = keys;
+    if (res.hasOwnProperty(robot[keys])) {
+      return null;
+    } else {
+      res[robot[keys]] = keys;
+    }
   }
 
   return res;
