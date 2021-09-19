@@ -25,10 +25,16 @@
  */
 
 function inverseRobot(robot) {
-  const keyCount = (obj) => Object.keys(obj).length;
-  const inv = Object.fromEntries(Object.entries(robot).map(a => a.reverse()));
+  const inverse = {};
 
-  return keyCount(inv) === keyCount(robot) ? inv : null;
+  for (const robotKey in robot) {
+    if (inverse.hasOwnProperty(robot[robotKey])) {
+      return null;
+    }
+    inverse[robot[robotKey]] = robotKey;
+  }
+
+  return inverse;
 }
 
 module.exports = inverseRobot;
