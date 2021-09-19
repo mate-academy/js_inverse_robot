@@ -23,8 +23,18 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const inverse = {};
+
+  for (const robotKey in robot) {
+    if (inverse.hasOwnProperty(robot[robotKey])) {
+      return null;
+    }
+    inverse[robot[robotKey]] = robotKey;
+  }
+
+  return inverse;
 }
 
 module.exports = inverseRobot;
