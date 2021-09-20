@@ -31,7 +31,7 @@ function inverseRobot(robot) {
       return null;
     }
 
-    obj[`${robot[key]}`] = key;
+    obj[robot[key]] = key;
   }
 
   return obj;
