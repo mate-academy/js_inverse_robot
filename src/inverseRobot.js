@@ -29,8 +29,6 @@ function inverseRobot(robot) {
 
   for (const key in robot) {
     if (robotCopy.hasOwnProperty(robot[key])) {
-      // robotCopy.hasOwnProperty(robot[key])
-      // robot[key] in robotCopy
       return null;
     }
 
