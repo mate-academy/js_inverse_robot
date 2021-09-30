@@ -24,7 +24,31 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {}; // a new empty object
+
+  const newRobotKeys = Object.values(robot); /* array of keys for the new
+  object(newRobot)
+  */
+
+  for (const key in robot) {
+    /* filling in of a new object(newRobot),
+    where values from the previous obj(robot)
+    become new keys for newRobot and the same
+    operation with the values
+    */
+
+    newRobot[robot[key]] = key;
+  }
+
+  /* comparing length of 2 arrays formed from robot and newRobot objs
+  if length is not equal, return null
+  */
+
+  if (newRobotKeys.length !== Object.keys(newRobot).length) {
+    return null;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
