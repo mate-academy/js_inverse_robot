@@ -28,7 +28,7 @@ function inverseRobot(robot) {
   try {
     return Object.fromEntries(
       Object.entries(robot).reduce((newRobot, [value, key]) => {
-        if (newRobot.filter(x => x[0] === key).length !== 0) {
+        if (newRobot.filter(x => x[0] === key).length) {
           return null;
         } else {
           return newRobot.concat([
