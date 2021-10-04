@@ -25,6 +25,23 @@
  */
 function inverseRobot(robot) {
   // write code here
+  try {
+    return Object.fromEntries(
+      Object.entries(robot).reduce((newRobot, [value, key]) => {
+        if (newRobot.filter(x => x[0] === key).length !== 0) {
+          return null;
+        } else {
+          return newRobot.concat([
+            [key, value],
+          ]);
+        }
+      }, [])
+    );
+  } catch (e) {
+    return null;
+  }
 }
+
+// console.log(inverseRobot({ Kolli: 'name', 123: 'chipVer', 3: 'wheels' }));
 
 module.exports = inverseRobot;
