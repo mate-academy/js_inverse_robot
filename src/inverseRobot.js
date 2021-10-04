@@ -42,6 +42,4 @@ function inverseRobot(robot) {
   }
 }
 
-// console.log(inverseRobot({ Kolli: 'name', 123: 'chipVer', 3: 'wheels' }));
-
 module.exports = inverseRobot;
