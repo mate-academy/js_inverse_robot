@@ -24,7 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const allValues = Object.values(robot);
+
+  const rightOrderedRobot = {};
+
+  const doublicates = allValues.filter((el, i) => allValues.indexOf(el) !== i);
+
+  for (const [key, value] of Object.entries(robot)) {
+    rightOrderedRobot[value] = key;
+  }
+
+  return doublicates.length > 0 ? null : rightOrderedRobot;
 }
 
 module.exports = inverseRobot;
