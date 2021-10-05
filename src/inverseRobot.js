@@ -24,22 +24,6 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
-  // try {
-  //   return Object.fromEntries(
-  //     Object.entries(robot).reduce((newRobot, [value, key]) => {
-  //       if (newRobot.filter(x => x[0] === key).length) {
-  //         return null;
-  //       } else {
-  //         return newRobot.concat([
-  //           [key, value],
-  //         ]);
-  //       }
-  //     }, [])
-  //   );
-  // } catch (e) {
-  //   return null;
-  // }
   const resultRobot = {};
 
   for (const key in robot) {
