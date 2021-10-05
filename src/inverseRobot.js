@@ -29,8 +29,9 @@ function inverseRobot(robot) {
 
   for (const key in robot) {
     const value = robot[key];
+    const robotKeys = Object.keys(resultRobot);
 
-    if (!Object.keys(resultRobot).includes(value)) {
+    if (!robotKeys.includes(value)) {
       resultRobot[value] = key;
     } else {
       return null;
