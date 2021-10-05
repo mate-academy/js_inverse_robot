@@ -23,12 +23,15 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
   const resultRobot = {};
 
   for (const key in robot) {
-    if (!Object.keys(resultRobot).includes(robot[key])) {
-      resultRobot[robot[key]] = key;
+    const value = robot[key];
+
+    if (!Object.keys(resultRobot).includes(value)) {
+      resultRobot[value] = key;
     } else {
       return null;
     }
