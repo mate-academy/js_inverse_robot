@@ -27,10 +27,10 @@ function inverseRobot(robot) {
   const inversedRobot = {};
 
   for (const [value, key] of Object.entries(robot)) {
-    if (inversedRobot[key] === undefined) {
-      inversedRobot[key] = value;
-    } else {
+    if (key in inversedRobot) {
       return null;
+    } else {
+      inversedRobot[key] = value;
     }
   }
 
