@@ -32,7 +32,7 @@ function inverseRobot(robot) {
     if (storedValue in inverseObject) {
       return null;
     } else {
-      inverseObject[robot[key]] = key;
+      inverseObject[storedValue] = key;
     }
   }
 
