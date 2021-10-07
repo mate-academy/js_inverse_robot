@@ -26,12 +26,12 @@
 function inverseRobot(robot) {
   const inversedValues = {};
 
-  for (const option in robot) {
-    if (robot[option] in inversedValues) {
+  for (const options in robot) {
+    if (robot[options] in inversedValues) {
       return null;
     }
 
-    inversedValues[robot[option]] = option;
+    inversedValues[robot[options]] = options;
   }
 
   return inversedValues;
