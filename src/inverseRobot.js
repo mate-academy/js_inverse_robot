@@ -31,9 +31,9 @@ function inverseRobot(robot) {
 
     if (storedValue in inverseObject) {
       return null;
-    } else {
-      inverseObject[storedValue] = key;
     }
+
+    inverseObject[storedValue] = key;
   }
 
   return inverseObject;
