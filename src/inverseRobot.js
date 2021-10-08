@@ -25,21 +25,16 @@
  */
 function inverseRobot(robot) {
   const robot2 = {};
-  let count = 0;
 
   for (const key in robot) {
     if (robot2.hasOwnProperty(robot[key])) {
-      count++;
+      return null;
     }
 
     robot2[robot[key]] = key;
   }
 
-  if (count > 0) {
-    return null;
-  } else {
-    return robot2;
-  }
+  return robot2;
 }
 
 module.exports = inverseRobot;
