@@ -28,17 +28,17 @@ function inverseRobot(robot) {
   const valuesNewRobot = Object.keys(robot);
   const keysNewRobot = Object.values(robot);
 
-  for (const values of valuesNewRobot) {
-    if (!valuesNewRobot.includes(values)) {
-      newRobot.keys = values;
-    } else {
-      return null;
+  if (keysNewRobot.length > 0) {
+    for (let i = 0; i < keysNewRobot.length; i++) {
+      if (newRobot[keysNewRobot[i]] === undefined) {
+        newRobot[keysNewRobot[i]] = valuesNewRobot[i];
+      } else {
+        return null;
+      }
     }
-  }
 
-  for (const keys of keysNewRobot) {
-    newRobot.keys = keys;
-  }
+    return newRobot;
+  };
 
   return newRobot;
 }
