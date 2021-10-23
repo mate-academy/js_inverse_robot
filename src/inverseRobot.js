@@ -24,7 +24,27 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
-}
+  const newRobot = {};
+  let isDublicated = false;
+  const arrayValues = Object.values(robot);
 
+  for (let i = 0; i < arrayValues.length; i++) {
+    for (let j = i + 1; j < arrayValues.length; j++) {
+      if (arrayValues[i] === arrayValues[j]) {
+        isDublicated = true;
+        break;
+      }
+    }
+  }
+
+  if (isDublicated) {
+    return null;
+  }
+
+  for (const key in robot) {
+    newRobot[robot[key]] = key;
+  }
+
+  return newRobot;
+}
 module.exports = inverseRobot;
