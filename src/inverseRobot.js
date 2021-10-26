@@ -25,6 +25,27 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const arrayValues = Object.values(robot);
+  const objectToCheck = {};
+  const renovatedRobot = {};
+
+  for (const i of arrayValues) {
+    if (objectToCheck[i] === undefined) {
+      objectToCheck[i] = 1;
+    } else {
+      objectToCheck[i] += 1;
+    }
+
+    if (objectToCheck[i] > 1) {
+      return null;
+    }
+  }
+
+  for (const key in robot) {
+    renovatedRobot[robot[key]] = key;
+  }
+
+  return renovatedRobot;
 }
 
 module.exports = inverseRobot;
