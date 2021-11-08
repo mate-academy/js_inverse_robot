@@ -24,7 +24,24 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const retrob = {};
+  const temp = [];
+
+  for (const key in robot) {
+    temp.push(robot[key]);
+  }
+
+  const checkIfDuplicate = (w) => new Set(w).size !== w.length;
+
+  if (checkIfDuplicate(temp)) {
+    return null;
+  }
+
+  for (const key in robot) {
+    retrob[robot[key]] = key;
+  }
+
+  return retrob;
 }
 
 module.exports = inverseRobot;
