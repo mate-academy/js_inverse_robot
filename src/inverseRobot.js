@@ -25,22 +25,14 @@
  */
 function inverseRobot(robot) {
   const returnRob = {};
-  const arrForCheckDulicate = [];
-  let robotValue = 0;
 
   for (const key in robot) {
-    robotValue = robot[key];
-    arrForCheckDulicate.push(robotValue);
-  }
+    const robotValue = robot[key];
 
-  const checkIfDuplicate = (w) => new Set(w).size !== w.length;
+    if (robotValue in returnRob) {
+      return null;
+    }
 
-  if (checkIfDuplicate(arrForCheckDulicate)) {
-    return null;
-  }
-
-  for (const key in robot) {
-    robotValue = robot[key];
     returnRob[robotValue] = key;
   }
 
