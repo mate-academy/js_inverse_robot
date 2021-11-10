@@ -24,24 +24,25 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const obj = robot;
   const newRobot = {};
 
-  for (const oldKey in obj) {
-    const newKey = obj[oldKey];
+  for (const [key, value] of Object.entries(robot)) {
+    if (newRobot.hasOwnProperty(value)) {
+      return null;
+    }
 
-    newRobot[newKey] = oldKey;
-  }
-
-  const size1 = Object.keys(robot).length;
-
-  const size2 = Object.keys(newRobot).length;
-
-  if (size1 !== size2) {
-    return null;
+    newRobot[value] = key;
   }
 
   return newRobot;
 }
 
 module.exports = inverseRobot;
+
+const robert = {
+  Robert: 'name',
+  123: 'chipVer',
+  113: 'chipVer',
+};
+
+inverseRobot(robert);
