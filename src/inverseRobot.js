@@ -26,9 +26,11 @@
 function inverseRobot(robot) {
   const returnRob = {};
   const arrForCheckDulicate = [];
+  let robotValue = 0;
 
   for (const key in robot) {
-    arrForCheckDulicate.push(robot[key]);
+    robotValue = robot[key];
+    arrForCheckDulicate.push(robotValue);
   }
 
   const checkIfDuplicate = (w) => new Set(w).size !== w.length;
@@ -38,7 +40,8 @@ function inverseRobot(robot) {
   }
 
   for (const key in robot) {
-    returnRob[robot[key]] = key;
+    robotValue = robot[key];
+    returnRob[robotValue] = key;
   }
 
   return returnRob;
