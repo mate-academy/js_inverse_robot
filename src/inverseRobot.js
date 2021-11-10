@@ -38,11 +38,3 @@ function inverseRobot(robot) {
 }
 
 module.exports = inverseRobot;
-
-const robert = {
-  Robert: 'name',
-  123: 'chipVer',
-  113: 'chipVer',
-};
-
-inverseRobot(robert);
