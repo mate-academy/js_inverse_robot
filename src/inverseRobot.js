@@ -26,16 +26,15 @@
 
 function inverseRobot(robot) {
   const invertedRobot = {};
-  let alreadyExists = false;
 
   for (const key in robot) {
-    if (Object.keys(invertedRobot).includes(robot[key])) {
-      alreadyExists = true;
+    if (invertedRobot[robot[key]]) {
+      return null;
     }
     invertedRobot[robot[key]] = key;
   }
 
-  return alreadyExists ? null : invertedRobot;
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
