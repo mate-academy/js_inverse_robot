@@ -25,28 +25,15 @@
  */
 function inverseRobot(robot) {
   const result = {};
-  const keys = Object.values(robot);
-  const values = Object.keys(robot);
 
-  for (let a = 0; a < keys.length; a++) {
-    const firstKey = keys.shift();
-    const firstValue = values.shift();
+  for (const param in robot) {
+    const key = robot[param];
 
-    if (keys.includes(firstKey)) {
+    if (result.hasOwnProperty(key)) {
       return null;
-    } else if (values.includes(firstValue)) {
-      return null;
+    } else {
+      result[key] = param;
     }
-
-    keys.push(firstKey);
-    values.push(firstValue);
-  }
-
-  for (let i = 0; i < keys.length; i++) {
-    const key = keys[i];
-    const value = values[i];
-
-    result[key] = value;
   }
 
   return result;
