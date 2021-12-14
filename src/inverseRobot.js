@@ -24,17 +24,12 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const values = Object.values(robot);
-
-  for (const value of values) {
-    if (values.indexOf(value) !== values.lastIndexOf(value)) {
-      return null;
-    }
-  }
-
   const repaired = {};
 
   for (const key in robot) {
+    if (robot[key] in repaired) {
+      return null;
+    }
     repaired[robot[key]] = key;
   }
 
