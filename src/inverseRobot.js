@@ -24,7 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const result = {};
+  const robotInverse = {};
   const entries = Object.entries(robot);
 
   for (let n = 0; n < entries.length; n++) {
@@ -34,10 +34,10 @@ function inverseRobot(robot) {
       }
     }
 
-    result[entries[n][1]] = entries[n][0];
+    robotInverse[entries[n][1]] = entries[n][0];
   }
 
-  return result;
+  return robotInverse;
 }
 
 module.exports = inverseRobot;
