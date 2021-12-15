@@ -24,24 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const keys = Object.keys(robot);
-  const values = Object.values(robot);
-
-  for (let i = 0; i < values.length - 1; i++) {
-    if (values.includes(values[i], i + 1)) {
-      return null;
-    };
-  };
+  const robotInverse = {};
 
   for (const key in robot) {
-    delete robot[key];
+    robotInverse[robot[key]] = key;
   };
 
-  for (let y = 0; y < values.length; y++) {
-    robot[values[y]] = keys[y];
-  };
-
-  return robot;
+  return Object.keys(robotInverse).length !== Object.keys(robot).length
+    ? null : robotInverse;
 }
 
 module.exports = inverseRobot;
