@@ -21,10 +21,23 @@
  *
  * @param {object} robot
  *
+ *
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const invertRobot = {};
+
+  for (const key in robot) {
+    const invertKey = robot[key];
+
+    if (invertRobot[invertKey]) {
+      return null;
+    }
+
+    invertRobot[invertKey] = key;
+  }
+
+  return invertRobot;
 }
 
 module.exports = inverseRobot;
