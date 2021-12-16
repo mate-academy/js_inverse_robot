@@ -24,15 +24,6 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const inversed = {};
-
-  for (const key in robot) {
-    if (inversed.hasOwnProperty(robot[key])) {
-      return null;
-    }
-    inversed[robot[key]] = key;
-  }
-
   const rightRobot = {};
 
   for (const detail in robot) {
