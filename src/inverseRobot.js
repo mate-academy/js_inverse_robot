@@ -28,7 +28,7 @@ function inverseRobot(robot) {
   const robotKeys = Object.keys(robot);
   const robotValues = Object.values(robot);
 
-  for (let i = 0; i < robotValues.length; i++) {
+  for (const i in robotValues) {
     const firstIndex = robotValues.indexOf(robotValues[i]);
     const lastIndex = robotValues.lastIndexOf(robotValues[i]);
 
