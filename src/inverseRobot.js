@@ -26,18 +26,17 @@
 function inverseRobot(robot) {
   const fixedRobot = {};
   const robotKeys = Object.keys(robot);
-  const val = Object.values(robot);
+  const robotValues = Object.values(robot);
 
-  for (let i = 0; i < val.length; i++) {
-    for (let n = 0; n < val.length; n++) {
-      if (i !== n && val[i] === val[n]) {
-        return null;
-      }
+  for (let i = 0; i < robotValues.length; i++) {
+    const firstIndex = robotValues.indexOf(robotValues[i]);
+    const lastIndex = robotValues.lastIndexOf(robotValues[i]);
+
+    if (firstIndex !== lastIndex) {
+      return null;
     }
-  }
 
-  for (let i = 0; i < robotKeys.length; i++) {
-    fixedRobot[val[i]] = robotKeys[i];
+    fixedRobot[robotValues[i]] = robotKeys[i];
   }
 
   return fixedRobot;
