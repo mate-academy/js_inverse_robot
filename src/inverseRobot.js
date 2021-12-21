@@ -28,20 +28,13 @@ function inverseRobot(robot) {
   const invertObj = {};
 
   for (const key in robot) {
-    invertObj[robot[key]] = key;
-  }
-
-  const values = Object.values(robot);
-
-  for (let i = 0; i < values.length; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[i] === values[j]) {
-        return null;
-      }
+    if (invertObj.hasOwnProperty(robot[key])) {
+      return null;
+    } else {
+      invertObj[robot[key]] = key;
     }
   }
 
   return invertObj;
 }
-
 module.exports = inverseRobot;
