@@ -11,6 +11,17 @@
  *
  * If any of the object values are repeated, return 'null'.
  *
+ * Зворотне положення
+ * Транспозиція внутрішніх органів є варіантом внутрішньої анатомії, коли
+ * органи розташовані в дзеркальному відображенні.
+ * Щось подібне сталося з нашим роботом Коллі. Його ключі стали цінностями,
+ * і значення стали ключами. Допоможіть відремонтувати робота.
+ *  * Створити "inverseRobot"
+ * функція, яка приймає 'robot' як параметр і повертає новий об'єкт, у якому
+ * клавіші змінюватимуться місцями зі значеннями.
+ *
+ * Якщо будь-яке зі значень об'єкта повторюється, поверніть 'null'.
+ *
  * Example:
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
@@ -24,7 +35,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const obj = {};
+
+  for (const key in robot) {
+    if (obj.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    obj[robot[key]] = key;
+  }
+
+  return obj;
 }
 
 module.exports = inverseRobot;
