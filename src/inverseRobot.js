@@ -26,15 +26,11 @@
 function inverseRobot(robot) {
   const newObj = {};
 
-  if (robot === null) {
-    return null;
-  }
-
   for (const key in robot) {
     const newVal = key;
     const newKey = robot[key];
 
-    if (newObj[newKey] !== undefined) {
+    if (newObj[newKey]) {
       return null;
     }
     newObj[newKey] = newVal;
