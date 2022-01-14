@@ -24,7 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  for (const part in robot) {
+    const robotPart = robot[part];
+
+    if (robotPart in newRobot) {
+      return null;
+    }
+    newRobot[robotPart] = part;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
