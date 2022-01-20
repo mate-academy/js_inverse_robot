@@ -28,13 +28,15 @@ function valuesRepeatCheck(checkedObject) {
   const check = {};
 
   for (const key in checkedObject) {
-    if (!check[checkedObject[key]]) {
-      check[checkedObject[key]] = 0;
+    const value = checkedObject[key];
+
+    if (!check.hasOwnProperty(value)) {
+      check[value] = 0;
     }
 
-    check[checkedObject[key]]++;
+    check[value]++;
 
-    if (check[checkedObject[key]] > 1) {
+    if (check[value] > 1) {
       return true;
     }
   }
@@ -51,7 +53,9 @@ function inverseRobot(robot) {
   const repairRobot = {};
 
   for (const key in robot) {
-    repairRobot[robot[key]] = key;
+    const value = robot[key];
+
+    repairRobot[value] = key;
   }
 
   return repairRobot;
