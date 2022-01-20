@@ -24,14 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const res = {};
+  const inversedRobot = {};
 
   Object.keys(robot).forEach(key => {
-    res[robot[key]] = key;
+    inversedRobot[robot[key]] = key;
   });
 
-  return Object.keys(robot).length === Object.keys(res).length
-    ? res
+  return Object.keys(robot).length === Object.keys(inversedRobot).length
+    ? inversedRobot
     : null;
 }
 
