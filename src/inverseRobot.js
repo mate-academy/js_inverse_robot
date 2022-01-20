@@ -23,8 +23,38 @@
  *
  * @return {object}
  */
+
+function valuesRepeatCheck(checkedObject) {
+  const check = {};
+
+  for (const key in checkedObject) {
+    if (!check[checkedObject[key]]) {
+      check[checkedObject[key]] = 0;
+    }
+
+    check[checkedObject[key]]++;
+
+    if (check[checkedObject[key]] > 1) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function inverseRobot(robot) {
   // write code here
+  if (valuesRepeatCheck(robot)) {
+    return null;
+  }
+
+  const repairRobot = {};
+
+  for (const key in robot) {
+    repairRobot[robot[key]] = key;
+  }
+
+  return repairRobot;
 }
 
 module.exports = inverseRobot;
