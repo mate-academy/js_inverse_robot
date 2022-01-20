@@ -29,7 +29,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const restoredKey = robot[key];
 
-    if (repairedRobot[restoredKey] !== undefined) {
+    if (restoredKey in repairedRobot) {
       return null;
     }
     repairedRobot[restoredKey] = key;
