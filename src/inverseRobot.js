@@ -27,7 +27,7 @@ function inverseRobot(robot) {
   const correctObj = {};
 
   for (const props in robot) {
-    if (correctObj[robot[props]] !== undefined) {
+    if (correctObj.hasOwnProperty(robot[props])) {
       return null;
     }
     correctObj[robot[props]] = props;

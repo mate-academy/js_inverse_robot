@@ -4,6 +4,7 @@
   "description": "js task boilerplate",
   "main": "src/sum.js",
   "scripts": {
+    "deploy": "npm run deploy",
     "init": "mate-scripts init",
     "start": "mate-scripts start",
     "lint": "mate-scripts lint",
