@@ -24,8 +24,8 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const inverseRootArray = Object
-    .entries(robot).map(([key, value]) => [value, key]);
+  const inverseRootArray = Object.entries(robot)
+    .map(([key, value]) => [value, key]);
 
   const result = Object.fromEntries(inverseRootArray);
 
