@@ -24,25 +24,30 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arr1 = Object.keys(robot);
-  const arr2 = Object.values(robot);
+  const arrOfKeys = Object.keys(robot);
+  const arrOfValues = Object.values(robot);
 
-  for (let x = 0; x < arr1.length; x++) {
-    if (arr1.indexOf(arr1[x]) !== arr1.lastIndexOf(arr1[x])) {
+  for (let x = 0; x < arrOfKeys.length; x++) {
+    if (
+      arrOfKeys.indexOf(arrOfKeys[x])
+      !== arrOfKeys.lastIndexOf(arrOfKeys[x])
+    ) {
       return null;
     }
   }
 
-  for (let x = 0; x < arr2.length; x++) {
-    if (arr2.indexOf(arr2[x]) !== arr2.lastIndexOf(arr2[x])) {
+  for (let x = 0; x < arrOfValues.length; x++) {
+    if (
+      arrOfValues.indexOf(arrOfValues[x])
+      !== arrOfValues.lastIndexOf(arrOfValues[x])) {
       return null;
     }
   }
 
   const revers = {};
 
-  for (let i = 0; i < arr1.length; i++) {
-    revers[arr2[i]] = arr1[i];
+  for (let i = 0; i < arrOfKeys.length; i++) {
+    revers[arrOfValues[i]] = arrOfKeys[i];
   }
 
   return revers;
