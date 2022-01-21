@@ -29,8 +29,11 @@ function inverseRobot(robot) {
 
   const result = Object.fromEntries(inverseRootArray);
 
-  return Object.keys(result).length < Object.values(robot).length
-    ? null : result;
+  if (Object.keys(result).length < Object.values(robot).length) {
+    return null;
+  } else {
+    return result;
+  }
 }
 
 module.exports = inverseRobot;
