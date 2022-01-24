@@ -25,21 +25,13 @@
  */
 function inverseRobot(robot) {
   const mirrorRobot = {};
-  const values = Object.values(robot);
-  let arr1 = [];
-  let arr2 = [];
-
-  for (let i = 0; i < values.length; i++) {
-    arr1 = values.slice(0, i);
-    arr2 = values.slice(i + 1);
-
-    if (arr1.includes(values[i]) || arr2.includes(values[i])) {
-      return null;
-    }
-  }
 
   for (const keys in robot) {
-    mirrorRobot[robot[keys]] = keys;
+    if (!mirrorRobot.hasOwnProperty(robot[keys])) {
+      mirrorRobot[robot[keys]] = keys;
+    } else {
+      return null;
+    }
   }
 
   return mirrorRobot;
