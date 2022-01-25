@@ -23,8 +23,23 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
   // write code here
+
+  const repairRobot = {};
+
+  for (const key in robot) {
+    const value = robot[key];
+
+    if (repairRobot.hasOwnProperty(value)) {
+      return null;
+    }
+
+    repairRobot[value] = key;
+  }
+
+  return repairRobot;
 }
 
 module.exports = inverseRobot;
