@@ -24,36 +24,17 @@
  * @return {object}
  */
 
-function valuesRepeatCheck(checkedObject) {
-  const check = {};
-
-  for (const key in checkedObject) {
-    const value = checkedObject[key];
-
-    if (!check.hasOwnProperty(value)) {
-      check[value] = 0;
-    }
-
-    check[value]++;
-
-    if (check[value] > 1) {
-      return true;
-    }
-  }
-
-  return false;
-}
-
 function inverseRobot(robot) {
   // write code here
-  if (valuesRepeatCheck(robot)) {
-    return null;
-  }
 
   const repairRobot = {};
 
   for (const key in robot) {
     const value = robot[key];
+
+    if (repairRobot.hasOwnProperty(value)) {
+      return null;
+    }
 
     repairRobot[value] = key;
   }
