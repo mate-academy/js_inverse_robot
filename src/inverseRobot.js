@@ -25,6 +25,22 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const repearedRobot = {};
+  const robotValuesArr = Object.values(robot);
+
+  const isDuplicate = robotValuesArr.some(function(item, idx) {
+    return robotValuesArr.indexOf(item) !== idx;
+  });
+
+  if (isDuplicate === true) {
+    return null;
+  }
+
+  for (const key in robot) {
+    repearedRobot[robot[key]] = key;
+  }
+
+  return repearedRobot;
 }
 
 module.exports = inverseRobot;
