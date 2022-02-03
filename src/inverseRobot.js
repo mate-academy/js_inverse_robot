@@ -24,20 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const result = {};
-
-  for (const key in robot) {
-    if (!result[robot[key]]) {
-      result[robot[key]] = key;
-    } else {
-      return null;
-    }
-  }
-
   const newRobot = {};
   const entries = Object.entries(robot);
 
   for (const [keyRobot, values] of entries) {
+    if (newRobot[values]) {
+      return null;
+    }
     newRobot[values] = keyRobot;
   }
 
