@@ -24,7 +24,21 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const arrForCheckDublicate = Object.values(robot);
+  const newRobot = {};
+  const parametersEntries = Object.entries(robot);
+
+  for (let i = 0; i < arrForCheckDublicate.length; i++) {
+    if (arrForCheckDublicate.includes(arrForCheckDublicate[i], i + 1)) {
+      return null;
+    }
+  }
+
+  for (let i = 0; i < parametersEntries.length; i++) {
+    newRobot[parametersEntries[i][1]] = parametersEntries[i][0];
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
