@@ -24,7 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const values = Array.from(Object.values(robot));
+  const values = Object.values(robot);
 
   if (new Set(values).size !== values.length) {
     return null;
