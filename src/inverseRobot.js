@@ -13,18 +13,41 @@
  *
  * Example:
  *
- * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
- * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
- * inverseRobot(robert) === null
- * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
+ * const kolli = {
+ *   Kolli: 'name',
+ *   123: 'chipVer',
+ *   3: 'wheels'
+ * };
+ * <br>
+ * const robert = {
+ *   Robert: 'name',
+ *   123: 'chipVer',
+ *   113: 'chipVer'
+ * };
  *
+ * inverseRobot(robert) === null
+ * <br>
+ * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
  * @param {object} robot
  *
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const inverse = {};
+  const values = Object.values(robot);
+
+  if (values.some(function(V, index) {
+    return values.indexOf(V) !== index;
+  })) {
+    return null;
+  }
+
+  for (const [K, V] of Object.entries(robot)) {
+    inverse[V] = K;
+  }
+
+  return inverse;
 }
 
 module.exports = inverseRobot;
