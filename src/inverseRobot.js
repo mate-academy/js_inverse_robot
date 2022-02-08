@@ -24,7 +24,21 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const cloneRobot = { ...robot };
+
+  const values = Object.values(cloneRobot);
+  const uniqValues = new Set(values);
+
+  if (uniqValues.size !== values.length) {
+    return null;
+  }
+
+  Object.entries(cloneRobot).forEach(([key, value]) => {
+    cloneRobot[value] = key;
+    delete cloneRobot[key];
+  });
+
+  return cloneRobot;
 }
 
 module.exports = inverseRobot;
