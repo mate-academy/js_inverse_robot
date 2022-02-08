@@ -37,9 +37,11 @@ function inverseRobot(robot) {
   const inverse = {};
   const values = Object.values(robot);
 
-  if (values.some(function(V, index) {
+  const hasDuplicate = values.some((V, index) => {
     return values.indexOf(V) !== index;
-  })) {
+  });
+
+  if (hasDuplicate) {
     return null;
   }
 
