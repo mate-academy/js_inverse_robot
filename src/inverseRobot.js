@@ -24,7 +24,25 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const result = {};
+
+  const roboValues = Object.values(robot);
+
+  const isDuplicate = roboValues.some((item, index) => {
+    return roboValues.indexOf(item) !== index;
+  });
+
+  if (isDuplicate) {
+    return null;
+  }
+
+  const values = Object.entries(robot);
+
+  for (const value of values) {
+    result[value[1]] = value[0];
+  }
+
+  return result;
 }
 
 module.exports = inverseRobot;
