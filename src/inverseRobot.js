@@ -24,7 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const res = Object.fromEntries(
+    Object.entries(robot).map(([key, value]) => [value, key]));
+
+  if (Object.keys(res).length < Object.values(robot).length) {
+    return null;
+  }
+
+  return res;
 }
 
 module.exports = inverseRobot;
