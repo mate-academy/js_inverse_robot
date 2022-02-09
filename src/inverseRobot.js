@@ -24,20 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const objLength = Object.values(robot).length;
-  const uniqLength = [...new Set(Object.values(robot))].length;
-
-  if (uniqLength !== objLength) {
-    return null;
-  }
-
   const result = {};
 
-  Object.keys(robot).forEach((value) => {
+  for (const value in robot) {
+    if (robot[value] in result) {
+      return null;
+    }
+
     const key = robot[value];
 
     result[key] = value;
-  });
+  }
 
   return result;
 }
