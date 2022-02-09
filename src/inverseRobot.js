@@ -24,18 +24,15 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arrForCheckDublicate = Object.values(robot);
   const newRobot = {};
-  const parametersEntries = Object.entries(robot);
+  const values = Object.values(robot);
 
-  for (let i = 0; i < arrForCheckDublicate.length; i++) {
-    if (arrForCheckDublicate.includes(arrForCheckDublicate[i], i + 1)) {
-      return null;
-    }
+  if (new Set(values).size !== values.length) {
+    return null;
   }
 
-  for (let i = 0; i < parametersEntries.length; i++) {
-    newRobot[parametersEntries[i][1]] = parametersEntries[i][0];
+  for (const key in robot) {
+    newRobot[robot[key]] = key;
   }
 
   return newRobot;
