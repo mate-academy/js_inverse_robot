@@ -24,19 +24,15 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const cloneRobot = { ...robot };
+  const cloneRobot = {};
 
-  const values = Object.values(cloneRobot);
-  const uniqValues = new Set(values);
+  for (const key in robot) {
+    if (robot[key] in cloneRobot) {
+      return null;
+    }
 
-  if (uniqValues.size !== values.length) {
-    return null;
+    cloneRobot[robot[key]] = key;
   }
-
-  Object.entries(cloneRobot).forEach(([key, value]) => {
-    cloneRobot[value] = key;
-    delete cloneRobot[key];
-  });
 
   return cloneRobot;
 }
