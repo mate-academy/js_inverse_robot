@@ -34,22 +34,19 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const inverse = {};
-  const values = Object.values(robot);
+  const brandNew = {};
 
-  const hasDuplicate = values.some((V, index) => {
-    return values.indexOf(V) !== index;
-  });
+  for (const fakeKey in robot) {
+    const properKey = robot[fakeKey];
 
-  if (hasDuplicate) {
-    return null;
+    if (brandNew[properKey]) {
+      return null;
+    }
+
+    brandNew[properKey] = fakeKey;
   }
 
-  for (const [K, V] of Object.entries(robot)) {
-    inverse[V] = K;
-  }
-
-  return inverse;
+  return brandNew;
 }
 
 module.exports = inverseRobot;
