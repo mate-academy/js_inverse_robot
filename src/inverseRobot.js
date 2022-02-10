@@ -32,8 +32,8 @@ function inverseRobot(robot) {
 
   const result = {};
 
-  for (const key in robot) {
-    result[robot[key]] = key;
+  for (const elem in robot) {
+    result[robot[elem]] = elem;
   }
 
   return result;
