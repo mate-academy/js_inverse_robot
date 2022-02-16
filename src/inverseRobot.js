@@ -25,24 +25,15 @@
  */
 function inverseRobot(robot) {
   const inverseObj = {};
-  const keys = Object.values(robot);
-
-  for (let i = 0; i < keys.length; i++) {
-    for (let j = i; j < keys.length; j++) {
-      if (keys[i] === keys[j + 1]) {
-        return null;
-      }
-    }
-  }
 
   for (const [key, value] of Object.entries(robot)) {
+    if (Object.keys(inverseObj).includes(robot[key])) {
+      return null;
+    }
     inverseObj[value] = key;
   }
 
   return inverseObj;
 }
 
-inverseRobot({
-  Robert: 'name', 123: 'chipVer', 113: 'chipVer',
-});
 module.exports = inverseRobot;
