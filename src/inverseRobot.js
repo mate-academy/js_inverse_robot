@@ -25,30 +25,15 @@
  */
 function inverseRobot(robot) {
   // write code here
-  const values = Object.values(robot);
-
-  for (let i = 0; i < values.length - 1; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[i] === values[j]) {
-        return null;
-      }
-    }
-  }
-
-  const keys = Object.keys;
-
-  for (let i = 0; i < keys.length - 1; i++) {
-    for (let j = i + 1; j < keys.length; j++) {
-      if (keys[i] === keys[j]) {
-        return null;
-      }
-    }
-  }
 
   const inverse = {};
 
-  for (const key in robot) {
-    inverse[robot[key]] = key;
+  for (const detail in robot) {
+    if (inverse.hasOwnProperty(robot[detail])) {
+      return null;
+    }
+
+    inverse[robot[detail]] = detail;
   }
 
   return inverse;
