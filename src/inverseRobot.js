@@ -25,13 +25,13 @@
  */
 function inverseRobot(robot) {
   // write code here
-  let inverseRobot1 = {};
-  
+  const inverseRobot1 = {};
+
   for (const key in robot) {
-    if (robot[key] in inverseRobot) {
+    if (robot[key] in inverseRobot1) {
       return null;
     }
-    inverseRobot[robot[key]] = key;
+    inverseRobot1[robot[key]] = key;
   }
 
   return inverseRobot1;
