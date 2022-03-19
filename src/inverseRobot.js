@@ -25,7 +25,7 @@
  */
 function inverseRobot(robot) {
   // write code here
-  let inverseRobot = {};
+  let inverseRobot1 = {};
   
   for (const key in robot) {
     if (robot[key] in inverseRobot) {
@@ -34,7 +34,7 @@ function inverseRobot(robot) {
     inverseRobot[robot[key]] = key;
   }
 
-  return inverseRobot;
+  return inverseRobot1;
 }
 
 module.exports = inverseRobot;
