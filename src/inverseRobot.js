@@ -29,12 +29,12 @@ function inverseRobot(robot) {
   const res = {};
 
   for (let i = 0; i < keysOfRobot.length; i++) {
-    for (let a = 1; a < keysOfRobot.length; a++) {
+    for (let a = i + 1; a < keysOfRobot.length; a++) {
       if (keysOfRobot[i] === keysOfRobot[a]) {
         return null;
       }
-      res[keysOfRobot[i]] = val[i];
     }
+    res[keysOfRobot[i]] = val[i];
   }
 
   return res;
