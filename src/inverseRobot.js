@@ -24,7 +24,22 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const values = Object.values(robot);
+
+  for (let i = 0; i < values.length; i++) {
+    for (let j = i + 1; j < values.length; j++) {
+      if (values[j] === values[i]) {
+        return null;
+      }
+    }
+  }
+
+  const swapped = Object.fromEntries(
+    // преобразовать в массив, затем map, затем fromEntries обратно объект
+    Object.entries(robot).map(([key, value]) => [value, key])
+  );
+
+  return swapped;
 }
 
 module.exports = inverseRobot;
