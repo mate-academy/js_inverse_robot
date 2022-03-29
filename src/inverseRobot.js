@@ -27,10 +27,8 @@ function inverseRobot(robot) {
   const robotRestructuring = {};
 
   for (const key in robot) {
-    for (const search in robot) {
-      if (key !== search && robot[key] === robot[search]) {
-        return null;
-      }
+    if (robotRestructuring[robot[key]]) {
+      return null;
     }
     robotRestructuring[robot[key]] = key;
   }
