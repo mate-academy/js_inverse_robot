@@ -23,18 +23,14 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  const sett = new Set();
   const copyy = {};
 
   for (const x in robot) {
-    sett.add(robot[x]);
-  }
-
-  if (sett.size !== Object.keys(robot).length) {
-    return null;
-  } else {
-    for (const x in robot) {
+    if (robot[x] in copyy) {
+      return null;
+    } else {
       copyy[robot[x]] = x;
     }
   }
