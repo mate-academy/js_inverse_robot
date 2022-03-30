@@ -15,29 +15,29 @@
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
  * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
- * inverseRobot(robert) === null
- * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
+ * inversedRobotRobot(robert) === null
+ * inversedRobotRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
  *
  * @param {object} robot
  *
  * @return {object}
  */
-function inverseRobot(robot) {
-  const inverse = {};
+function inversedRobotRobot(robot) {
+  const inversedRobot = {};
 
   for (const key in robot) {
     const newKey = robot[key];
     const newValue = key;
 
-    if (inverse[newKey] !== undefined) {
+    if (newKey in inversedRobot) {
       return null;
     }
 
-    inverse[newKey] = newValue;
+    inversedRobot[newKey] = newValue;
   }
 
-  return inverse;
+  return inversedRobot;
 }
 
-module.exports = inverseRobot;
+module.exports = inversedRobotRobot;
