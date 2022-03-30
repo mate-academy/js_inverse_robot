@@ -15,15 +15,15 @@
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
  * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
- * inversedRobotRobot(robert) === null
- * inversedRobotRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
+ * inverseRobot(robert) === null
+ * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
  *
  * @param {object} robot
  *
  * @return {object}
  */
-function inversedRobotRobot(robot) {
+function inverseRobot(robot) {
   const inversedRobot = {};
 
   for (const key in robot) {
@@ -40,4 +40,4 @@ function inversedRobotRobot(robot) {
   return inversedRobot;
 }
 
-module.exports = inversedRobotRobot;
+module.exports = inverseRobot;
