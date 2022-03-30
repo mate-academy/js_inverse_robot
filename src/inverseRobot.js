@@ -32,9 +32,9 @@ function inverseRobot(robot) {
 
     if (inverse[newKey] !== undefined) {
       return null;
-    } else {
-      inverse[newKey] = newValue;
     }
+
+    inverse[newKey] = newValue;
   }
 
   return inverse;
