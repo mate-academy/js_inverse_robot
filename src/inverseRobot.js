@@ -24,25 +24,25 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const keysA = Object.keys(robot);
-  const valuesA = Object.values(robot);
-  const arr = [ ...valuesA ];
+  const keysArr = Object.keys(robot);
+  const valuesArr = Object.values(robot);
+  const copyValuesArr = [ ...valuesArr ];
 
-  for (let i = 0; i < arr.length; i++) {
-    const shifted = arr.shift();
+  for (let i = 0; i < copyValuesArr.length; i++) {
+    const shifted = copyValuesArr.shift();
 
-    if (arr.includes(shifted)) {
+    if (copyValuesArr.includes(shifted)) {
       return null;
     }
   }
 
-  const result = {};
+  const inverseObject = {};
 
-  for (let j = valuesA.length - 1; j >= 0; j--) {
-    result[valuesA[j]] = keysA[j];
+  for (let j = valuesArr.length - 1; j >= 0; j--) {
+    inverseObject[valuesArr[j]] = keysArr[j];
   }
 
-  return result;
+  return inverseObject;
 }
 
 module.exports = inverseRobot;
