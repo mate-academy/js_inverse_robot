@@ -25,19 +25,19 @@
  */
 function inverseRobot(robot) {
   // write code here
-  const copy = {};
+  const inversedRobot = {};
 
   for (const key in robot) {
-    const varr = robot[key];
+    const value = robot[key];
 
-    if (copy[varr] !== undefined) {
+    if (inversedRobot[value] !== undefined) {
       return null;
     }
 
-    copy[varr] = key;
+    inversedRobot[value] = key;
   }
 
-  return copy;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
