@@ -25,19 +25,16 @@
  */
 
 function inverseRobot(robot) {
-  const valueObj = Object.values(robot);
-  const keyObj = Object.keys(robot);
-  const copy = {};
+  const repairRobot = {};
 
-  for (let i = 0; i < valueObj.length; i++) {
-    copy[valueObj[i]] = keyObj[i];
+  for (const key in robot) {
+    if (repairRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    repairRobot[robot[key]] = key;
   }
 
-  if (Object.values(copy).length === Object.values(robot).length) {
-    return copy;
-  } else {
-    return null;
-  }
+  return repairRobot;
 }
 
 module.exports = inverseRobot;
