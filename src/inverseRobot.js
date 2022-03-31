@@ -24,17 +24,16 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arr = Object.entries(robot).map(a => a.reverse());
-  const val = Object.values(robot);
-  const lenval = (val.filter((a, i) => val.indexOf(a) === i)).length;
+  const key = Object.values(robot);
+  const val = Object.keys(robot);
   const rez = {};
 
-  if (lenval !== arr.length) {
-    return null;
-  }
+  for (let i = 0; i < key.length; i++) {
+    if (rez.hasOwnProperty(key[i])) {
+      return null;
+    }
 
-  for (let i = 0; i < arr.length; i++) {
-    rez[arr[i][0]] = arr[i][1];
+    rez[key[i]] = val[i];
   }
 
   return rez;
