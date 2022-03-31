@@ -29,13 +29,11 @@ function inverseRobot(robot) {
 
   const newObj = {};
 
-  const objSet = new Set(objValues);
-
-  if (objValues.length !== objSet.size) {
-    return null;
-  }
-
   for (let i = 0; i < objKeys.length; i++) {
+    if (newObj.hasOwnProperty(objValues[i])) {
+      return null;
+    }
+
     newObj[objValues[i]] = objKeys[i];
   }
 
