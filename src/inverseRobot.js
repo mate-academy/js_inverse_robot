@@ -24,19 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const keysArr = Object.keys(robot);
-  const valuesArr = Object.values(robot);
-  const copyValuesArr = [ ...valuesArr ];
   const inverseObject = {};
 
-  for (let i = 0; i < valuesArr.length; i++) {
-    const shifted = copyValuesArr.shift();
-
-    inverseObject[valuesArr[i]] = keysArr[i];
-
-    if (copyValuesArr.includes(shifted)) {
+  for (const key in robot) {
+    if (inverseObject[robot[key]]) {
       return null;
     }
+    inverseObject[robot[key]] = key;
   }
 
   return inverseObject;
