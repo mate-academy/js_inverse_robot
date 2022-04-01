@@ -27,19 +27,16 @@ function inverseRobot(robot) {
   const keysArr = Object.keys(robot);
   const valuesArr = Object.values(robot);
   const copyValuesArr = [ ...valuesArr ];
+  const inverseObject = {};
 
-  for (let i = 0; i < copyValuesArr.length; i++) {
+  for (let i = 0; i < valuesArr.length; i++) {
     const shifted = copyValuesArr.shift();
+
+    inverseObject[valuesArr[i]] = keysArr[i];
 
     if (copyValuesArr.includes(shifted)) {
       return null;
     }
-  }
-
-  const inverseObject = {};
-
-  for (let j = valuesArr.length - 1; j >= 0; j--) {
-    inverseObject[valuesArr[j]] = keysArr[j];
   }
 
   return inverseObject;
