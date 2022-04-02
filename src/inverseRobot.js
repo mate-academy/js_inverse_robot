@@ -24,10 +24,10 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arr = Object.entries(robot);
+  const objectToArray = Object.entries(robot);
   const duplicateValues = {};
 
-  arr.forEach(element => {
+  objectToArray.forEach(element => {
     duplicateValues[element[1]] = (duplicateValues[element[1]] || 0) + 1;
   });
 
@@ -37,7 +37,7 @@ function inverseRobot(robot) {
     return null;
   }
 
-  const reverseKeyAndValue = arr
+  const reverseKeyAndValue = objectToArray
     .map(element => [element[1], element[0]]).reverse();
 
   return Object.fromEntries(reverseKeyAndValue);
