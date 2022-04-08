@@ -23,8 +23,21 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const checkVal = [];
+
+  for (const val in robot) {
+    if (checkVal.includes(robot[val])) {
+      return null;
+    }
+
+    checkVal.push(robot[val]);
+    robot[robot[val]] = val;
+    delete robot[val];
+  }
+
+  return robot;
 }
 
 module.exports = inverseRobot;
