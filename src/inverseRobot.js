@@ -26,6 +26,7 @@
 
 function inverseRobot(robot) {
   const checkVal = [];
+  const result = {};
 
   for (const val in robot) {
     if (checkVal.includes(robot[val])) {
@@ -33,11 +34,10 @@ function inverseRobot(robot) {
     }
 
     checkVal.push(robot[val]);
-    robot[robot[val]] = val;
-    delete robot[val];
+    result[robot[val]] = val;
   }
 
-  return robot;
+  return result;
 }
 
 module.exports = inverseRobot;
