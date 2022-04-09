@@ -24,7 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const dublicateCheck = [];
+
+  for (const key in robot) {
+    if (!dublicateCheck.includes(robot[key])) {
+      dublicateCheck.push(robot[key]);
+    } else {
+      return null;
+    }
+  }
+
+  const correct = {};
+
+  for (const key in robot) {
+    correct[robot[key]] = key;
+  }
+
+  return correct;
 }
 
 module.exports = inverseRobot;
