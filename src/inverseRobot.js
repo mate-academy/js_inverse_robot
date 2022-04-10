@@ -23,8 +23,25 @@
  *
  * @return {object}
  */
+
+// steps to solve the tasc
+//  create new object (newRobot for example )
+//  iterate through keys (use for ... in)
+//  in loop check if newRobot has property robot[key] -> return null
+//  in another case add new property to newRobot
+
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  for (const key in robot) {
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
+    newRobot[robot[key]] = key;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
