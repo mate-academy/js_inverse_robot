@@ -24,23 +24,24 @@
  * @return {object}
  */
 
-function inverseRobot(robot) {
-  const values = Object.values(robot);
+// steps to solve the tasc
+//  create new object (newRobot for example )
+//  iterate through keys (use for ... in)
+//  in loop check if newRobot has property robot[key] -> return null
+//  in another case add new property to newRobot
 
-  for (let i = 0; i < values.length; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[j] === values[i]) {
-        return null;
-      }
+function inverseRobot(robot) {
+  const newRobot = {};
+
+  for (const key in robot) {
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
     }
+
+    newRobot[robot[key]] = key;
   }
 
-  const swapped = Object.fromEntries(
-    // преобразовать в массив, затем map, затем fromEntries обратно объект
-    Object.entries(robot).map(([key, value]) => [value, key])
-  );
-
-  return swapped;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
