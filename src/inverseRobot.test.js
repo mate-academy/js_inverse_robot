@@ -1,17 +1,17 @@
 'use strict';
 
-describe('inverseRobot', () => {
+describe(`Function 'inverseRobot'`, () => {
   const inverseRobot = require('./inverseRobot');
 
-  it(`Function 'inverseRobot' should be declared`, () => {
+  it(`should be declared`, () => {
     expect(inverseRobot).toBeInstanceOf(Function);
   });
 
-  it(`Function 'inverseRobot' should return 'object'`, () => {
+  it(`should return an object`, () => {
     expect(typeof inverseRobot({})).toBe('object');
   });
 
-  it(`Function 'inverseRobot' should not modify the input object`, () => {
+  it(`should not modify the input object`, () => {
     const robot = {
       Kolli: 'name',
       123: 'chipVer',
@@ -26,12 +26,7 @@ describe('inverseRobot', () => {
       });
   });
 
-  it(`input: {
-      Robert: "name",
-      123: "chipVer",
-      113: "chipVer"
-    }
-    expected output: null`, () => {
+  it(`should return null if there are two 'chipVer' values`, () => {
     expect(
       inverseRobot({
         Robert: 'name', 123: 'chipVer', 113: 'chipVer',
@@ -39,16 +34,8 @@ describe('inverseRobot', () => {
     ).toBe(null);
   });
 
-  it(`input: {
-      Kolli: "name",
-      123: "chipVer",
-      3: "wheels"
-    }
-    expected output: {
-      name: "Kolli",
-      chipVer: "123",
-      wheels: "3"
-    }`, () => {
+  it(`should return a robot with inversed keys and values if all three values 
+    are unique`, () => {
     expect(
       inverseRobot({
         Kolli: 'name', 123: 'chipVer', 3: 'wheels',
@@ -58,21 +45,12 @@ describe('inverseRobot', () => {
     });
   });
 
-  it(`input: {}
-      expected output: {}`, () => {
+  it(`should return an empty object if the input is empty`, () => {
     expect(inverseRobot({})).toEqual({});
   });
 
-  it(`input: {
-      Robert: "name",
-      123: "chipVerPro",
-      113: "chipVer"
-    }
-    expected output: {
-      name: "Robert"
-      chipVerPro: "123",
-      chipVer: "113",
-    }`, () => {
+  it(`should return a robot with inversed keys and values if some keys are 
+    similar but still unique`, () => {
     expect(
       inverseRobot({
         Robert: 'name', 123: 'chipVerPro', 113: 'chipVer',
@@ -82,13 +60,7 @@ describe('inverseRobot', () => {
     });
   });
 
-  it(`input: {
-      Kolli: "name",
-      123: "chipVer",
-      3: "wheels",
-      2: 'wheels'
-    }
-    expected output: null`, () => {
+  it(`should return null if there are two 'wheels' values`, () => {
     expect(
       inverseRobot({
         Kolli: 'name', 123: 'chipVer', 3: 'wheels', 2: 'wheels',
@@ -96,18 +68,8 @@ describe('inverseRobot', () => {
     ).toEqual(null);
   });
 
-  it(`input: {
-      name: 'Bob',
-      age: 32,
-      gender: 'male',
-      interests: 'music',
-    }
-    expected output: {
-      Bob: "name",
-      32: "age",
-      male: "gender",
-      music: "interests"
-    }`, () => {
+  it(`should return a robot with inversed keys and values if all four values 
+    are unique`, () => {
     expect(
       inverseRobot({
         name: 'Bob', age: 32, gender: 'male', interests: 'music',
@@ -117,14 +79,8 @@ describe('inverseRobot', () => {
     });
   });
 
-  it(`input: {
-      name: 'Bob',
-      fullName: 'Bob',
-      age: 32,
-      gender: 'male',
-      interests: 'music',
-    }
-    expected output: null`, () => {
+  it(`should return null if the values for 'name' and 'fullName' are the same 
+    in the input object`, () => {
     expect(
       inverseRobot({
         name: 'Bob',
@@ -136,15 +92,8 @@ describe('inverseRobot', () => {
     ).toEqual(null);
   });
 
-  it(`input: {
-    name: 'Bob',
-    fullName: 'Bob Acad',
-    age: 32,
-    gender: 'male',
-    interests: 'music',
-    nickname: 'Bob'
-  }
-  expected output: null`, () => {
+  it(`should return null if the values for 'name' and 'nickname' are the same 
+    in the input object`, () => {
     expect(
       inverseRobot({
         name: 'Bob',
