@@ -11,6 +11,21 @@ describe('inverseRobot', () => {
     expect(typeof inverseRobot({})).toBe('object');
   });
 
+  it(`Function 'inverseRobot' should not modify the input object`, () => {
+    const robot = {
+      Kolli: 'name',
+      123: 'chipVer',
+      3: 'wheels',
+    };
+
+    inverseRobot(robot);
+
+    expect(robot)
+      .toEqual({
+        Kolli: 'name', 123: 'chipVer', 3: 'wheels',
+      });
+  });
+
   it(`input: {
       Robert: "name",
       123: "chipVer",
