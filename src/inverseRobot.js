@@ -29,7 +29,7 @@ function inverseRobot(robot) {
 
   for (const key in robot) {
     if (robot[key] in updateRobot) {
-      return 0;
+      return null;
     }
 
     updateRobot[robot[key]] = key;
