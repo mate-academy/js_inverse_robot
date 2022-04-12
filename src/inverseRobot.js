@@ -25,6 +25,31 @@
  */
 function inverseRobot(robot) {
   // write code here
+  let count = 0;
+  const revers = {};
+
+  for (const j in robot) {
+    // console.log(kolli[j]);
+    for (const k in robot) {
+      // console.log(kolli[k]);
+      if (robot[j] === robot[k]) {
+        count++;
+      }
+    }
+  }
+
+  // console.log(count)
+  if (count > Object.values(robot).length) {
+    return null;
+  }
+
+  for (const k in robot) {
+    // console.log(kolli[k])
+    // console.log(kolli[k], k)
+    revers[robot[k]] = k;
+  }
+
+  return revers;
 }
 
 module.exports = inverseRobot;
