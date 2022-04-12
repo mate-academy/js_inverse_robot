@@ -23,8 +23,23 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const invertRobot = {};
+  const dublicateCheck = [];
+
+  for (const key in robot) {
+    invertRobot[robot[key]] = key;
+    dublicateCheck.push(robot[key]);
+
+    const indexOfMatch = dublicateCheck.indexOf(robot[key]);
+
+    if (dublicateCheck.includes(robot[key], indexOfMatch + 1)) {
+      return null;
+    }
+  }
+
+  return invertRobot;
 }
 
 module.exports = inverseRobot;
