@@ -23,8 +23,20 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const copy = {};
+
+  if (Array.from(new Set(Object.values(robot))).length
+    < Object.values(robot).length) {
+    return null;
+  }
+
+  for (const key in robot) {
+    copy[robot[key]] = key;
+  }
+
+  return copy;
 }
 
 module.exports = inverseRobot;
