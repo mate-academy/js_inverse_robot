@@ -26,9 +26,10 @@
 
 function inverseRobot(robot) {
   const copy = {};
+  const lengthOfUniquePartsArray
+    = Array.from(new Set(Object.values(robot))).length;
 
-  if (Array.from(new Set(Object.values(robot))).length
-    < Object.values(robot).length) {
+  if (lengthOfUniquePartsArray < Object.values(robot).length) {
     return null;
   }
 
