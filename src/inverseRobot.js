@@ -23,8 +23,22 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const copy = {};
+  const lengthOfUniquePartsArray
+    = Array.from(new Set(Object.values(robot))).length;
+
+  if (lengthOfUniquePartsArray < Object.values(robot).length) {
+    return null;
+  }
+
+  for (const key in robot) {
+    copy[robot[key]] = key;
+  }
+
+  return copy;
 }
+// to refresh the commit
 
 module.exports = inverseRobot;
