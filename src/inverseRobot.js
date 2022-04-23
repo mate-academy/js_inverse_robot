@@ -34,11 +34,10 @@ function inverseRobot(robot) {
     robotValues.push(robot[key]);
   }
 
-  const robotKeys = Object.keys(robot);
   const invRobot = {};
 
-  for (let i = 0; i < robotValues.length; i++) {
-    invRobot[robotValues[i]] = robotKeys[i];
+  for (const key in robot) {
+    invRobot[robot[key]] = key;
   }
 
   return invRobot;
