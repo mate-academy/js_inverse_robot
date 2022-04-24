@@ -24,7 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const copy = {};
+  const inversedRobot = {};
   const values = Object.values(robot);
   const unique = new Set(values);
 
@@ -33,10 +33,18 @@ function inverseRobot(robot) {
   }
 
   for (const key in robot) {
-    copy[robot[key]] = key;
+    inversedRobot[robot[key]] = key;
   }
 
-  return copy;
+  return inversedRobot;
 }
+
+const r = {
+  Robert: 'name',
+  123: 'chipVer',
+  113: 'chipVer',
+};
+
+inverseRobot(r);
 
 module.exports = inverseRobot;
