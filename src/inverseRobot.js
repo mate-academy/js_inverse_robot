@@ -27,13 +27,10 @@ function inverseRobot(robot) {
   const newRobot = {};
   const keys = Object.values(robot);
   const values = Object.keys(robot);
-  const map = {};
 
   for (let i = 0; i < keys.length; i++) {
-    if (map[keys[i]]) {
+    if (newRobot.hasOwnProperty(keys[i])) {
       return null;
-    } else {
-      map[keys[i]] = true;
     }
     newRobot[keys[i]] = values[i];
   }
