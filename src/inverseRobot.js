@@ -31,7 +31,7 @@ function inverseRobot(robot) {
 
     key = robot[key];
 
-    if (reversedObj[key]) {
+    if (key in reversedObj) {
       return null;
     } else {
       reversedObj[key] = value;
