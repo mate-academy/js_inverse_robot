@@ -24,20 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const valueArr = Object.keys(robot);
-  const keyArr = Object.values(robot);
-  const dublicate = keyArr.some((e, i, arr) => arr.indexOf(e) !== i);
   const reversObj = {};
 
-  for (const v of valueArr) {
-    reversObj[robot[v]] = v;
+  for (const key in robot) {
+    if (reversObj.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
+    reversObj[robot[key]] = key;
   }
 
-  if (dublicate === true) {
-    return null;
-  } else {
-    return reversObj;
-  }
+  return reversObj;
 }
 
 module.exports = inverseRobot;
