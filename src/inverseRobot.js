@@ -25,26 +25,16 @@
  */
 function inverseRobot(robot) {
   const reversRobot = {};
-  const values = Object.values(robot);
-  const result = {};
-
-  for (const k of values) {
-    if (result[k] === undefined) {
-      result[k] = 0;
-    }
-
-    if (result[k] === 1) {
-      return null;
-    }
-
-    result[k]++;
-  }
 
   Object.keys(robot).forEach(function(value) {
     const key = robot[value];
 
     reversRobot[key] = value;
   });
+
+  if (Object.keys(robot).length !== Object.keys(reversRobot).length) {
+    return null;
+  }
 
   return reversRobot;
 }
