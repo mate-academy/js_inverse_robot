@@ -24,7 +24,33 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  // 1.check if value occurred twice
+  if (Object.keys(robot).length === 0) {
+    return {};
+  }
+
+  // 2. check if anything repeated
+  const robotValues = Object.values(robot);
+
+  for (let i = 0; i < robotValues.length; i++) {
+    if (robotValues[i] === robotValues[i + 1]) {
+      return null;
+    }
+
+    if (robotValues[i].toString().indexOf(' ') >= 0) {
+      return null;
+    }
+  }
+
+  // 3. replace keys with values
+  for (const key in robot) {
+    const value = robot[key];
+
+    robot[value] = key;
+    delete robot[key];
+  }
+
+  return robot;
 }
 
 module.exports = inverseRobot;
