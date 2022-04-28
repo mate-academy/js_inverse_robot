@@ -24,14 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // 1.check if value occurred twice
   if (Object.keys(robot).length === 0) {
     return {};
   }
 
-  // 2. check if anything repeated
   const robotValues = Object.values(robot);
 
+  // check if some value passed twice
   for (let i = 0; i < robotValues.length; i++) {
     if (robotValues[i] === robotValues[i + 1]) {
       return null;
@@ -42,11 +41,12 @@ function inverseRobot(robot) {
     }
   }
 
-  // 3. replace keys with values
+  // replace keys with values
   for (const key in robot) {
     const value = robot[key];
 
     robot[value] = key;
+
     delete robot[key];
   }
 
