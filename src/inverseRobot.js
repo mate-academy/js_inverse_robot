@@ -30,12 +30,13 @@ function inverseRobot(robot) {
 
   const robotValues = Object.values(robot);
 
-  // check if some value passed twice
   for (let i = 0; i < robotValues.length; i++) {
+    // check if some value passed twice
     if (robotValues[i] === robotValues[i + 1]) {
       return null;
     }
 
+    // check if there is space in value
     if (robotValues[i].toString().indexOf(' ') >= 0) {
       return null;
     }
