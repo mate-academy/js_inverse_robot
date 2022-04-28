@@ -24,17 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const robotValues = Object.values(robot);
-
-  for (const value of robotValues) {
-    if (robotValues.indexOf(value) !== robotValues.lastIndexOf(value)) {
-      return null;
-    }
-  }
-
   const inversedRobot = {};
 
   for (const key in robot) {
+    if (inversedRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
     const currentValue = robot[key];
 
     inversedRobot[currentValue] = key;
