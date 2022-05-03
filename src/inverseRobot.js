@@ -24,34 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  if (Object.keys(robot).length === 0) {
-    return {};
-  }
+  const newRobots = {};
 
-  const robotValues = Object.values(robot);
-
-  for (let i = 0; i < robotValues.length; i++) {
-    // check if some value passed twice
-    if (robotValues[i] === robotValues[i + 1]) {
-      return null;
-    }
-
-    // check if there is space in value
-    if (robotValues[i].toString().indexOf(' ') >= 0) {
-      return null;
-    }
-  }
-
-  // replace keys with values
   for (const key in robot) {
     const value = robot[key];
 
-    robot[value] = key;
+    if (value.toString().indexOf(' ') > -1 || newRobots.hasOwnProperty(value)) {
+      return null;
+    }
 
-    delete robot[key];
+    newRobots[value] = key;
   }
 
-  return robot;
+  if (newRobots === {}) {
+    return null;
+  }
+
+  return newRobots;
 }
 
 module.exports = inverseRobot;
