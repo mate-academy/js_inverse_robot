@@ -36,10 +36,6 @@ function inverseRobot(robot) {
     newRobots[value] = key;
   }
 
-  if (newRobots === {}) {
-    return null;
-  }
-
   return newRobots;
 }
 
