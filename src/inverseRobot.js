@@ -8,9 +8,10 @@
  * and values became keys. Help to repair the robot. Create a 'inverseRobot'
  * function that takes 'robot' as a parameter and returns a new object in which
  * keys will change places with values.
- *
+ *  функція, яка приймає 'robot' як параметр і повертає новий об'єкт, у якому
+ * клавіші змінюватимуться місцями зі значеннями
  * If any of the object values are repeated, return 'null'.
- *
+ *          Якщо будь-які значення об’єктів повторюються, поверніть 'null'.
  * Example:
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
@@ -24,7 +25,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const result = {};
+
+  for (const key in robot) {
+    if (robot[key] in result) {
+      return null;
+    }
+
+    result[robot[key]] = key;
+  }
+
+  return result;
 }
 
 module.exports = inverseRobot;
