@@ -25,6 +25,19 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const robotNewKeys = Object.values(robot);
+  const robotNewValues = Object.keys(robot);
+  const repairedObject = {};
+
+  for (let i = 0; i < robotNewKeys.length; i++) {
+    if ([robotNewKeys[i]] in repairedObject) {
+      return null;
+    }
+
+    repairedObject[robotNewKeys[i]] = robotNewValues[i];
+  }
+
+  return repairedObject;
 }
 
 module.exports = inverseRobot;
