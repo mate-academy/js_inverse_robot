@@ -24,19 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let goodRobot = {};
+  const goodRobot = {};
   const arrRobot = Object.entries(robot);
 
-  for (let i = 0; i <= arrRobot.length; i++) {
-    if (goodRobot.arrRobot[i][1] === arrRobot[i][0]) {
-      goodRobot = null;
-
-      return goodRobot;
-    }
-    goodRobot.arrRobot[i][1] = arrRobot[i][0];
-
-    return goodRobot;
+  for (let i = arrRobot.length - 1; i >= 0; i--) {
+    goodRobot[arrRobot[i][1]] = arrRobot[i][0];
   }
+
+  if (Object.keys(goodRobot).length < Object.keys(robot).length) {
+    return null;
+  }
+
+  return goodRobot;
 }
 
 module.exports = inverseRobot;
