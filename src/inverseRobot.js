@@ -23,8 +23,53 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  if (!robot) {
+    return {};
+  }
+
+  const keys = Object.keys(robot).reverse();
+  const values = Object.values(robot).reverse();
+  const tem = {};
+
+  for (let i = 0; i < values.length; i++) {
+    let count = 0;
+
+    for (let j = i; j < values.length; j++) {
+      if (values[j] === values[i]) {
+        count++;
+      }
+
+      if (count > 1) {
+        return null;
+      }
+    }
+  }
+
+  for (let i = 0; i < keys.length; i++) {
+    let count1 = 0;
+
+    for (let j = i; j < keys.length - i; j++) {
+      if (keys[j] === keys[i]) {
+        count1++;
+      }
+    }
+
+    if (count1 > 1) {
+      return null;
+    }
+  }
+
+  if (keys.length !== values.length) {
+    return null;
+  }
+
+  for (let i = 0; i < keys.length; i++) {
+    tem[values[i]] = keys[i];
+  }
+
+  return tem;
 }
 
 module.exports = inverseRobot;
