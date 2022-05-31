@@ -24,30 +24,15 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const allValue = Object.values(robot);
-  let copyRobot = {};
+  const copyRobot = {};
 
-  for (let i = 0; i < allValue.length; i++) {
-    let count = 0;
-
-    for (let value = 0; value < allValue.length; value++) {
-      if (allValue[i] === allValue[value]) {
-        count++;
-      }
+  for (const key in robot) {
+    if (copyRobot.hasOwnProperty(robot[key])) {
+      return null;
     }
 
-    if (count > 1) {
-      copyRobot = null;
-
-      return copyRobot;
-    }
+    copyRobot[robot[key]] = key;
   }
-
-  Object.keys(robot).forEach(function(value) {
-    const key = robot[value];
-
-    copyRobot[key] = value;
-  });
 
   return copyRobot;
 }
