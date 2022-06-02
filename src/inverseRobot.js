@@ -24,14 +24,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  let result = {};
+  const result = {};
 
   for (const [key, velue] of Object.entries(robot)) {
-    result[velue] = key;
-  }
-
-  if (Object.keys(result).length !== Object.keys(robot).length) {
-    result = null;
+    if (!result[velue]) {
+      result[velue] = key;
+    } else {
+      return null;
+    }
   }
 
   return result;
