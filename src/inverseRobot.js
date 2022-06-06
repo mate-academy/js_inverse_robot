@@ -24,10 +24,6 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  if (robot === {}) {
-    return null;
-  }
-
   const nameRobot = {};
 
   for (const key in robot) {
