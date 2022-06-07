@@ -24,31 +24,20 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const invRobot = {};
+  const inversedRobot = {};
 
   if (Object.keys(robot).length === 0) {
-    return invRobot;
+    return inversedRobot;
   }
 
   for (const el in robot) {
-    let count = 0;
-
-    for (const secEl in robot) {
-      if (robot[el] === robot[secEl]) {
-        count++;
-      }
-    }
-
-    if (count > 1) {
+    if (Object.keys(inversedRobot).includes(robot[el])) {
       return null;
     }
+    inversedRobot[robot[el]] = el;
   }
 
-  for (const el in robot) {
-    invRobot[robot[el]] = el;
-  }
-
-  return invRobot;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
