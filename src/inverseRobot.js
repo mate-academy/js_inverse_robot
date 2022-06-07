@@ -29,11 +29,6 @@ function inverseRobot(robot) {
   const arrayKey = Object.values(robot);
   const result = {};
 
-  // for (let i = 0; i < value.length; i++) {
-  //   if (result.hasOwnProperty(key[i])) {
-  //     return null;
-  //   }
-
   for (const char in arrayValue) {
     if (result.hasOwnProperty(arrayKey[char])) {
       return null;
