@@ -31,6 +31,7 @@ function inverseRobot(robot) {
     if (newObject.hasOwnProperty(robot[keys])) {
       return null;
     }
+
     newObject[robot[keys]] = keys;
   }
 
