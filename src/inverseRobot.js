@@ -28,11 +28,11 @@ function inverseRobot(robot) {
   const arrayCheck = [];
 
   for (const prop in robot) {
-    if (!arrayCheck.includes(robot[prop])) {
-      arrayCheck.push(robot[prop]);
-    } else {
+    if (arrayCheck.includes(robot[prop])) {
       return null;
     }
+
+    arrayCheck.push(robot[prop]);
 
     newObj[robot[prop]] = prop;
   }
