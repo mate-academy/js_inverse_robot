@@ -33,9 +33,9 @@ function inverseRobot(robot) {
 
   if (Object.values(robot).length === Object.values(robotReverse).length) {
     return robotReverse;
-  } else {
-    return null;
   }
+
+  return null;
 }
 
 module.exports = inverseRobot;
