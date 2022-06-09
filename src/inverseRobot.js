@@ -32,9 +32,9 @@ function inverseRobot(robot) {
 
   if (Object.values(robot).length === Object.values(reversedRobot).length) {
     return reversedRobot;
-  } else {
-    return null;
   }
+
+  return null;
 }
 
 module.exports = inverseRobot;
