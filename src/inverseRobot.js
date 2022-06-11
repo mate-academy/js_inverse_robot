@@ -22,17 +22,20 @@
 
 function inverseRobot(robot) {
   const inverseObject = {};
-  const values = Object.values(robot);
+  // const values = Object.values(robot);
 
-  for (let i = 0; i < values.length; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[i] === values[j]) {
-        return null;
-      }
-    }
-  }
+  // for (let i = 0; i < values.length; i++) {
+  //   for (let j = i + 1; j < values.length; j++) {
+  //     if (values[i] === values[j]) {
+  //       return null;
+  //     }
+  //   }
+  // }
 
   for (const key in robot) {
+    if (inverseObject[robot[key]]) {
+      return null;
+    }
     inverseObject[robot[key]] = key;
   }
 
