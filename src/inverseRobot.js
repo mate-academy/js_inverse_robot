@@ -30,11 +30,11 @@ function inverseRobot(robot) {
   const object = {};
 
   for (const [key, value] of Object.entries(robot)) {
-    if (object[`${value}`]) {
+    if (object[value]) {
       return null;
     }
 
-    Object.assign(object, { [`${value}`]: `${key}` });
+    Object.assign(object, { [value]: key });
   }
 
   return object;
