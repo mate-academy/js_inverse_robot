@@ -29,16 +29,11 @@ function inverseRobot(robot) {
   const arr = [];
 
   for (const k of Object.keys(robot)) {
-    revers[robot[k]] = k;
-    arr.push(robot[k]);
-  }
-
-  for (let i = 0; i < arr.length; i++) {
-    for (let k = i + 1; k < arr.length; k++) {
-      if (arr[i] === arr[k]) {
-        return null;
-      }
+    if (arr.includes(robot[k])) {
+      return null;
     }
+    arr.push(robot[k]);
+    revers[robot[k]] = k;
   }
 
   return revers;
