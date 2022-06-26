@@ -22,9 +22,20 @@
  * @param {object} robot
  *
  * @return {object}
- */
-function inverseRobot(robot) {
-  // write code here
+ */function inverseRobot(robot) {
+  const correctRobots = {};
+  const uniqueValuelength = Array.from(new Set(Object.values(robot)));
+  const ordinaryValuelength = Object.values(robot);
+
+  for (const key in robot) {
+    correctRobots[robot[key]] = key;
+  }
+
+  if (uniqueValuelength.length !== ordinaryValuelength.length) {
+    return null;
+  } else {
+    return correctRobots;
+  }
 }
 
 module.exports = inverseRobot;
