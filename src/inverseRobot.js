@@ -22,9 +22,22 @@
  * @param {object} robot
  *
  * @return {object}
+ *
  */
 function inverseRobot(robot) {
-  // write code here
+  const result = {};
+
+  for (const key in robot) {
+    const resultKey = robot[key];
+
+    if (resultKey in result) {
+      return null;
+    }
+
+    result[resultKey] = key;
+  }
+
+  return result;
 }
 
 module.exports = inverseRobot;
