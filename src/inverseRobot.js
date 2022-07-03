@@ -25,6 +25,21 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const values = Object.values(robot);
+
+  for (let i = 0; i < values.length; i++) {
+    const value = values[i];
+
+    if (values.indexOf(value) !== values.lastIndexOf(value)) {
+      return null;
+    }
+  }
+
+  const formattedObject = Object.fromEntries(
+    Object.entries(robot).map(prop => prop.reverse())
+  );
+
+  return formattedObject;
 }
 
 module.exports = inverseRobot;
