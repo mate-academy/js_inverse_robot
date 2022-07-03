@@ -27,16 +27,10 @@ function inverseRobot(robot) {
   const valuesArray = Object.values(robot);
   const isDuplicate = new Set(valuesArray).size !== valuesArray.length;
 
-  const robotReverse = {
-    ...robot,
-  };
+  const robotReverse = {};
 
-  for (const key in robotReverse) {
-    const currentValue = robotReverse[key];
-
-    robotReverse[currentValue] = currentValue;
-    robotReverse[currentValue] = key;
-    delete robotReverse[key];
+  for (const key in robot) {
+    robotReverse[robot[key]] = key;
   }
 
   return isDuplicate ? null : robotReverse;
