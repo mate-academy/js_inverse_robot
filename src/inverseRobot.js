@@ -24,25 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
-  const values = Object.values(robot);
-  const uniqueValues = unique(values);
-
-  if (values.length !== uniqueValues.length) {
-    return null;
-  }
-
-  const reversRobot = {};
+  const newRobot = {};
 
   for (const char in robot) {
-    reversRobot[robot[char]] = char;
+    if (robot[char] in newRobot) {
+      return null;
+    }
+
+    newRobot[robot[char]] = char;
   }
 
-  return reversRobot;
-}
-
-function unique(arr) {
-  return Array.from(new Set(arr));
+  return newRobot;
 }
 
 module.exports = inverseRobot;
