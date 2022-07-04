@@ -1,5 +1,5 @@
 'use strict';
-
+/* eslint-disable */
 /**
  * Situs inversus
  * Transposition of internal organs is a variant of internal anatomy, when
@@ -24,7 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  for (const key in robot) {
+    if (newRobot[robot[key]]) {
+      return null;
+    }
+
+    newRobot[robot[key]] = key;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
