@@ -33,12 +33,8 @@ function inverseRobot(robot) {
     return null;
   }
 
-  if (!Object.keys(robot).length) {
-    return newObj;
-  }
-
   for (const key in robot) {
-    newObj[`${robot[key]}`] = `${key}`;
+    newObj[robot[key]] = key;
   }
 
   return newObj;
