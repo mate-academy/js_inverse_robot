@@ -24,16 +24,13 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const valuesArray = Object.values(robot);
-  const isDuplicate = new Set(valuesArray).size !== valuesArray.length;
-
-  if (isDuplicate) {
-    return null;
-  }
-
   const robotReverse = {};
 
   for (const key in robot) {
+    if (robotReverse[robot[key]]) {
+      return null;
+    }
+
     robotReverse[robot[key]] = key;
   }
 
