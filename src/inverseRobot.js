@@ -26,13 +26,9 @@
 function inverseRobot(robot) {
   // write code here
   const values = Object.values(robot);
-  const keys = Object.keys(robot);
   const uniqueValues = unique(values);
-  const uniqueKeys = unique(keys);
 
   if (values.length !== uniqueValues.length) {
-    return null;
-  } else if (keys.length !== uniqueKeys.length) {
     return null;
   }
 
