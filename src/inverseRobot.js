@@ -32,9 +32,9 @@ function inverseRobot(robot) {
       trueRobot = null;
 
       return trueRobot;
-    } else {
-      trueRobot[robot[key]] = key;
     }
+
+    trueRobot[robot[key]] = key;
   }
 
   return trueRobot;
