@@ -25,6 +25,19 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const newObj = {};
+
+  for (const key in robot) {
+    const newKeys = robot[key];
+    const newValues = key;
+
+    if (Object.keys(newObj).includes(newKeys)) {
+      return null;
+    }
+    newObj[newKeys] = newValues;
+  }
+
+  return newObj;
 }
 
 module.exports = inverseRobot;
