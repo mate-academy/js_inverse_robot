@@ -25,16 +25,14 @@
  */
 function inverseRobot(robot) {
   const result = {};
-  const arrValues = [];
 
   for (const key in robot) {
     const currValue = robot[key];
 
-    if (arrValues.includes(currValue)) {
+    if (result.hasOwnProperty(currValue)) {
       return null;
     } else {
       result[currValue] = key;
-      arrValues.push(currValue);
     };
   }
 
