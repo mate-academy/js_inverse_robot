@@ -25,6 +25,29 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const objValues = [];
+  const inversedRobot = {};
+
+  // collect the values from object for future checks
+  for (const key in robot) {
+    objValues.push(robot[key]);
+  }
+
+  // checking the values from objects for dublicates
+  for (const val of objValues) {
+    const dublicateCount = objValues.filter(el => el === val);
+
+    if (dublicateCount.length > 1) {
+      return null;
+    }
+  }
+
+  // create a new object with inversed keys\values
+  for (const key in robot) {
+    inversedRobot[robot[key]] = key;
+  }
+
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
