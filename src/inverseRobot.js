@@ -24,7 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const params = Object.values(robot);
+  const unique = Array.from(new Set(params));
+
+  if (params.length === unique.length) {
+    const swapped = Object.entries(robot).map(
+      ([key, value]) => ({ [value]: key })
+    );
+
+    return Object.assign({}, ...swapped);
+  } else {
+    return null;
+  }
 }
 
 module.exports = inverseRobot;
