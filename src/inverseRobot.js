@@ -24,31 +24,21 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // get array of robot values
-  const robotValues = Object.values(robot);
   // create new emty object for result
   const correctRobot = {};
 
-  // searching the same values in values array, if founded then return null
-  for (let i = 0; i < robotValues.length; i++) {
-    const curValue = robotValues[i];
-
-    for (let j = i + 1; j < robotValues.length; j++) {
-      if (curValue === robotValues[j]) {
-        return null;
-      }
-    }
-  }
-
-  // checking for the no prototype properties and then add correct key values
+  // create a cycle for each property in robot
+  // and check if we've already add to correctRobot this property
+  // then return null else add correct key values
   // for new correctRobot Object and then return it
   for (const prop in robot) {
-    if (robot.hasOwnProperty(prop)) {
+    if (!correctRobot.hasOwnProperty(robot[prop])) {
       correctRobot[robot[prop]] = prop;
+    } else {
+      return null;
     }
   }
 
-  // console.log(correctRobot);
   return correctRobot;
 }
 
