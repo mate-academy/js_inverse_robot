@@ -24,7 +24,22 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  // create new emty object for result
+  const correctRobot = {};
+
+  // create a cycle for each property in robot
+  // and check if we've already add to correctRobot this property
+  // then return null else add correct key values
+  // for new correctRobot Object and then return it
+  for (const prop in robot) {
+    if (!correctRobot.hasOwnProperty(robot[prop])) {
+      correctRobot[robot[prop]] = prop;
+    } else {
+      return null;
+    }
+  }
+
+  return correctRobot;
 }
 
 module.exports = inverseRobot;
