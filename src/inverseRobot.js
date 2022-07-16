@@ -25,15 +25,14 @@
  */
 function inverseRobot(robot) {
   // write code here
-  let inverseNewRobot = {};
+  const inverseNewRobot = {};
 
   for (const key in robot) {
     const val = robot[key];
     const newKey = val;
 
-    if ((newKey in inverseNewRobot) === true) {
-      inverseNewRobot = null;
-      break;
+    if (newKey in inverseNewRobot) {
+      return null;
     }
     inverseNewRobot[newKey] = key.toString();
   }
