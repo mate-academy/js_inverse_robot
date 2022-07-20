@@ -27,10 +27,10 @@ function inverseRobot(robot) {
   const reverseRobot = {};
 
   for (const key in robot) {
-    if (!reverseRobot[robot[key]]) {
-      reverseRobot[robot[key]] = key;
-    } else {
+    if (reverseRobot[robot[key]]) {
       return null;
+    } else {
+      reverseRobot[robot[key]] = key;
     }
   }
 
