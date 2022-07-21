@@ -29,9 +29,9 @@ function inverseRobot(robot) {
   for (const key in robot) {
     if (reverseRobot[robot[key]]) {
       return null;
-    } else {
-      reverseRobot[robot[key]] = key;
     }
+
+    reverseRobot[robot[key]] = key;
   }
 
   return reverseRobot;
