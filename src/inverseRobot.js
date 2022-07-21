@@ -24,6 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
+  const newKolli = {};
+
+  for (const key in robot) {
+    if (!newKolli[robot[key]]) {
+      newKolli[robot[key]] = key;
+    } else {
+      return null;
+    }
+  }
+
+  return newKolli;
   // write code here
 }
 
