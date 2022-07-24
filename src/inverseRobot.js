@@ -25,6 +25,20 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const normalVersion = {};
+
+  const uniqueRobValLength = Array.from(new Set(Object.values(robot)));
+  const ordinaryRobVallength = Object.values(robot);
+
+  for (const key in robot) {
+    normalVersion[robot[key]] = key;
+  }
+
+  if (uniqueRobValLength.length !== ordinaryRobVallength.length) {
+    return null;
+  } else {
+    return normalVersion;
+  }
 }
 
 module.exports = inverseRobot;
