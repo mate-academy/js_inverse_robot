@@ -27,14 +27,13 @@ function inverseRobot(robot) {
   const result = {};
 
   for (const key in robot) {
-    if (!result[robot[key]]) {
-      result[robot[key]] = key;
-    } else {
+    if (Object.prototype.hasOwnProperty.call(result, robot[key])) {
       return null;
     }
+
+    result[robot[key]] = key;
   }
 
   return result;
 }
-
 module.exports = inverseRobot;
