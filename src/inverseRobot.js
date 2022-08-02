@@ -26,19 +26,12 @@
 
 function inverseRobot(robot) {
   let newRobot = {};
-  const checkValues = [];
 
   for (const key in robot) {
-    if (checkValues.includes(robot[key])) {
-      newRobot = null;
-    } else {
-      checkValues.push(robot[key]);
-    }
-  }
-
-  if (newRobot) {
-    for (const key in robot) {
+    if (newRobot && !newRobot.hasOwnProperty(robot[key])) {
       newRobot[robot[key]] = key;
+    } else {
+      newRobot = null;
     }
   }
 
