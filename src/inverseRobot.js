@@ -29,13 +29,11 @@ function inverseRobot(robot) {
 
   check.sort();
 
-  for (let i = 0; i < check.length; i++) {
-    if (check[i] === check[i + 1]) {
+  for (const key in robot) {
+    if (robot[key] in result) {
       return null;
     }
-  }
 
-  for (const key in robot) {
     result[robot[key]] = key;
   }
 
