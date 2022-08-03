@@ -14,9 +14,11 @@
  * Example:
  *
  * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
+ * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
+ *
  * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
  * inverseRobot(robert) === null
- * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
+ *
  *
  *
  * @param {object} robot
@@ -24,7 +26,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  let robotNew = {};
+
+  for (const key in robot) {
+    robotNew[robot[key]] = key;
+  }
+
+  const robotValue = Object.values(robot);
+
+  for (let i = 0; i <= robotValue.length; i++) {
+    for (let j = i + 1; j <= robotValue.length - 1; j++) {
+      if (robotValue[i] === robotValue[j]) {
+        robotNew = null;
+      }
+    }
+  }
+
+  return robotNew;
 }
 
 module.exports = inverseRobot;
