@@ -25,12 +25,11 @@
  */
 function inverseRobot(robot) {
   const arr = [];
-
   const values = Object.values(robot);
 
   for (let i = 0; i < values.length; i++) {
     for (let k = 0; k < i; k++) {
-      if ((values[i] === values[k]) === true) {
+      if (values[i] === values[k]) {
         return null;
       }
     }
