@@ -25,9 +25,6 @@
  */
 function inverseRobot(robot) {
   const result = {};
-  const check = Object.values(robot);
-
-  check.sort();
 
   for (const key in robot) {
     if (robot[key] in result) {
