@@ -27,14 +27,13 @@ function inverseRobot(robot) {
   const fixedRobot = {};
 
   for (const key in robot) {
+    if (robot[key] in fixedRobot) {
+      return null;
+    }
+
     fixedRobot[robot[key]] = key;
   }
 
-  if (Object.keys(fixedRobot).length < Object.values(robot).length) {
-    return null;
-  } else {
-    return fixedRobot;
-  }
+  return fixedRobot;
 }
-
 module.exports = inverseRobot;
