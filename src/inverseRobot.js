@@ -24,7 +24,7 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const result = {};
+  const obj = {};
   const keys = Object.keys(robot);
 
   for (let i = 0; i <= keys.length; i++) {
@@ -38,10 +38,10 @@ function inverseRobot(robot) {
   const arr = Object.entries(robot).reverse();
 
   arr.forEach(([key, values]) => {
-    result[values] = key;
+    obj[values] = key;
   });
 
-  return result;
+  return obj;
 }
 
 module.exports = inverseRobot;
