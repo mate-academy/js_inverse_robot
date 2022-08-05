@@ -25,12 +25,23 @@
  */
 function inverseRobot(robot) {
   const copy = {};
-
+  /*
   for (const [key, value] of Object.entries(robot)) {
     copy[value] = key;
   }
 
   return Object.keys(robot).length === Object.keys(copy).length ? copy : null;
+*/
+
+  for (const key in robot) {
+    if (copy[robot[key]]) {
+      return null;
+    }
+
+    copy[robot[key]] = key;
+  }
+
+  return copy;
 }
 
 module.exports = inverseRobot;
