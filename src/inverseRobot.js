@@ -21,10 +21,20 @@
  *
  * @param {object} robot
  *
+ *
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const mirror = {};
+
+  for (const key in robot) {
+    if (mirror.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    mirror[robot[key]] = key;
+  }
+
+  return mirror;
 }
 
 module.exports = inverseRobot;
