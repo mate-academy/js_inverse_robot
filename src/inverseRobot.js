@@ -51,10 +51,30 @@ function inverseRobot(robot) {
   // проблема в том что ключи могут быть в разных местах а не подряд
   // вот val[i] === val[i + 1]
   // не срабатывает
-  // const val = Object.values(robot);
+  const val = Object.values(robot);
   // console.log(val);
   // const keys = Object.keys(robot);
   // console.log(keys);
+
+  let count = 0;
+  // for (let i = 0; i < val.length; i++) {
+  //   if (val.includes(val[i])) {
+  //     // return null;
+  //     count++
+  //     console.log(count);
+  //   }
+  // }
+
+  for (let i = 0; i < val.length; i++) {
+    if (val.indexOf(val[i]) !== i) {
+      count++;
+      // console.log(count);
+    }
+  }
+
+  if (count >= 1) {
+    return null;
+  }
 
   // for (let i = 0; i < val.length; i++) {
   //   if (val[i] === val[i + 1]) {
