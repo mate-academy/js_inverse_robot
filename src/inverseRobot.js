@@ -39,5 +39,3 @@ function inverseRobot(robot) {
 }
 
 module.exports = inverseRobot;
-
-//  if (!inversedPropertise[robot[key]]) {
