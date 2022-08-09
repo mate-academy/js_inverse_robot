@@ -25,26 +25,17 @@
  */
 function inverseRobot(robot) {
   // write code here
-  const array = [];
-  const newObj = {};
+  const mirrorKeys = {};
 
   for (const key in robot) {
-    array.push(robot[key]);
-  }
-
-  const sortedArray = array.sort();
-
-  for (let i = 0; i < sortedArray.length - 1; i++) {
-    if (sortedArray[i] === sortedArray[i + 1]) {
+    if (mirrorKeys.hasOwnProperty(robot[key])) {
       return null;
     }
+
+    mirrorKeys[robot[key]] = key;
   }
 
-  for (const key in robot) {
-    newObj[robot[key]] = key;
-  }
-
-  return newObj;
+  return mirrorKeys;
 }
 
 module.exports = inverseRobot;
