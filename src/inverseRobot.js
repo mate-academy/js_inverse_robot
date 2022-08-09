@@ -24,10 +24,10 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const res = { };
+  const inverse = { };
 
   for (const key in robot) {
-    res[robot[key]] = key;
+    inverse[robot[key]] = key;
   }
 
   const objKeysArr = Object.values(robot).sort();
@@ -38,8 +38,7 @@ function inverseRobot(robot) {
     }
   };
 
-  return res;
+  return inverse;
 }
 
 module.exports = inverseRobot;
-
