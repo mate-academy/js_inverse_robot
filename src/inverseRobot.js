@@ -27,41 +27,13 @@ function inverseRobot(robot) {
   const inverse = {};
 
   for (const key in robot) {
-    if (robot[key] in inverse) {
+    if (inverse.hasOwnProperty(robot[key])) {
       return null;
     }
     inverse[robot[key]] = key;
   }
 
-  // const objKeysArr = Object.values(robot).sort();
-  //
-  // for (let i = 0; i < objKeysArr.length; i++) {
-  //   if (objKeysArr[i] === objKeysArr[i + 1]) {
-  //     return null;
-  //   }
-  // };
-
   return inverse;
 }
 
 module.exports = inverseRobot;
-
-// function inverseRobot(robot) {
-//   const inverse = {};
-//
-//   for (const key in robot) {
-//     inverse[robot[key]] = key;
-//   }
-//
-//   const objKeysArr = Object.values(robot).sort();
-//
-//   for (let i = 0; i < objKeysArr.length; i++) {
-//     if (objKeysArr[i] === objKeysArr[i + 1]) {
-//       return null;
-//     }
-//   };
-//
-//   return inverse;
-// }
-//
-// module.exports = inverseRobot;
