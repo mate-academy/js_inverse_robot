@@ -28,14 +28,14 @@ function inverseRobot(robot) {
   const robotData = Object.entries(robot);
 
   for (const data of robotData) {
-    const key = data[1];
-    const velue = data[0];
+    const repairedKey = data[1];
+    const repairedVelue = data[0];
 
-    if (repairedRobot.hasOwnProperty(key)) {
+    if (repairedRobot.hasOwnProperty(repairedKey)) {
       return null;
     }
 
-    repairedRobot[key] = velue;
+    repairedRobot[repairedKey] = repairedVelue;
   }
 
   return repairedRobot;
