@@ -24,7 +24,19 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const newRobot = {};
+
+  for (const [key, value] of Object.entries(robot)) {
+    if (newRobot[value] === undefined) {
+      newRobot[value] = key;
+    } else {
+      return null;
+    }
+  }
+  // eslint-disable-next-line no-console
+  console.log(newRobot);
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
