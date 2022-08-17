@@ -24,7 +24,23 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const median = Object.entries(robot);
+  const ans = {};
+  const defects = [];
+
+  for (const i of Object.values(robot)) {
+    if (defects.indexOf(i) === -1) {
+      defects.push(i);
+    } else {
+      return null;
+    }
+  }
+
+  for (let i = 0; i < median.length; i++) {
+    ans[median[i][1]] = median[i][0];
+  };
+
+  return ans;
 }
 
 module.exports = inverseRobot;
