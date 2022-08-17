@@ -30,8 +30,8 @@ function inverseRobot(robot) {
   for (let i = 0; i < values.length; i++) {
     const sli = values.slice(i + 1);
 
-    for (let a = 0; a < sli.length; a++) {
-      if (values[i] === sli[a]) {
+    for (const keys in sli) {
+      if (values[i] === sli[keys]) {
         return null;
       }
     }
