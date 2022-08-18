@@ -25,17 +25,24 @@
  */
 function inverseRobot(robot) {
   const result = {};
-  const masRobot = Object.values(robot);
 
-  for (const keyMR of masRobot) {
-    for (const key in robot) {
-      if (keyMR === robot[key]) {
-        if (result[robot[key]]) {
-          return null;
-        }
-        result[robot[key]] = key;
-      }
+  // const masRobot = Object.values(robot);
+
+  // for (const keyMR in robot) {
+  //   for (const key in robot) {
+  //     if (keyMR === robot[key]) {
+  //       if (result[robot[key]]) {
+  //         return null;
+  //       }
+  //       result[robot[key]] = key;
+  //     }
+  //   }
+  // }
+  for (const key in robot) {
+    if (result.hasOwnProperty(robot[key])) {
+      return null;
     }
+    result[robot[key]] = key;
   }
 
   return result;
