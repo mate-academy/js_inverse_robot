@@ -24,26 +24,19 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
-  const values = Object.values(robot);
+  const obj = {};
 
-  for (let i = 0; i < values.length; i++) {
-    const sli = values.slice(i + 1);
+  for (const key in robot) {
+    const newKey = robot[key];
+    const newValue = key;
 
-    for (const keys in sli) {
-      if (values[i] === sli[keys]) {
-        return null;
-      }
+    if (obj.hasOwnProperty(newKey)) {
+      return null;
     }
+
+    obj[newKey] = newValue;
   }
 
-  const swapped = Object.entries(robot).map(
-    ([key, value]) => [value, key]
-  );
-
-  const ob = Object.fromEntries(swapped);
-
-  return ob;
+  return obj;
 }
-
 module.exports = inverseRobot;
