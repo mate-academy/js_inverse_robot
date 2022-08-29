@@ -25,17 +25,13 @@
  */
 function inverseRobot(robot) {
   const result = {};
-  const arr = Object.entries(robot);
-  const values = Object.values(robot).sort();
 
-  for (let i = 0; i < values.length; i++) {
-    if (values[i] === values[i + 1]) {
+  for (const key in robot) {
+    if (robot[key] in result) {
       return null;
     }
-  }
 
-  for (const [key, value] of arr) {
-    result[value] = key;
+    result[robot[key]] = key;
   }
 
   return result;
