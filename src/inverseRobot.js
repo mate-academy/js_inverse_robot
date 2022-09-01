@@ -29,10 +29,8 @@ function inverseRobot(robot) {
   const val = Object.values(robot);
 
   for (let i = 0; i < val.length; i++) {
-    for (let j = i + 1; j < val.length; j++) {
-      if (val[j] === val[i]) {
-        return null;
-      }
+    if (val.indexOf(val[i]) !== val.lastIndexOf(val[i])) {
+      return null;
     }
   }
 
