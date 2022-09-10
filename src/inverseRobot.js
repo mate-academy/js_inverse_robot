@@ -27,14 +27,12 @@ function inverseRobot(robot) {
   // write code here
   const newRobot = {};
 
-  const keys = Object.keys(robot);
+  const keys = Object.values(robot);
 
-  for (let i = 0; i < keys.length; i++) {
-    for (let j = i + 1; j < keys.length; j++) {
-      if (robot[keys[i]] === robot[keys[j]]) {
-        return null;
-      }
-    }
+  const newKeys = [...new Set(keys)];
+
+  if (newKeys.length !== keys.length) {
+    return null;
   }
 
   Object.entries(robot).forEach(entry => {
