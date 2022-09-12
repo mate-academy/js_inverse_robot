@@ -27,27 +27,14 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
-  let counter = 0;
-
-  for (const key in robot) {
-    counter = 0;
-
-    for (const newkey in robot) {
-      if (robot[key] === robot[newkey]) {
-        counter += 1;
-      }
-
-      if (counter > 1) {
-        return null;
-      }
-    }
-  }
-
   const result = {};
 
   for (const key in robot) {
     result[robot[key]] = key;
+  }
+
+  if (Object.keys(robot).length !== Object.keys(result).length) {
+    return null;
   }
 
   return result;
