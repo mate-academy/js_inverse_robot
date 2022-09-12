@@ -2,7 +2,6 @@
 
 /**
  * Situs inversus
- * testttt
  * Transposition of internal organs is a variant of internal anatomy, when
  * the organs are located in a mirror image.
  * Something similar happened to our robot Kolli. His keys became values,
@@ -25,7 +24,18 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const correctRobot = {};
+  const values = Object.keys(robot);
+  const keys = Object.values(robot);
+
+  for (let i = 0; i < values.length; i++) {
+    if (correctRobot[keys[i]]) {
+      return null;
+    }
+    correctRobot[keys[i]] = values[i];
+  }
+
+  return correctRobot;
 }
 
 module.exports = inverseRobot;
