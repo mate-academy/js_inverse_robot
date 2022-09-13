@@ -28,10 +28,6 @@ function inverseRobot(robot) {
   const values = Object.values(robot);
 
   for (let i = 0; i < keys.length; i++) {
-    if (keys.slice(i + 1).includes(keys[i])) {
-      return null;
-    }
-
     if (values.slice(i + 1).includes(values[i])) {
       return null;
     }
