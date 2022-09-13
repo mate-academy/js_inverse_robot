@@ -35,12 +35,16 @@ function inverseRobot(robot) {
     return null;
   }
 
-  Object.entries(robot).forEach(entry => {
-    const key = entry[1];
-    const value = entry[0];
+  for (const k in robot) {
+    newRobot[robot[k]] = k;
+  }
 
-    newRobot[key] = value;
-  });
+  // Object.entries(robot).forEach(entry => {
+  //   const key = entry[1];
+  //   const value = entry[0];
+
+  //   newRobot[key] = value;
+  // });
 
   return newRobot;
 }
