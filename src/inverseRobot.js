@@ -24,7 +24,28 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const val = Object.values(robot);
+
+  for (let counter = 0; counter <= val.length; counter++) {
+    let c = 1;
+
+    for (; c < val.length; c++) {
+      if (val[counter] === val[c]) {
+        // eslint-disable-next-line no-param-reassign
+        robot = null;
+
+        return robot;
+      }
+    }
+
+    const obj = {};
+
+    for (const property in robot) {
+      obj[robot[`${property}`]] = property;
+    }
+
+    return obj;
+  }
 }
 
 module.exports = inverseRobot;
