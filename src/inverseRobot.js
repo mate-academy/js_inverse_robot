@@ -37,13 +37,13 @@ function inverseRobot(robot) {
     }
   }
 
-  const result = {};
+  const inverse = {};
 
   for (let i = 0; i < values.length; i++) {
-    result[values[i]] = keys[i];
+    inverse[values[i]] = keys[i];
   }
 
-  return result;
+  return inverse;
 }
 
 module.exports = inverseRobot;
