@@ -27,11 +27,13 @@ function inverseRobot(robot) {
   const repair = {};
 
   for (const key in robot) {
-    if (!repair[robot[key]]) {
-      repair[robot[key]] = key;
-    } else {
+    const value = robot[key];
+
+    if (repair[value]) {
       return null;
     }
+
+    repair[value] = key;
   }
 
   return repair;
