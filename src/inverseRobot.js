@@ -29,11 +29,10 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const val = robot[key];
 
-    if (!reverseBot.hasOwnProperty(val)) {
-      reverseBot[val] = key;
-    } else {
+    if (reverseBot.hasOwnProperty(val)) {
       return null;
     }
+    reverseBot[val] = key;
   }
 
   return reverseBot;
