@@ -26,15 +26,13 @@
 function inverseRobot(robot) {
   const inverseObj = {};
 
-  for (const objValue of Object.values(robot)) {
-    if (inverseObj[objValue]) {
-      return null;
-    }
+  for (const key in robot) {
+    const value = robot[key];
 
-    for (const objKey of Object.keys(robot)) {
-      if (robot[objKey] === objValue) {
-        inverseObj[objValue] = objKey;
-      }
+    if (inverseObj[value]) {
+      return null;
+    } else {
+      inverseObj[value] = key;
     }
   }
 
