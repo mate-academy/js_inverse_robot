@@ -25,24 +25,16 @@
  */
 function inverseRobot(robot) {
   const newObj = {};
-  const keys = Object.keys(robot);
-  const values = Object.values(robot);
 
-  for (let i = 0; i < keys.length; i++) {
-    newObj[`${values[i]}`] = keys[i];
+  for (const [key, value] of Object.entries(robot)) {
+    if (newObj.hasOwnProperty(value)) {
+      return null;
+    }
+
+    newObj[`${value}`] = key;
   }
 
-  const ordered = {};
-
-  Object.keys(newObj).sort().forEach(function(key) {
-    ordered[key] = newObj[key];
-  });
-
-  if (Object.keys(ordered).length !== keys.length) {
-    return null;
-  }
-
-  return ordered;
+  return newObj;
 }
 
 module.exports = inverseRobot;
