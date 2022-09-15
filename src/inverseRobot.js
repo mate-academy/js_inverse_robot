@@ -28,14 +28,8 @@ function inverseRobot(robot) {
   const newRobot = {};
 
   for (const key1 in robot) {
-    for (const key2 in robot) {
-      if (key1 === key2) {
-        continue;
-      }
-
-      if (robot[key1] === robot[key2]) {
-        return null;
-      }
+    if (newRobot.hasOwnProperty(robot[key1])) {
+      return null;
     }
 
     newRobot[robot[key1]] = key1;
