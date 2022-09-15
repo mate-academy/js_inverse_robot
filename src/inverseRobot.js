@@ -35,16 +35,9 @@ function inverseRobot(robot) {
     return null;
   }
 
-  for (const k in robot) {
-    newRobot[robot[k]] = k;
+  for (const key in robot) {
+    newRobot[robot[key]] = key;
   }
-
-  // Object.entries(robot).forEach(entry => {
-  //   const key = entry[1];
-  //   const value = entry[0];
-
-  //   newRobot[key] = value;
-  // });
 
   return newRobot;
 }
