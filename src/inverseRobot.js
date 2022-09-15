@@ -27,11 +27,13 @@ function inverseRobot(robot) {
   const inversedRobot = {};
 
   for (const property in robot) {
-    if (inversedRobot[robot[property]]) {
+    const robotProp = robot[property];
+
+    if (inversedRobot[robotProp]) {
       return null;
     }
 
-    inversedRobot[robot[property]] = property;
+    inversedRobot[robotProp] = property;
   }
 
   return inversedRobot;
