@@ -29,9 +29,9 @@ function inverseRobot(robot) {
   for (const prop in robot) {
     if (newRobot.hasOwnProperty(robot[prop])) {
       return null;
-    } else {
-      newRobot[robot[prop]] = prop;
     }
+
+    newRobot[robot[prop]] = prop;
   }
 
   return newRobot;
