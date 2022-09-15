@@ -23,28 +23,25 @@
  *
  * @return {object}
  */
-function inverseRobot(robot) {
+function inverseRobot(robot = {}) {
+  const inputRobot = { ...robot };
   const reverseRobot = {};
   const organs = [];
 
-  if (arguments.length === 0) {
-    return {};
-  }
-
-  for (const elem of Object.entries(robot)) {
+  for (const elem of Object.entries(inputRobot)) {
     organs.push(elem[1]);
     reverseRobot[elem[1]] = elem[0];
   }
 
   for (const item of organs) {
-    if (organs.filter(a => a === item).length > 1) {
+    if (organs.filter(organ => organ === item).length > 1) {
       return null;
-    } else {
-      return reverseRobot;
     }
+
+    return reverseRobot;
   }
 
-  return {};
+  return inputRobot;
 }
 
 module.exports = inverseRobot;
