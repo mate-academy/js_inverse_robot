@@ -25,6 +25,23 @@
  */
 function inverseRobot(robot) {
   // write code here
+  const newRobot = {};
+
+  for (const key1 in robot) {
+    for (const key2 in robot) {
+      if (key1 === key2) {
+        continue;
+      }
+
+      if (robot[key1] === robot[key2]) {
+        return null;
+      }
+    }
+
+    newRobot[robot[key1]] = key1;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
