@@ -28,9 +28,9 @@ function inverseRobot(robot = {}) {
   const reverseRobot = {};
   const organs = [];
 
-  for (const property of Object.entries(inputRobot)) {
-    organs.push(property[1]);
-    reverseRobot[property[1]] = property[0];
+  for (const [key, value] of Object.entries(inputRobot)) {
+    organs.push(value);
+    reverseRobot[value] = key;
   }
 
   for (const item of organs) {
