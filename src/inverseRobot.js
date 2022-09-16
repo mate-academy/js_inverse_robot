@@ -23,8 +23,25 @@
  *
  * @return {object}
  */
-function inverseRobot(robot) {
-  // write code here
+function inverseRobot(robot = {}) {
+  const inputRobot = { ...robot };
+  const reverseRobot = {};
+  const organs = [];
+
+  for (const [key, value] of Object.entries(inputRobot)) {
+    organs.push(value);
+    reverseRobot[value] = key;
+  }
+
+  for (const item of organs) {
+    if (organs.filter(organ => organ === item).length > 1) {
+      return null;
+    }
+
+    return reverseRobot;
+  }
+
+  return inputRobot;
 }
 
 module.exports = inverseRobot;
