@@ -27,17 +27,21 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const result = {};
+  const newRobot = {};
 
   for (const key in robot) {
-    result[robot[key]] = key;
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
+    newRobot[robot[key]] = key;
   }
 
-  if (Object.keys(robot).length !== Object.keys(result).length) {
-    return null;
-  }
+  // if (Object.keys(robot).length !== Object.keys(newRobot).length) {
+  //   return null;
+  // }
 
-  return result;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
