@@ -23,23 +23,17 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
   const newRobot = {};
-  const count = {};
-
-  Object.values(robot).forEach(value => {
-    count[value] = (count[value] || 0) + 1;
-  });
-
-  for (const key in count) {
-    if (count[key] > 1) {
-      return null;
-    }
-  }
 
   for (const key in robot) {
     const x = key;
     const y = robot[key];
+
+    if (newRobot.hasOwnProperty(y)) {
+      return null;
+    }
 
     newRobot[y] = x;
   }
