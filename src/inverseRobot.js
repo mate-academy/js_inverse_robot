@@ -23,8 +23,24 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  let swappedObject = [];
+  const mySet = new Set();
+  const arrRobot = Object.values(robot);
+
+  for (const key of arrRobot) {
+    mySet.add(key);
+  }
+
+  if (arrRobot.length === mySet.size) {
+    swappedObject = Object.fromEntries(
+      Object.entries(robot).map(v => v.reverse()));
+  } else {
+    return null;
+  }
+
+  return swappedObject;
 }
 
 module.exports = inverseRobot;
