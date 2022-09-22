@@ -23,8 +23,22 @@
  *
  * @return {object}
  */
+
 function inverseRobot(robot) {
-  // write code here
+  const swappedObject = {};
+
+  const values = Object.values(robot);
+  const uniqueValues = new Set(values).size;
+
+  if (uniqueValues !== values.length) {
+    return null;
+  }
+
+  for (const key in robot) {
+    swappedObject[robot[key]] = key;
+  }
+
+  return swappedObject;
 }
 
 module.exports = inverseRobot;
