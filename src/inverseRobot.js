@@ -25,19 +25,17 @@
  */
 
 function inverseRobot(robot) {
-  let swappedObject = [];
-  const mySet = new Set();
-  const arrRobot = Object.values(robot);
+  const swappedObject = {};
 
-  for (const key of arrRobot) {
-    mySet.add(key);
+  const values = Object.values(robot);
+  const uniqueValues = new Set(values).size;
+
+  if (uniqueValues !== values.length) {
+    return null;
   }
 
-  if (arrRobot.length === mySet.size) {
-    swappedObject = Object.fromEntries(
-      Object.entries(robot).map(v => v.reverse()));
-  } else {
-    return null;
+  for (const key in robot) {
+    swappedObject[robot[key]] = key;
   }
 
   return swappedObject;
