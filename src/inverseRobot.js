@@ -1,5 +1,7 @@
 'use strict';
 
+// const { Linter } = require("eslint");
+
 /**
  * Situs inversus
  * Transposition of internal organs is a variant of internal anatomy, when
@@ -24,32 +26,19 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const res = Object.fromEntries(Object.entries(robot).map(([key, value]) =>
-    [value, key]));
-
-  if (Object.keys(res).length < Object.values(robot).length) {
-    return null;
-  }
-
-  const arrKeys = [];
+  const newObj = {};
 
   for (const key in robot) {
-    arrKeys.push(key);
+    const currentValue = robot[key];
+
+    if (!newObj.hasOwnProperty(currentValue)) {
+      newObj[currentValue] = key;
+    } else {
+      return null;
+    }
   }
 
-  const arrValues = [];
-
-  for (const key in robot) {
-    arrValues.push(robot[key]);
-  };
-
-  const newUser = {};
-
-  for (let i = 0; i < arrKeys.length; i++) {
-    newUser[arrValues[i]] = arrKeys[i];
-  }
-
-  return newUser;
+  return newObj;
 }
 
 module.exports = inverseRobot;
