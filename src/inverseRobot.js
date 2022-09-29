@@ -23,7 +23,7 @@
  *
  * @return {object}
  */
- function inverseRobot(robot) {
+function inverseRobot(robot) {
   const newRobot = {};
   const robotKeys = Object.values(robot);
   const robotValues = Object.keys(robot);
