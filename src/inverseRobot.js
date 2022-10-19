@@ -24,17 +24,17 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const arrKeys = Object.values(robot);
-  const arrValues = Object.keys(robot);
+  const robotKeys = Object.values(robot);
+  const robotValues = Object.keys(robot);
   const newRobot = {};
-  const double = [];
+  const errCheck = [];
 
-  for (let i = 0; i < arrKeys.length; i++) {
-    if (double.includes(arrKeys[i])) {
+  for (let i = 0; i < robotKeys.length; i++) {
+    if (errCheck.includes(robotKeys[i])) {
       return null;
     } else {
-      double.push(arrKeys[i]);
-      newRobot[arrKeys[i]] = arrValues[i];
+      errCheck.push(robotKeys[i]);
+      newRobot[robotKeys[i]] = robotValues[i];
     }
   }
 
