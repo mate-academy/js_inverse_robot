@@ -27,7 +27,7 @@ function inverseRobot(robot) {
   const repearRobot = {};
 
   for (const key in robot) {
-    if (repearRobot[robot[key]] === undefined) {
+    if (!repearRobot.hasOwnProperty([robot[key]])) {
       repearRobot[robot[key]] = key;
     } else {
       return null;
