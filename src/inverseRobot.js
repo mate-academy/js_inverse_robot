@@ -42,9 +42,9 @@ function inverseRobot(robot) {
 
   if (oldCounter === newCounter) {
     return newRobot;
-  } else {
-    return null;
   }
+
+  return null;
 }
 
 module.exports = inverseRobot;
