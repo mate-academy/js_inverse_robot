@@ -25,26 +25,16 @@
  */
 function inverseRobot(robot) {
   const newRobot = {};
-  let oldCounter = 0;
-  let newCounter = 0;
 
   for (const key in robot) {
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
     newRobot[robot[key]] = key;
   }
 
-  for (let i = 0; i < Object.keys(robot).length; i++) {
-    oldCounter++;
-  }
-
-  for (let i = 0; i < Object.keys(newRobot).length; i++) {
-    newCounter++;
-  }
-
-  if (oldCounter === newCounter) {
-    return newRobot;
-  }
-
-  return null;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
