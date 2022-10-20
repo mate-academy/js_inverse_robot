@@ -20,11 +20,28 @@
  *
  *
  * @param {object} robot
- *
+ * @param {object} checkObj
  * @return {object}
  */
 function inverseRobot(robot) {
-  // write code here
+  const temp = { ...robot };
+  const checkValues = Object.values(temp);
+
+  for (let i = 0; i < checkValues.length; i++) {
+    const element = checkValues[i];
+
+    if (checkValues.includes(element, i + 1)) {
+      return null;
+    }
+  };
+
+  const newRobot = {};
+
+  for (const i in robot) {
+    newRobot[robot[i]] = i;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
