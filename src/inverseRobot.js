@@ -19,22 +19,20 @@
  * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
  *
  *
- * @param {object} robot
- *
- * @return {object}
  */
 function inverseRobot(robot) {
-  const arr = Object.entries(robot);
-  const result = {};
+  const propertiesArray = Object.entries(robot);
+  const inversedRobot = {};
 
-  for (let i = 0; i < arr.length; i++) {
-    result[arr[i][1]] = arr[i][0];
+  for (const item in propertiesArray) {
+    inversedRobot[propertiesArray[item][1]] = propertiesArray[item][0];
   }
 
-  if (Object.keys(robot).length !== Object.keys(result).length) {
+  if (propertiesArray.length !== Object.keys(inversedRobot).length) {
     return null;
   }
 
-  return result;
+  return inversedRobot;
 }
+
 module.exports = inverseRobot;
