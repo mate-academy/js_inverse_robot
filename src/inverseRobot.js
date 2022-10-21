@@ -21,15 +21,14 @@
  *
  */
 function inverseRobot(robot) {
-  const propertiesArray = Object.entries(robot);
   const inversedRobot = {};
 
-  for (const item in propertiesArray) {
-    inversedRobot[propertiesArray[item][1]] = propertiesArray[item][0];
-  }
-
-  if (propertiesArray.length !== Object.keys(inversedRobot).length) {
-    return null;
+  for (const property in robot) {
+    if (!inversedRobot.hasOwnProperty([robot[property]])) {
+      inversedRobot[robot[property]] = property;
+    } else {
+      return null;
+    }
   }
 
   return inversedRobot;
