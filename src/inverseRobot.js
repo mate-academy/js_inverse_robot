@@ -7,7 +7,19 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const keyList = Object.values(robot);
+
+  if (new Set(keyList).size !== keyList.length) {
+    return null;
+  }
+
+  const swapRobot = {};
+
+  Object.keys(robot).forEach(key => {
+    swapRobot[robot[key]] = key;
+  });
+
+  return swapRobot;
 }
 
 module.exports = inverseRobot;
