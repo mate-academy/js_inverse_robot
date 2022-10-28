@@ -7,7 +7,17 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
-}
+  const rearranged = {};
+  const isUnique = Object.values(robot);
 
+  if ((new Set(isUnique)).size !== isUnique.length) {
+    return null;
+  }
+
+  for (const key in robot) {
+    rearranged[robot[key]] = key;
+  }
+
+  return rearranged;
+}
 module.exports = inverseRobot;
