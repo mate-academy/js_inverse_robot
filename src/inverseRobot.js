@@ -8,19 +8,22 @@
 
 function inverseRobot(robot) {
   const fixRobot = {};
-
-  const arrValues = Object.values(robot);
-  const arrKeys = Object.keys(robot);
+  let sizeRobot = 0;
 
   for (const key in robot) {
-    if (arrValues.filter(n => n === robot[key]).length > 1
-    || arrKeys.filter(n => n === key).length > 1) {
-      return null;
-    }
     fixRobot[robot[key]] = key;
+    sizeRobot++;
   }
 
-  return fixRobot;
+  let sizeFixRobot = 0;
+
+  for (const key in fixRobot) {
+    if (fixRobot.hasOwnProperty(key)) {
+      sizeFixRobot++;
+    }
+  }
+
+  return (sizeRobot !== sizeFixRobot) ? null : fixRobot;
 }
 
 module.exports = inverseRobot;
