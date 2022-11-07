@@ -24,7 +24,5 @@ function inverseRobot(robot) {
 }
 
 const  ape = {name: "asi", sure: "assni", last: "as" }
-console.log(inverseRobot(ape));
-
 
 module.exports = inverseRobot;
