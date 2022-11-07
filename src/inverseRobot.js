@@ -23,6 +23,4 @@ function inverseRobot(robot) {
   return ret;
 }
 
-const  ape = {name: "asi", sure: "assni", last: "as" }
-
 module.exports = inverseRobot;
