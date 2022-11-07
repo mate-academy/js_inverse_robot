@@ -7,7 +7,20 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const ret = {};
+  const array = Object.keys(robot);
+  
+  array.forEach(key => {
+    ret[robot[key]] = key;
+  });
+
+  const difference = Object.keys(ret);
+
+  if (array.length !== difference.length) {
+    return null;
+  }
+
+  return ret;
 }
 
 module.exports = inverseRobot;
