@@ -8,16 +8,8 @@
 
 function inverseRobot(robot) {
   const inversedRobot = {};
-  const arrKeys = [];
-  const arrValues = [];
-
-  for (const key in robot) {
-    arrKeys.push(key);
-  }
-
-  for (const key in robot) {
-    arrValues.push(robot[key]);
-  }
+  const arrKeys = Object.keys(robot);
+  const arrValues = Object.values(robot);
 
   for (let i = 0; i < arrValues.length; i++) {
     for (let j = i + 1; j < arrValues.length; j++) {
@@ -25,9 +17,7 @@ function inverseRobot(robot) {
         return null;
       }
     }
-  }
 
-  for (let i = 0; i < arrKeys.length; i++) {
     inversedRobot[arrValues[i]] = arrKeys[i];
   }
 
