@@ -8,15 +8,13 @@
 
 function inverseRobot(robot) {
   const robotReverse = {};
-  const rKeys = Object.keys(robot);
-  const rValues = Object.values(robot);
 
-  for (let i = 0; i < rKeys.length; i++) {
-    if (robotReverse[rValues[i]] || robotReverse[rValues[rKeys[i]]]) {
+  for (const key in robot) {
+    if (robot[key] in robotReverse) {
       return null;
-    } else {
-      robotReverse[rValues[i]] = rKeys[i];
     }
+
+    robotReverse[robot[key]] = key;
   }
 
   return robotReverse;
