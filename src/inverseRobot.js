@@ -9,7 +9,7 @@
 function inverseRobot(robot) {
   const robotValues = Object.values(robot);
   const robotKeys = Object.keys(robot);
-  const resultObject = {};
+  const inversedObject = {};
 
   for (let i = 0; i < robotValues.length; i++) {
     for (let a = robotValues.length - 1; a >= 0; a--) {
@@ -19,11 +19,11 @@ function inverseRobot(robot) {
         }
       }
 
-      resultObject[robotValues[a]] = robotKeys[a];
+      inversedObject[robotValues[a]] = robotKeys[a];
     }
   }
 
-  return resultObject;
+  return inversedObject;
 }
 
 module.exports = inverseRobot;
