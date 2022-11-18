@@ -7,7 +7,16 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const situsInversus = {};
+
+  for (const key in robot) {
+    if (situsInversus.hasOwnProperty(robot[key])) {
+      return null;
+    }
+    situsInversus[robot[key]] = key;
+  }
+
+  return situsInversus;
 }
 
 module.exports = inverseRobot;
