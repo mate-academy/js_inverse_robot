@@ -10,7 +10,7 @@ function inverseRobot(robot) {
   const inversedObject = {};
 
   for (const key in robot) {
-    if (inversedObject[robot[key]]) {
+    if (inversedObject.hasOwnProperty(robot[key])) {
       return null;
     }
 
