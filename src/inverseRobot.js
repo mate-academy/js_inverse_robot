@@ -10,13 +10,15 @@ function inverseRobot(robot) {
   const inversedRobot = {};
 
   for (const key in robot) {
-    const newKey = robot[key];
+    if (Object.hasOwnProperty.call(robot, key)) {
+      const newKey = robot[key];
 
-    if (inversedRobot[newKey]) {
-      return null;
+      if (inversedRobot[newKey]) {
+        return null;
+      }
+
+      inversedRobot[newKey] = key;
     }
-
-    inversedRobot[newKey] = key;
   }
 
   return inversedRobot;
