@@ -8,9 +8,11 @@
 
 function inverseRobot(robot) {
   const rearranged = {};
-  const isUnique = Object.values(robot);
+  const robotValues = Object.values(robot);
 
-  if ((new Set(isUnique)).size !== isUnique.length) {
+  const isValueUnique = new Set(robotValues).size === robotValues.length;
+
+  if (!isValueUnique) {
     return null;
   }
 
@@ -20,4 +22,5 @@ function inverseRobot(robot) {
 
   return rearranged;
 }
+
 module.exports = inverseRobot;
