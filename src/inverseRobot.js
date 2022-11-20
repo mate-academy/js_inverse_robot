@@ -7,12 +7,11 @@
 */
 
 function inverseRobot(robot) {
-  let inverse = {};
+  const inverse = {};
 
   for (const key in robot) {
     if (inverse[robot[key]]) {
-      inverse = null;
-      break;
+      return null;
     }
 
     inverse[robot[key]] = key;
