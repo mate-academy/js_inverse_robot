@@ -9,17 +9,14 @@
 function inverseRobot(robot) {
   const result = {};
 
-  const toArray = Object.entries(robot);
-
-  for (const key of toArray) {
-    result[key[1]] = key[0];
+  for (const key in robot) {
+    if (result[robot[key]]) {
+      return null;
+    }
+    result[robot[key]] = key;
   }
 
-  if (Object.keys(result).length < Object.values(robot).length) {
-    return null;
-  } else {
-    return result;
-  }
+  return result;
 }
 
 module.exports = inverseRobot;
