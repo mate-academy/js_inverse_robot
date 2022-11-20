@@ -11,11 +11,11 @@ function inverseRobot(robot) {
   const corectRobot = {};
 
   for (const data of robotEntries) {
-    if (!corectRobot[data[1]]) {
-      corectRobot[data[1]] = data[0];
-    } else {
+    if (corectRobot.hasOwnProperty(data[1])) {
       return null;
     }
+
+    corectRobot[data[1]] = data[0];
   }
 
   return corectRobot;
