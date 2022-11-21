@@ -12,12 +12,14 @@ function inverseRobot(robot) {
   const robotKeys = Object.keys(robot);
 
   for (const key of robotKeys) {
-    if (result[robot[key]] !== undefined) {
+    const value = robot[key];
+
+    if (result[value] !== undefined) {
       return null;
-    } else {
-      result[robot[key]] = key;
-    };
-  }
+    }
+
+    result[value] = key;
+  };
 
   return result;
 }
