@@ -7,15 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  const robotEntries = Object.entries(robot);
   const corectRobot = {};
 
-  for (const data of robotEntries) {
-    if (corectRobot.hasOwnProperty(data[1])) {
+  for (const key in robot) {
+    if (corectRobot.hasOwnProperty(robot[key])) {
       return null;
     }
 
-    corectRobot[data[1]] = data[0];
+    corectRobot[robot[key]] = key;
   }
 
   return corectRobot;
