@@ -12,7 +12,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const property = robot[key];
 
-    if (inverse[property]) {
+    if (inverse.hasOwnProperty(property)) {
       return null;
     }
     inverse[property] = key;
