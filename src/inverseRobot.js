@@ -10,11 +10,11 @@ function inverseRobot(robot) {
   const fixedRobot = {};
 
   for (const [value, key] of Object.entries(robot)) {
-    if (!fixedRobot[key]) {
-      fixedRobot[key] = value;
-    } else {
+    if (fixedRobot.hasOwnProperty(key)) {
       return null;
     }
+
+    fixedRobot[key] = value;
   }
 
   return fixedRobot;
