@@ -8,14 +8,10 @@
 
 function inverseRobot(robot) {
   const newRobot = {};
-  const UniqueValues = new Set();
-  const Values = Object.values(robot);
+  const values = Object.values(robot);
+  const uniqueValues = new Set(values);
 
-  Values.forEach((elem) => {
-    UniqueValues.add(elem);
-  });
-
-  if (UniqueValues.size !== Values.length) {
+  if (uniqueValues.size !== values.length) {
     return null;
   }
 
