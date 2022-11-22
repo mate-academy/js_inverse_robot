@@ -73,6 +73,7 @@ describe('inverseRobot', () => {
       3: "wheels",
       2: 'wheels'
     }
+
     expected output: null`, () => {
     expect(
       inverseRobot({
