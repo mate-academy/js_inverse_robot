@@ -8,10 +8,9 @@
 
 function inverseRobot(robot) {
   const robotInverse = {};
-  let name;
 
   for (const key in robot) {
-    name = robot[key];
+    const name = robot[key];
 
     if (robotInverse.hasOwnProperty(name)) {
       return null;
