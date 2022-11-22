@@ -7,7 +7,13 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
-}
+  const normalRobot = Object.fromEntries(
+    Object.entries(robot).map(([key, value]) => [value, key]));
 
+  if (Object.keys(normalRobot).length < Object.values(robot).length) {
+    return null;
+  }
+
+  return normalRobot;
+}
 module.exports = inverseRobot;
