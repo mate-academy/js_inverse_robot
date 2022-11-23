@@ -11,11 +11,11 @@ function inverseRobot(robot) {
   const values = Object.keys(robot);
   const inverse = {};
 
-  for (const key of keys) {
-    if (keys.lastIndexOf(key) !== keys.indexOf(key)) {
+  for (let i = 0; i < keys.length; i++) {
+    if (keys.lastIndexOf(keys[i]) !== i) {
       return null;
     }
-    inverse[key] = values[keys.indexOf(key)];
+    inverse[keys[i]] = values[i];
   }
 
   return inverse;
