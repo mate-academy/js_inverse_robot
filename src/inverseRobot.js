@@ -15,10 +15,7 @@ function inverseRobot(robot) {
     if (keys.lastIndexOf(key) !== keys.indexOf(key)) {
       return null;
     }
-  }
-
-  for (let i = 0; i < keys.length; i++) {
-    inverse[keys[i]] = values[i];
+    inverse[key] = values[keys.indexOf(key)];
   }
 
   return inverse;
