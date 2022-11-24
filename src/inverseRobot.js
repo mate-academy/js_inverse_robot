@@ -9,16 +9,14 @@
 function inverseRobot(robot) {
   const values = Object.keys(robot);
   const keys = Object.values(robot);
-  let newBot = {};
+  const newBot = {};
 
-  for (const key in keys) {
-    if (keys.indexOf(keys[key]) !== keys.lastIndexOf(keys[key])) {
-      newBot = null;
-
-      return newBot;
+  for (const key of keys) {
+    if (keys.indexOf(key) !== keys.lastIndexOf(key)) {
+      return null;
     }
 
-    newBot[keys[key]] = values[key];
+    newBot[key] = values[keys.indexOf(key)];
   }
 
   return newBot;
