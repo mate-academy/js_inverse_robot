@@ -8,31 +8,16 @@
 
 function inverseRobot(robot) {
   // write code here
-  const inverseCopy = {};
+  const inversedRobot = {};
 
-  const length = Object.keys(robot).length;
-
-  for (let i = 0; i < length; i++) {
-    let dupliCount = 0;
-
-    for (let j = 0; j < length; j++) {
-      if (Object.values(robot)[i] === Object.values(robot)[j]) {
-        dupliCount++;
-      }
-    }
-
-    if (dupliCount > 1) {
+  for (const key in robot) {
+    if (inversedRobot.hasOwnProperty(robot[key])) {
       return null;
     }
+    inversedRobot[robot[key]] = key;
   }
 
-  for (let i = 0; i < length; i++) {
-    const key = Object.keys(robot)[i];
-
-    inverseCopy[robot[key]] = key;
-  }
-
-  return inverseCopy;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
