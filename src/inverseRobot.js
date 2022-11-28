@@ -7,14 +7,12 @@
 */
 
 function inverseRobot(robot) {
-  const values = Object.values(robot);
   const newRobot = {};
 
-  if ((new Set(values)).size !== values.length) {
-    return null;
-  }
-
   for (const key in robot) {
+    if (robot[key] in newRobot) {
+      return null;
+    }
     newRobot[robot[key]] = key;
   }
 
