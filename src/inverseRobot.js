@@ -7,7 +7,6 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
   const reverseRobot = {};
 
   for (const key in robot) {
