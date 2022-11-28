@@ -8,18 +8,18 @@
 
 function inverseRobot(robot) {
   // write code here
-  const newObj = {};
-  const mass = [];
+  const reversedRobot = {};
+  const robotValues = [];
 
   for (const part in robot) {
-    if (mass.includes(robot[part])) {
+    if (robotValues.includes(robot[part])) {
       return null;
     }
-    newObj[robot[part]] = part;
-    mass.push(robot[part]);
+    reversedRobot[robot[part]] = part;
+    robotValues.push(robot[part]);
   }
 
-  return newObj;
+  return reversedRobot;
 }
 
 module.exports = inverseRobot;
