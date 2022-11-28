@@ -7,17 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  const disassembledRobot = Object.entries(robot);
   const inversedRobot = {};
 
-  for (const [key, value] of disassembledRobot) {
-    inversedRobot[value] = key;
-  }
-
-  const forCheckNull = Object.entries(inversedRobot);
-
-  if (forCheckNull.length !== disassembledRobot.length) {
-    return null;
+  for (const key in robot) {
+    if (!(robot[key] in inversedRobot)) {
+      inversedRobot[robot[key]] = key;
+    } else {
+      return null;
+    }
   }
 
   return inversedRobot;
