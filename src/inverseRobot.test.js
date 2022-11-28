@@ -121,7 +121,7 @@ describe('inverseRobot', () => {
     ).toEqual(null);
   });
 
-  it(`input: {
+  const newLocal = `input: {
     name: 'Bob',
     fullName: 'Bob Acad',
     age: 32,
@@ -129,7 +129,9 @@ describe('inverseRobot', () => {
     interests: 'music',
     nickname: 'Bob'
   }
-  expected output: null`, () => {
+  expected output: null`;
+
+  it(newLocal, () => {
     expect(
       inverseRobot({
         name: 'Bob',
