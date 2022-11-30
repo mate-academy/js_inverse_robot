@@ -8,15 +8,12 @@
 
 function inverseRobot(robot) {
   const transpositionRobot = {};
-  const prop = Object.keys(robot).concat(Object.values(robot)).sort();
-
-  for (let i = 0; i < prop.length; i++) {
-    if (prop[i] === prop[i + 1]) {
-      return null;
-    }
-  }
 
   for (const key in robot) {
+    if (transpositionRobot[robot[key]]) {
+      return null;
+    }
+
     transpositionRobot[robot[key]] = key;
   }
 
