@@ -28,7 +28,7 @@ function inverseRobot(robot) {
   }
 
   if (numberValue > 0) {
-    reversRobot = null
+    reversRobot = null;
   }
 
   return reversRobot;
