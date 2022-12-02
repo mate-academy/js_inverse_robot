@@ -10,7 +10,7 @@ function inverseRobot(robot) {
   const repairRobot = {};
 
   for (const key in robot) {
-    if (robot[key] in repairRobot) {
+    if (repairRobot.hasOwnProperty(robot[key])) {
       return null;
     }
 
