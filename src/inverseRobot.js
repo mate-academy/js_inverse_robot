@@ -14,7 +14,6 @@ function inverseRobot(robot) {
       return null;
     }
     reversedRobot[robot[key]] = key;
-    delete reversedRobot[key];
   }
 
   return reversedRobot;
