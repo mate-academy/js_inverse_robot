@@ -13,9 +13,8 @@ function inverseRobot(robot) {
     const property = robot[key];
 
     if (property in result) {
-      result = null;
 
-      return result;
+      return null;
     }
 
     result[property] = key;
