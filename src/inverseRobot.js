@@ -12,9 +12,9 @@ function inverseRobot(robot) {
   for (const keys in robot) {
     if (copy.hasOwnProperty(robot[keys])) {
       return null;
-    } else {
-      copy[robot[keys]] = keys;
     }
+
+    copy[robot[keys]] = keys;
   }
 
   return copy;
