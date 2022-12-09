@@ -7,26 +7,20 @@
 */
 
 function inverseRobot(robot) {
-  const getRobot = {};
-  const arrRobot = Object.values(robot);
-
-  for (let i = 0; i < arrRobot.length; i++) {
-    if (arrRobot[i] === arrRobot[i + 1] || arrRobot[i + 5]) {
-      return null;
-    }
-  }
+  const newRobot = {};
 
   for (const i in robot) {
     const value = i;
     const key = robot[i];
 
-    getRobot[key] = value;
-  };
+    if (newRobot.hasOwnProperty(key)) {
+      return null;
+    }
 
-  return getRobot;
+    newRobot[key] = value;
+  }
+
+  return newRobot;
 }
 
-// inverseRobot({
-//   Kolli: 'name', 123: 'chipVer', 3: 'wheels',
-// });
 module.exports = inverseRobot;
