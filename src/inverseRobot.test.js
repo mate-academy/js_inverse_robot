@@ -26,7 +26,7 @@ describe('inverseRobot', () => {
 
   it(`input: {
       Kolli: "name",
-      123: "chipVer",
+      npm : "chipVer",
       3: "wheels"
     }
     expected output: {
