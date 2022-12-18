@@ -8,14 +8,19 @@
 
 function inverseRobot(robot) {
   const robotValues = Object.values(robot);
-  const robotEnries = Object.entries(robot);
   const unique = Array.from(new Set(robotValues));
-  const reverseEnries = robotEnries.map(a => a.reverse());
+  const invertedRobotEntries = [];
 
   if (unique.length < robotValues.length) {
     return null;
   } else {
-    return (Object.fromEntries(reverseEnries.reverse()));
+    for (const key in robot) {
+      const newKey = robot[key];
+
+      invertedRobotEntries.push([newKey, key]);
+    }
+
+    return Object.fromEntries(invertedRobotEntries.reverse());
   }
 }
 
