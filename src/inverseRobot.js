@@ -10,17 +10,12 @@ function inverseRobot(robot) {
   const inverse = {};
 
   for (const key in robot) {
-    inverse[robot[key]] = key;
-  }
+    const value = robot[key];
 
-  const counts = {};
-
-  for (const value of Object.values(robot)) {
-    if (counts[value]) {
+    if (value in inverse) {
       return null;
-    } else {
-      counts[value] = 1;
     }
+    inverse[value] = key;
   }
 
   return inverse;
