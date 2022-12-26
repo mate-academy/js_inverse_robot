@@ -7,7 +7,15 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const sum = Object.fromEntries(
+    Object.entries(robot).map(([key, value]) => [value, key])
+  );
+
+  if (Object.keys(sum).length < Object.values(robot).length) {
+    return null;
+  }
+
+  return sum;
 }
 
 module.exports = inverseRobot;
