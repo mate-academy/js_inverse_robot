@@ -8,18 +8,18 @@
 
 function inverseRobot(robot) {
   const invertedCopy = {};
-  const values = Object.values(robot);
+  const robotValues = Object.values(robot);
 
-  for (let i = 0; i < values.length; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[i] === values[j]) {
+  for (let i = 0; i < robotValues.length; i++) {
+    for (let j = i + 1; j < robotValues.length; j++) {
+      if (robotValues[i] === robotValues[j]) {
         return null;
       }
     }
   }
 
   for (const key in robot) {
-    invertedCopy[robot[key]] = key + '';
+    invertedCopy[robot[key]] = String(key);
   }
 
   return invertedCopy;
