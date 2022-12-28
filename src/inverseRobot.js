@@ -1,20 +1,20 @@
 'use strict';
 
 function inverseRobot(robot) {
-  const correctArray = {};
+  const correctObj = {};
   let value;
 
   for (const keys in robot) {
     value = robot[keys];
 
-    if (correctArray.hasOwnProperty(value)) {
+    if (correctObj.hasOwnProperty(value)) {
       return null;
     }
 
-    correctArray[value] = keys;
+    correctObj[value] = keys;
   }
 
-  return correctArray;
+  return correctObj;
 }
 
 module.exports = inverseRobot;
