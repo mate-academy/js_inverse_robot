@@ -10,14 +10,14 @@ function inverseRobot(robot) {
   const remakeData = {};
 
   for (const key in robot) {
+    if (robot[key] in remakeData) {
+      return null;
+    }
+  
     remakeData[robot[key]] = key;
   }
-
-  if (Object.keys(remakeData).length < Object.values(robot).length) {
-    return null;
-  } else {
+  
     return remakeData;
   }
-}
 
-module.exports = inverseRobot;
+  module.exports = inverseRobot;
