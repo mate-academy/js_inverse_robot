@@ -13,11 +13,11 @@ function inverseRobot(robot) {
     if (robot[key] in remakeData) {
       return null;
     }
-  
+
     remakeData[robot[key]] = key;
   }
-  
-    return remakeData;
-  }
 
-  module.exports = inverseRobot;
+  return remakeData;
+}
+
+module.exports = inverseRobot;
