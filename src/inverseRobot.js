@@ -8,21 +8,18 @@
 
 function inverseRobot(robot) {
   const newObj = {};
-  const arrayKeys = Object.values(robot);
-  const arrayValues = Object.keys(robot);
 
-  if (arrayKeys.some((e, i, arr) => arr.indexOf(e) !== i)) {
-    return null;
-  } else {
-    for (let i = 0; i < arrayKeys.length; i++) {
-      const keyNew = arrayKeys[i];
-      const valueNew = arrayValues[i];
+  for (const key in robot) {
+    const newKey = robot[key];
 
-      newObj[keyNew] = valueNew;
+    if (newKey in newObj) {
+      return null;
     }
 
-    return newObj;
+    newObj[newKey] = key;
   }
+
+  return newObj;
 }
 
 module.exports = inverseRobot;
