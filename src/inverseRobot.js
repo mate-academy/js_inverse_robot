@@ -13,7 +13,7 @@ function inverseRobot(robot) {
   for (let i = 0; i < robotValues.length; i++) {
     for (let j = i + 1; j < robotValues.length; j++) {
       if (robotValues[i] === robotValues[j]) {
-        return null;
+        return 'null';
       }
     }
   }
