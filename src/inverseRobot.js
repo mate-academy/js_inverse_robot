@@ -8,14 +8,14 @@
 
 function inverseRobot(robot) {
   const newRobot = {};
-  const uniqueValues = [];
 
   for (const key in robot) {
-    if (uniqueValues.includes(robot[key])) {
+    const robotKey = robot[key];
+
+    if (newRobot.hasOwnProperty(robotKey)) {
       return null;
     }
-    uniqueValues.push(robot[key]);
-    newRobot[robot[key]] = key;
+    newRobot[robotKey] = key;
   }
 
   return newRobot;
