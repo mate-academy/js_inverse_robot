@@ -7,27 +7,28 @@
 */
 
 function inverseRobot(robot) {
-  const duplicateElem = {};
+  const robotInverso = {};
 
   for (const key in robot) {
     const robotKey = robot[key];
 
-    if (duplicateElem.hasOwnProperty(robotKey)) {
+    if (robotInverso.hasOwnProperty(robotKey)) {
       return null;
     }
 
-    duplicateElem[robot[key]] = key;
+    robotInverso[robot[key]] = key;
   }
 
-  return duplicateElem;
+  return robotInverso;
 
-  // const keysFrom = Object.entries(robot);
+  // const keysFrom = Object.entries(robot); array dall'oggetto
 
   // for (let i = 0; i < keysFrom.length; i++) {
   //   keysFrom[i].reverse(keysFrom);
-  // }
+  // } per invertire ogni array dentro il nuovo array keysfrom
 
   // const newObject = Object.fromEntries(keysFrom);
+  // riconvertire tutto in oggetto
 
   // return newObject;
 }
