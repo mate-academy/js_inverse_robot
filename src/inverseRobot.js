@@ -8,17 +8,15 @@
 
 function inverseRobot(robot) {
   const rightRobot = {};
-  const valueArr = Object.values(robot);
-  const sortArr = valueArr.sort();
-
-  for (let i = 0; i < sortArr.length; i++) {
-    if (sortArr[i + 1] === sortArr[i]) {
-      return null;
-    }
-  }
+  // const valueArr = Object.values(robot);
+  // const sortArr = valueArr.sort();
 
   for (const value in robot) {
     const key = robot[value];
+
+    if (rightRobot.hasOwnProperty(key)) {
+      return null;
+    }
 
     rightRobot[key] = value;
   }
