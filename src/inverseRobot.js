@@ -12,7 +12,7 @@ function inverseRobot(robot) {
   const resultObj = {};
 
   for (let i = 0; i < values.length; i++) {
-    if (values.indexOf(values[i]) !== values.lastIndexOf(values[i])) {
+    if (resultObj.hasOwnProperty(values[i])) {
       return null;
     }
     resultObj[values[i]] = keys[i];
