@@ -17,3 +17,6 @@ Example:
  inverseRobot(robert) === null
  inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
 ``` 
+
+
+Test
