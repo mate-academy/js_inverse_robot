@@ -8,21 +8,16 @@
 
 function inverseRobot(robot) {
   // write code here
-  const array = Object.values(robot);
-  const isValuesAreDuplicated = array.some(item => {
-    if (array.indexOf(item) !== array.lastIndexOf(item)) {
-      return true;
-    }
-  });
-  const newRobot = Object.entries(robot).map(
-    ([key, value]) => ({ [value]: key })
-  );
+  const newRobot = {};
 
-  if (isValuesAreDuplicated) {
-    return null;
+  for (const prop of Object.entries(robot)) {
+    if (newRobot.hasOwnProperty(prop[1])) {
+      return null;
+    }
+    newRobot[prop[1]] = prop[0];
   }
 
-  return Object.assign({}, ...newRobot);
+  return newRobot;
 }
 
 module.exports = inverseRobot;
