@@ -9,16 +9,16 @@
 function inverseRobot(robot) {
   // write code here
   const inverseArr = {};
-  const robotValues = Object.values(robot);
-  const robotKeys = Object.keys(robot);
 
-  for (let i = 0; i < robotValues.length; i++) {
-    inverseArr[robotValues[i]] = robotKeys[i];
+  for (const key in robot) {
+    inverseArr[robot[key]] = key;
   }
 
-  const inverseArrKeys = Object.keys(inverseArr);
+  function getObjectLength(obj) {
+    return (Object.keys(obj)).length;
+  }
 
-  if (robotKeys.length !== inverseArrKeys.length) {
+  if (getObjectLength(robot) !== getObjectLength(inverseArr)) {
     return null;
   }
 
