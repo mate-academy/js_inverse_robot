@@ -8,21 +8,17 @@
 
 function inverseRobot(robot) {
   // write code here
-  const inverseArr = {};
+  const inversedRobot = {};
 
   for (const key in robot) {
-    inverseArr[robot[key]] = key;
+    if (inversedRobot.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
+    inversedRobot[robot[key]] = key;
   }
 
-  function getObjectLength(obj) {
-    return (Object.keys(obj)).length;
-  }
-
-  if (getObjectLength(robot) !== getObjectLength(inverseArr)) {
-    return null;
-  }
-
-  return inverseArr;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
