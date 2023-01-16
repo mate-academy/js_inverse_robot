@@ -7,7 +7,18 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  let repaired = {};
+
+  for (const key in robot) {
+    if (robot[key] in repaired) {
+      repaired = null;
+      break;
+    }
+
+    repaired[robot[key]] = key;
+  }
+
+  return repaired;
 }
 
 module.exports = inverseRobot;
