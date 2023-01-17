@@ -7,12 +7,11 @@
 */
 
 function inverseRobot(robot) {
-  let repaired = {};
+  const repaired = {};
 
   for (const key in robot) {
     if (robot[key] in repaired) {
-      repaired = null;
-      break;
+      return null;
     }
 
     repaired[robot[key]] = key;
