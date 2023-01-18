@@ -7,17 +7,9 @@
 */
 
 function inverseRobot(robot) {
-  const rev = {};
-
-  for (const i in robot) {
-    rev[robot[i]] = i;
-  }
-
-  if (Object.keys(rev).length < Object.values(robot).length) {
-    return null;
-  } else {
-    return rev;
-  }
+  return Object.entries(robot).reduce((accum, [key, value]) =>
+    !accum || accum[value] ? null : Object.assign(accum, { [value]: key }), {}
+  );
 }
 
 module.exports = inverseRobot;
