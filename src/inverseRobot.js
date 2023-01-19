@@ -8,16 +8,15 @@
 
 function inverseRobot(robot) {
   const newRobot = {};
-  const allValues = [];
+  // const allValues = [];
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (allValues.includes(value)) {
-      return null;
-    } else {
+    if (!newRobot[value]) {
       newRobot[value] = key;
-      allValues.push(value);
+    } else {
+      return null;
     }
   }
 
