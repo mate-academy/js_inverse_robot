@@ -10,11 +10,13 @@ function inverseRobot(robot) {
   const result = {};
 
   for (const key in robot) {
-    if (result[robot[key]]) {
+    const i = robot[key];
+
+    if (result[i]) {
       return null;
     }
 
-    result[robot[key]] = key;
+    result[i] = key;
   }
 
   return result;
