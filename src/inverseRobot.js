@@ -8,20 +8,15 @@
 
 function inverseRobot(robot) {
   const newRobot = {};
-  const robotLength = Object.keys(robot).length;
-  let newRobotLength = 0;
 
-  for (const key in robot) {
-    newRobot[robot[key]] = key;
+  for (const [key, value] of Object.entries(robot)) {
+    if (newRobot[value]) {
+      return null;
+    }
+    newRobot[value] = key;
   }
 
-  newRobotLength = Object.keys(newRobot).length;
-
-  if (robotLength === newRobotLength) {
-    return newRobot;
-  }
-
-  return null;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
