@@ -4,20 +4,19 @@
  * @param {object} robot
  *
  * @return {object}
- * 1.Object.entries transform object to array
- * 2.map >= reversed key and value and it's still array
- * 3.Object.fromEntries transform array back to object
 */
 
 function inverseRobot(robot) {
-  const inversed
-    = Object.fromEntries(Object.entries(robot).map(([key, value]) =>
-      [value, key]));
+  const newRobot = {};
 
-  return Object.keys(inversed).length
-    < Object.values(robot).length
-    ? null
-    : inversed;
+  for (const [key, value] of Object.entries(robot)) {
+    if (newRobot[value]) {
+      return null;
+    }
+    newRobot[value] = key;
+  }
+
+  return newRobot;
 }
 
 module.exports = inverseRobot;
