@@ -8,20 +8,16 @@
 
 function inverseRobot(robot) {
   // write code here
-  const keys = Object.values(robot);
-  const duplicateElements = keys.filter(
-    (item, index) => keys.indexOf(item) !== index
-  );
-
-  if (duplicateElements.length > 0) {
-    return null;
-  }
-
   const inversedRobot = {};
 
-  Object.keys(robot).forEach((value, index) => {
-    inversedRobot[keys[index]] = value;
-  });
+  for (const value in robot) {
+    const key = robot[value];
+
+    if (Object.prototype.hasOwnProperty.call(inversedRobot, key)) {
+      return null;
+    }
+    inversedRobot[key] = value;
+  }
 
   return inversedRobot;
 }
