@@ -7,15 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  const reversed = { ...robot };
+  const reversed = {};
 
-  for (const key of Object.keys(reversed)) {
-    if (reversed.hasOwnProperty(reversed[key])) {
+  for (const key in robot) {
+    if (robot[key] in reversed) {
       return null;
     }
 
-    reversed[reversed[key]] = key;
-    delete reversed[key];
+    reversed[robot[key]] = key;
   }
 
   return reversed;
