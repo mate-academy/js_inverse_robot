@@ -13,6 +13,7 @@ function inverseRobot(robot) {
     if (value in newObj) {
       return null;
     }
+
     newObj[value] = key;
   }
 
