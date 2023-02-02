@@ -7,22 +7,17 @@
 */
 
 function inverseRobot(robot) {
-  const repairedProperties = [];
-  const robotEntries = Object.entries(robot);
+  const inversed = {};
 
-  for (let entry of robotEntries) {
-    entry = entry.reverse().map((n) => `${n}`);
-
-    const key = entry[0];
-
-    if (repairedProperties.includes(key)) {
+  for (const [value, key] of Object.entries(robot)) {
+    if (key in inversed) {
       return null;
-    } else {
-      repairedProperties.push(key);
     }
+
+    inversed[key] = value;
   }
 
-  return Object.fromEntries(robotEntries);
+  return inversed;
 }
 
 module.exports = inverseRobot;
