@@ -4,7 +4,7 @@
  * @param {object} robot
  *
  * @return {object}
- */
+*/
 
 function inverseRobot(robot) {
   const repairedProperties = [];
