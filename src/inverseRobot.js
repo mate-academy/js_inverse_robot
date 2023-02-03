@@ -8,13 +8,11 @@
 
 function inverseRobot(robot) {
   const revert = {};
-  const exclusiveNames = [];
 
   for (const key in robot) {
-    if (exclusiveNames.includes(robot[key])) {
+    if (robot[key] in revert) {
       return null;
     }
-    exclusiveNames.push(robot[key]);
     revert[robot[key]] = key;
   }
 
