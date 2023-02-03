@@ -7,25 +7,6 @@
 */
 
 function inverseRobot(robot) {
-  // const result = {};
-
-  // // Object.keys(robot).forEach(key => {
-  // //   result[robot[key]] = key;
-  // // });
-
-  // // const valuesOfRobot = Object.values(robot);
-
-  // // for (const value in ret) {
-  // //   if (valuesOfRobot === value) {
-  // //     return null;
-  // //   }
-  // // }
-
-  // for (const property in robot) {
-  //   result[robot[property]] = robot;
-  // }
-
-  // console.log(result);
   const result = {};
 
   for (const property in robot) {
