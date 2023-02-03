@@ -7,21 +7,39 @@
 */
 
 function inverseRobot(robot) {
-  const ret = {};
+  // const result = {};
 
-  const values = Object.values(robot);
+  // // Object.keys(robot).forEach(key => {
+  // //   result[robot[key]] = key;
+  // // });
 
-  Object.keys(robot).forEach(key => {
-    ret[robot[key]] = key;
-  });
+  // // const valuesOfRobot = Object.values(robot);
 
-  const valuesOfRet = Object.values(ret);
+  // // for (const value in ret) {
+  // //   if (valuesOfRobot === value) {
+  // //     return null;
+  // //   }
+  // // }
 
-  if (valuesOfRet.length < values.length) {
+  // for (const property in robot) {
+  //   result[robot[property]] = robot;
+  // }
+
+  // console.log(result);
+  const result = {};
+
+  for (const property in robot) {
+    result[robot[property]] = property;
+  }
+
+  const valuesOfRobot = Object.values(robot);
+  const valuesOfResult = Object.values(result);
+
+  if (valuesOfResult.length < valuesOfRobot.length) {
     return null;
   }
 
-  return ret;
+  return result;
 }
 
 module.exports = inverseRobot;
