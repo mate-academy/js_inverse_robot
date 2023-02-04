@@ -1,13 +1,18 @@
 'use strict';
 
-/*
- * @param {object} robot
- *
- * @return {object}
-*/
-
 function inverseRobot(robot) {
-  // write code here
+  const miror = {};
+
+  for (const key in robot) {
+
+    if (robot[key] in miror) {
+      return null;
+    }
+
+    miror[robot[key]] = key;
+  }
+
+  return miror;
 }
 
 module.exports = inverseRobot;
