@@ -1,18 +1,17 @@
 'use strict';
 
 function inverseRobot(robot) {
-  const miror = {};
+  const mirror = {};
 
   for (const key in robot) {
-
-    if (robot[key] in miror) {
+    if (robot[key] in mirror) {
       return null;
     }
 
-    miror[robot[key]] = key;
+    mirror[robot[key]] = key;
   }
 
-  return miror;
+  return mirror;
 }
 
 module.exports = inverseRobot;
