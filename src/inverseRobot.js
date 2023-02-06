@@ -7,25 +7,17 @@
 */
 
 function inverseRobot(robot) {
-  const robotEntries = Object.entries(robot);
-  const objectReversed = {};
-  const objectValues = Object.values(robot);
-  const hasDuplicates = new Set(objectValues).size !== objectValues.length;
+  const robotReversed = {};
 
-  if (hasDuplicates) {
-    return null;
-  };
+  for (const key in robot) {
+    if (robot[key] in robotReversed) {
+      return null;
+    }
 
-  for (let i = 0; i < robotEntries.length; i++) {
-    const innerArray = robotEntries[i].reverse();
-
-    const objectKey = innerArray[0];
-    const objectValue = innerArray[1];
-
-    objectReversed[objectKey] = objectValue;
+    robotReversed[robot[key]] = key;
   }
 
-  return objectReversed;
+  return robotReversed;
 }
 
 module.exports = inverseRobot;
