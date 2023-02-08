@@ -10,12 +10,11 @@ function inverseRobot(robot) {
   const newObj = {};
 
   for (const prop in robot) {
-    if (!newObj[robot[prop]]) {
-      newObj[robot[prop]] = prop;
-      continue;
+    if (newObj[robot[prop]]) {
+      return null;
     }
 
-    return null;
+    newObj[robot[prop]] = prop;
   }
 
   return newObj;
