@@ -32,23 +32,3 @@ function inverseRobot(robot) {
 }
 
 module.exports = inverseRobot;
-
-// for (const param of params) {
-//   for (const key of keys) {
-//     newRobot[param] = key;
-//     break;
-//   }
-// }
-// const keysInNewRobot = Object.keys(robot);
-
-// for (let i = 0; i < keysInNewRobot.length; i++) {
-//   for (let j = i + 1; j < keysInNewRobot.length; j++) {
-//     if (keysInNewRobot[i] === keysInNewRobot[j]) {
-//       return null;
-//     } else {
-//       continue;
-//     }
-//   }
-
-//   return newRobot;
-// }
