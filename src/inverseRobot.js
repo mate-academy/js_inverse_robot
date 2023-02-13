@@ -7,15 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  const realKeys = Object.values(robot);
-  const realValues = Object.keys(robot);
   const rightRobot = {};
 
-  for (let i = 0; i <= realKeys.length; i++) {
-    if (rightRobot[realKeys[i]]) {
+  for (const key of Object.keys(robot)) {
+    if (rightRobot[robot[key]]) {
       return null;
+    } else {
+      rightRobot[robot[key]] = key;
     }
-    rightRobot[realKeys[i]] = realValues[i];
   }
 
   return rightRobot;
