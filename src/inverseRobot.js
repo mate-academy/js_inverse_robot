@@ -8,13 +8,12 @@
 
 function inverseRobot(robot) {
   const fixedRobot = {};
-  const entries = Object.entries(robot);
 
-  for (const entry of entries) {
-    if (fixedRobot.hasOwnProperty(entry[1])) {
+  for (const entry in robot) {
+    if (fixedRobot.hasOwnProperty([robot[entry]])) {
       return null;
     }
-    fixedRobot[entry[1]] = entry[0];
+    fixedRobot[robot[entry]] = entry;
   }
 
   return fixedRobot;
