@@ -16,7 +16,7 @@ describe('inverseRobot', () => {
       123: "chipVer",
       113: "chipVer"
     }
-    expected output: null`, () => {
+    // expected output: null`, () => {
     expect(
       inverseRobot({
         Robert: 'name', 123: 'chipVer', 113: 'chipVer',
