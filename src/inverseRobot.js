@@ -16,9 +16,9 @@ function inverseRobot(robot) {
 
   if (flatted.length !== uniqueParts.length) {
     return null;
-  } else {
-    return Object.fromEntries(reverse);
-  }
+  };
+
+  return Object.fromEntries(reverse);
 }
 
 module.exports = inverseRobot;
