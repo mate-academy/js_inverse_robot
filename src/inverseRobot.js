@@ -7,7 +7,18 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const reverse = Object.entries(robot).map(([value, key]) => [key, value]);
+
+  const flatted = reverse.flat();
+  const uniqueParts = flatted
+    .filter((element, index, array) => array.indexOf(element)
+    === index);
+
+  if (flatted.length !== uniqueParts.length) {
+    return null;
+  };
+
+  return Object.fromEntries(reverse);
 }
 
 module.exports = inverseRobot;
