@@ -9,7 +9,9 @@
 function inverseRobot(robot) {
   const inverdedRobot = {};
 
-  for (const [key, value] of Object.entries(robot)) {
+  for (const key in robot) {
+    const value = robot[key];
+
     if (inverdedRobot.hasOwnProperty(value)) {
       return null;
     }
