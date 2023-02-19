@@ -5,26 +5,25 @@
  *
  * @return {object}
 */
-
 function inverseRobot(robot) {
   const obj = {};
-  const values = Object.values(robot);
+  let finTest = 0;
 
-  for (let i = 0; i < values.length; i++) {
-    const x = values[i];
+  Object.values(robot).forEach((value, i, arr) => {
+    const x = value;
 
-    delete values[i];
+    delete arr[i];
 
-    if (values.includes(x)) {
-      return null;
+    if (arr.includes(x)) {
+      finTest = null;
     };
-  }
+  });
 
   for (const key in robot) {
     obj[robot[key]] = key;
   }
 
-  return obj;
+  return finTest === null ? null : obj;
 }
 
 module.exports = inverseRobot;
