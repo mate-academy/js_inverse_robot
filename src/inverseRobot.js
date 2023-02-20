@@ -14,19 +14,14 @@ function inverseRobot(robot) {
     return inverseRob;
   }
 
-  for (let i = 0; i < values.length; i++) {
-    for (let k = 1; k < values.length; k++) {
-      if (values[i] === values[k]) {
-        return null;
-      }
-    }
-
-    for (const key in robot) {
+  for (const key in robot) {
+    if (inverseRob[robot[key]]) {
+      return null;
+    } else {
       inverseRob[robot[key]] = key;
     }
-
-    return inverseRob;
   }
-}
 
+  return inverseRob;
+}
 module.exports = inverseRobot;
