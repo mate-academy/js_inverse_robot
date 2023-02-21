@@ -10,18 +10,16 @@ function inverseRobot(robot) {
   const TRUE_KEYS = [];
   const OBJ = {};
 
-  for (const [key, value] of Object.entries(robot)) {
-    OBJ[value] = key;
-    TRUE_KEYS.push(value);
+  for (const key in robot) {
+    OBJ[robot[key]] = key;
+    TRUE_KEYS.push(robot[key]);
 
-    for (let i = 1; i < TRUE_KEYS.length; i++) {
-      let FIRST_KEY = 0;
-
-      if (TRUE_KEYS[FIRST_KEY] === TRUE_KEYS[i]) {
-        return null;
+    for (let y = 0; y < TRUE_KEYS.length; y++) {
+      for (let i = y + 1; i < TRUE_KEYS.length + 1; i++) {
+        if (TRUE_KEYS[y] === TRUE_KEYS[i]) {
+          return null;
+        }
       }
-
-      FIRST_KEY++;
     }
   }
 
