@@ -7,23 +7,16 @@
 */
 
 function inverseRobot(robot) {
-  const testRepeat = [];
-  const value = [];
-  const resalt = {};
+  const result = {};
 
   for (const key in robot) {
-    if (testRepeat.includes(robot[key])) {
+    if (result[robot[key]]) {
       return null;
     }
-    testRepeat.push(robot[key]);
-    value.push(key);
+    result[robot[key]] = key;
   }
 
-  for (let j = 0; j < value.length; j++) {
-    resalt[testRepeat[j]] = value[j];
-  }
-
-  return resalt;
+  return result;
 }
 
 module.exports = inverseRobot;
