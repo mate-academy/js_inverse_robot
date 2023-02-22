@@ -12,14 +12,11 @@ function inverseRobot(robot) {
   const resalt = {};
 
   for (const key in robot) {
-    testRepeat.push(robot[key]);
-    value.push(key);
-  }
-
-  for (let i = 0; i < testRepeat.length - 1; i++) {
-    if (testRepeat.lastIndexOf(testRepeat[i]) !== i) {
+    if (testRepeat.includes(robot[key])) {
       return null;
     }
+    testRepeat.push(robot[key]);
+    value.push(key);
   }
 
   for (let j = 0; j < value.length; j++) {
