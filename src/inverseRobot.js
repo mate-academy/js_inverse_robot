@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 'use strict';
 
 /*
@@ -7,20 +8,16 @@
  */
 
 function inverseRobot(robot) {
-  const values = Object.values(robot);
+  const reversedRobot = {};
 
-  for (let i = 0; i < values.length; i++) {
-    for (let j = i + 1; j < values.length; j++) {
-      if (values[i] === values[j]) {
-        return null;
-      }
+  for (const key in robot) {
+    if (reversedRobot[robot[key]] !== undefined) {
+      return null;
     }
+    reversedRobot[robot[key]] = key;
   }
 
-  const newRobot = Object.entries(robot).map(([a, b]) => [b, a]);
-  const end = Object.fromEntries(newRobot);
-
-  return end;
+  return reversedRobot;
 }
 
 module.exports = inverseRobot;
