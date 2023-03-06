@@ -9,23 +9,22 @@
 function inverseRobot(robot) {
   let newKey;
   let newValue;
+  const result = {};
 
   for (const key in robot) {
     newKey = robot[key];
     newValue = key;
 
-    const keyArr = Object.keys(robot);
-
-    delete robot[key];
+    const keyArr = Object.keys(result);
 
     if (keyArr.includes(newKey)) {
       return null;
     }
 
-    robot[newKey] = newValue;
+    result[newKey] = newValue;
   }
 
-  return robot;
+  return result;
 }
 
 module.exports = inverseRobot;
