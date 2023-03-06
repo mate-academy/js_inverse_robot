@@ -12,9 +12,9 @@ function inverseRobot(robot) {
   for (const val in robot) {
     if (toEqual[robot[val]]) {
       return null;
-    } else {
-      toEqual[robot[val]] = val;
     }
+
+    toEqual[robot[val]] = val;
   }
 
   return toEqual;
