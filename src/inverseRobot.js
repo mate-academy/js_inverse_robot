@@ -7,17 +7,13 @@
 */
 
 function inverseRobot(robot) {
-  let newKey;
-  let newValue;
   const result = {};
 
   for (const key in robot) {
-    newKey = robot[key];
-    newValue = key;
+    const newKey = robot[key];
+    const newValue = key;
 
-    const keyArr = Object.keys(result);
-
-    if (keyArr.includes(newKey)) {
+    if (result[newKey]) {
       return null;
     }
 
