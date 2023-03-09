@@ -1,30 +1,22 @@
 'use strict';
 
-const robert = {
-  Robert: 'name',
-  123: 'chipVer',
-  113: 'chipVerPro',
-};
-
-inverseRobot(robert);
-
 function inverseRobot(robot) {
   const inversedRobot = {};
 
-  if (robot.hasOwnProperty('name') && robot.name !== 'name') {
-    inversedRobot[robot.name] = 'name';
-  }
+  for (const key in robot) {
+    const value = robot[key];
 
-  for (const objectKey in robot) {
-    const objectValue = robot[objectKey];
+    if (robot.hasOwnProperty('name') && robot.name !== 'name') {
+      inversedRobot[robot.name] = 'name';
+    }
 
-    if (objectKey !== 'name') {
-      if (Object.keys(inversedRobot).includes(objectValue)) {
+    if (key !== 'name') {
+      if (inversedRobot.hasOwnProperty(value)) {
         return null;
       }
     }
 
-    inversedRobot[objectValue] = objectKey;
+    inversedRobot[value] = key;
   }
 
   return inversedRobot;
