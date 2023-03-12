@@ -11,13 +11,15 @@ function inverseRobot(robot) {
   const robotValues = Object.keys(robot);
   const inversedRobot = {};
 
-  for (let i = 0; i < robotKeys.length; i++) {
-    for (let j = i + 1; j < robotKeys.length; j++) {
-      if (robotKeys[i] === robotKeys[j]) {
-        return null;
-      }
-    }
-  }
+  for (const key in robotKeys) {
+    let checkRobotKeys = [...robotKeys];
+
+    checkRobotKeys = checkRobotKeys.filter(num => num !== robotKeys[key]);
+
+    if ((robotKeys.length - checkRobotKeys.length > 1)) {
+      return null;
+    };
+  };
 
   for (const i in robotKeys) {
     inversedRobot[robotKeys[i]] = robotValues[i];
@@ -43,4 +45,11 @@ module.exports = inverseRobot;
 //  const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
 //  const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
 //  inverseRobot(robert) === null
-//  inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
+//  inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' };
+// for (let i = 0; i < robotKeys.length; i++) {
+//   for (let j = i + 1; j < robotKeys.length; j++) {
+//     if (robotKeys[i] === robotKeys[j]) {
+//       return null;
+//     }
+//   }
+// }
