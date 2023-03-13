@@ -11,10 +11,6 @@ function inverseRobot(robot) {
   const usedValues = [];
 
   for (const key in robot) {
-    if (inversedRobot[key]) {
-      return null;
-    }
-
     if (usedValues.includes(robot[key])) {
       return null;
     }
