@@ -15,13 +15,13 @@ function inverseRobot(robot) {
     return null;
   }
 
-  const result = {};
+  const reverseRobot = {};
 
   for (let i = 0; i < keys.length; i++) {
-    result[values[i]] = keys[i];
+    reverseRobot[values[i]] = keys[i];
   }
 
-  return result;
+  return reverseRobot;
 }
 
 module.exports = inverseRobot;
