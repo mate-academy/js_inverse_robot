@@ -15,9 +15,9 @@ function inverseRobot(robot) {
 
     if (resultObj.hasOwnProperty(value)) {
       return null;
-    } else {
-      resultObj[value] = key;
     }
+
+    resultObj[value] = key;
   }
 
   return resultObj;
