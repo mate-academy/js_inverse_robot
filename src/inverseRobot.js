@@ -7,17 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  const arrOfKeys = Object.values(robot).reverse();
-  const arrOfValue = Object.keys(robot).reverse();
+  const entriesOfRobot = Object.entries(robot);
   const inverseObjectRobot = {};
 
-  const lenOfArrays = arrOfKeys.length;
-
-  for (let i = 0; i < lenOfArrays; i++) {
-    if (inverseObjectRobot[arrOfKeys[i]]) {
+  for (let i = 0; i < entriesOfRobot.length; i++) {
+    if (inverseObjectRobot[entriesOfRobot[i][1]]) {
       return null;
     }
-    inverseObjectRobot[arrOfKeys[i]] = arrOfValue[i];
+    inverseObjectRobot[entriesOfRobot[i][1]] = entriesOfRobot[i][0];
   }
 
   return inverseObjectRobot;
