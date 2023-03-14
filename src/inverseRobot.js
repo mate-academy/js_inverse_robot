@@ -10,11 +10,11 @@ function inverseRobot(robot) {
   const corectRobot = {};
 
   for (const key in robot) {
-    if (corectRobot[robot[key]] !== undefined) {
+    if (robot[key] in corectRobot) {
       return null;
-    } else {
-      corectRobot[robot[key]] = key;
     }
+
+    corectRobot[robot[key]] = key;
   }
 
   return corectRobot;
