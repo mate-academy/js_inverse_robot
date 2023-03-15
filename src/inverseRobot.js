@@ -8,18 +8,18 @@
 
 function inverseRobot(robot) {
   // write code here
-  const result = {};
+  const inversed = {};
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (result[value] !== undefined) {
+    if (robot.hasOwnProperty(inversed[value])) {
       return null;
     }
-    result[value] = key;
+    inversed[value] = key;
   }
 
-  return result;
+  return inversed;
 }
 
 module.exports = inverseRobot;
