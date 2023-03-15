@@ -8,7 +8,6 @@
 
 function inverseRobot(robot) {
   const values = Object.values(robot);
-
   const uniqueValues = new Set(values);
 
   if (uniqueValues.size !== values.length) {
@@ -20,9 +19,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const value = robot[key];
 
-    if (!Object.prototype.hasOwnProperty.call(invertedRobot, key)) {
-      invertedRobot[value] = key;
-    }
+    invertedRobot[value] = key;
   }
 
   return invertedRobot;
