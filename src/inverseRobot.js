@@ -10,7 +10,7 @@ function inverseRobot(robot) {
   const correctRobot = {};
 
   for (const key in robot) {
-    if (correctRobot[robot[key]]) {
+    if (correctRobot.hasOwnProperty([robot[key]])) {
       return null;
     }
     correctRobot[robot[key]] = key;
