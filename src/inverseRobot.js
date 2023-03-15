@@ -9,15 +9,13 @@
 function inverseRobot(robot) {
   // write code here
   const trueRobot = {};
-  const params = [];
 
   for (const key in robot) {
     const paramName = robot[key];
 
-    if (paramName === params.find(val => val === paramName)) {
+    if (robot[key] in trueRobot) {
       return null;
     }
-    params.push(paramName);
 
     trueRobot[paramName] = key;
   }
