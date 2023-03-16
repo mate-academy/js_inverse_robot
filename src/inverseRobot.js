@@ -7,20 +7,12 @@
 */
 
 function inverseRobot(robot) {
-  const robotValuesMas = Object.values(robot);
-  const originalRobotValues = [];
-
-  for (const curr of robotValuesMas) {
-    if (originalRobotValues.includes(curr)) {
-      return null;
-    }
-
-    originalRobotValues.push(curr);
-  }
-
   const changedObj = {};
 
   for (const key in robot) {
+    if (changedObj.hasOwnProperty(robot[key])) {
+      return null;
+    }
     changedObj[robot[key]] = key;
   }
 
