@@ -11,10 +11,12 @@ function inverseRobot(robot) {
   const newRobot = {};
 
   for (const elem in robot) {
-    if (robot[elem] in newRobot) {
+    const element = robot[elem];
+
+    if (element in newRobot) {
       return null;
     };
-    newRobot[robot[elem]] = elem;
+    newRobot[element] = elem;
   }
 
   return newRobot;
