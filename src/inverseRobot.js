@@ -13,9 +13,8 @@ function inverseRobot(robot) {
   for (const elem in robot) {
     if (robot[elem] in newRobot) {
       return null;
-    } else {
-      newRobot[robot[elem]] = elem;
     }
+    newRobot[robot[elem]] = elem;
   }
 
   return newRobot;
