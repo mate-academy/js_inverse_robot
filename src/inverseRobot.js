@@ -4,7 +4,7 @@
  * @param {object} robot
  *
  * @return {object}
-*/
+//  */
 
 function inverseRobot(robot) {
   const reversedRobot = {};
@@ -12,7 +12,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const value = robot[key];
 
-    if (reversedRobot[value] !== undefined) {
+    if (reversedRobot.hasOwnProperty(value)) {
       return null;
     }
     reversedRobot[value] = key;
