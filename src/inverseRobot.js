@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 'use strict';
 
 /*
@@ -10,7 +9,7 @@
 function inverseRobot(robot) {
   for (const key in robot) {
     if (robot.hasOwnProperty(robot[key])) {
-      return (robot = null);
+      return null;
     } else {
       robot[`${(robot[key])}`] = key;
       delete robot[key];
