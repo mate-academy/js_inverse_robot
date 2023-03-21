@@ -8,11 +8,16 @@
 
 function inverseRobot(robot) {
   // write code here
-  const inversedRobot  = {};
+  const inversedRobot = {};
 
-  for (const[key, value] of Object.entries(robot)) {
-    inversedRobot[value] = key;
+  for (const [key, value] of Object.entries(robot)) {
+    if (inversedRobot[value] !== undefined) {
+      return null;
+    } else {
+      inversedRobot[value] = key;
+    }
   }
+
   return inversedRobot;
 }
 
