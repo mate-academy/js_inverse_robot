@@ -8,21 +8,17 @@
 function inverseRobot(robot) {
   const repeatRobot = {};
 
-  for (const key of Object.keys(robot)) {
-    if (!robot[robot[key]]) {
-      repeatRobot[robot[key]] = 0;
-    }
-    repeatRobot[robot[key]]++;
+  for (const value in robot) {
+    const key = robot[value];
 
-    if (repeatRobot[robot[key]] >= 2) {
+    if (repeatRobot[key]) {
       return null;
     }
 
-    robot[robot[key]] = key;
-    delete robot[key];
+    repeatRobot[key] = value;
   }
 
-  return robot;
+  return repeatRobot;
 }
 
 module.exports = inverseRobot;
