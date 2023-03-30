@@ -7,29 +7,23 @@
  */
 
 function inverseRobot(robot) {
-  if (Object.keys(robot).length === 0) {
-    return {};
-  }
-
+  const result = {};
   const arrayItems = [];
 
-  const reversedEntries = Object.entries(robot).map((entry) => {
-    const [key, value] = entry;
-
+  for (const [key, value] of Object.entries(robot)) {
     if (arrayItems.includes(value)) {
       return null;
     }
 
+    if (result[value]) {
+      return null;
+    }
+
     arrayItems.push(value);
-
-    return [value, key];
-  });
-
-  if (reversedEntries.includes(null)) {
-    return null;
+    result[value] = key;
   }
 
-  return Object.fromEntries(reversedEntries);
+  return result;
 }
 
 module.exports = inverseRobot;
