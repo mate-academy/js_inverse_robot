@@ -17,3 +17,6 @@ Example:
  inverseRobot(robert) === null
  inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
 ``` 
+
+**Read [the guideline](https://github.com/mate-academy/js_task-guideline/blob/master/README.md) before start**
+## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/js_inverse_robot/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
