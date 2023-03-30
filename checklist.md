@@ -22,6 +22,7 @@ if (robot[key]) {
 3. [NAMING] - use proper names for variables - if you want to name variable `result`, pick a better one :)
 
 4. [CODE STYLE] - You should return the value immediately in `if` statements. And don't use `else` after return statement. If `return` is performed - code after it won't be executed anyway.
+
 BAD EXAMPLE:
 ```
 if (condition) {
