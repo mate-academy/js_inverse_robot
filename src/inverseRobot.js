@@ -20,9 +20,7 @@ function inverseRobot(robot) {
   const newRobot = {};
 
   for (let j = 0; j < robotValues.length; j++) {
-    for (let k = j; k < robotKeys.length; k++) {
-      newRobot[robotValues[j]] = robotKeys[j];
-    }
+    newRobot[robotValues[j]] = robotKeys[j];
   }
 
   return newRobot;
