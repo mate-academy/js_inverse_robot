@@ -8,17 +8,16 @@
 
 function inverseRobot(robot) {
   // write code here
-  const robotToFix = robot;
   const fixedRobot = {};
 
-  for (const part in robotToFix) {
-    if (fixedRobot.hasOwnProperty(robotToFix[part])) {
+  for (const part in robot) {
+    if (fixedRobot.hasOwnProperty(robot[part])) {
       return null;
     }
-    fixedRobot[robotToFix[part]] = part;
+    fixedRobot[robot[part]] = part;
   }
 
-  return (fixedRobot);
+  return fixedRobot;
 }
 
 module.exports = inverseRobot;
