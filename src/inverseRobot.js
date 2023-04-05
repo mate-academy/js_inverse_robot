@@ -11,15 +11,13 @@ function inverseRobot(robot) {
   const robotValues = Object.values(robot);
   const invertedRobot = {};
 
-  for (let i = 0; i < robotValues.length; i++) {
+  for (const key in robot) {
     const checkValue = robotValues.shift();
 
     if (robotValues.includes(checkValue)) {
       return null;
     }
-  }
 
-  for (const key in robot) {
     invertedRobot[robot[key]] = key;
   }
 
