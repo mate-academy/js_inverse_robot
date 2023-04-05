@@ -7,7 +7,6 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
   const invertedRobot = {};
 
   for (const key in robot) {
@@ -19,5 +18,4 @@ function inverseRobot(robot) {
 
   return invertedRobot;
 }
-// typeof (invertedRobot[robot[key]]) !== 'undefined'
 module.exports = inverseRobot;
