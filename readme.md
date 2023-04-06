@@ -4,19 +4,19 @@
 
 ## ❗️❗️❗️ DON'T FORGET TO PROOFREAD YOUR CODE WITH [CHECKLIST](https://github.com/mate-academy/js_inverse_robot/blob/master/checklist.md) BEFORE SENDING YOUR PULL REQUEST❗️❗️❗️
 
-Transposition of internal organs is a variant of internal anatomy, when the organs are located in a mirror image.
-Something similar happened to our robot Kolli. His keys became values, and values became keys. Help to repair the robot. 
+Транспозиція внутрішніх органів - це варіант внутрішньої анатомії, коли органи розташовані в дзеркальному зображенні.
+Щось подібне трапилося з нашим роботом Коллі.Його ключі стали цінностями, а цінності стали клавішами.Допоможіть відремонтувати робота.
 
 `
-Create a 'inverseRobot' function that takes 'robot' as a parameter and returns a new object in which keys will change places with values.
+Створіть функцію "Inverserobot", яка приймає "робот" як параметр і повертає новий об'єкт, в якому клавіші змінить місця зі значеннями.
 `
 
-If any of the object values are repeated, return 'null'. 
+Якщо будь -яке з значень об'єкта повторюється, поверніть "null".
 
-Example:
-```
- const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
- const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
- inverseRobot(robert) === null
- inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
-``` 
+Приклад:
+`` `
+ const kolli = {kolli: 'ім'я', 123: 'чіпвер', 3: 'колеса'};
+ const robert = {robert: 'ім'я', 123: 'Чіпвер', 113: 'Чіпвер'};
+ INVERSEROBOT (Роберт) === null
+ inverserobot (kolli) === {name: 'kolli', Chipver: '123', колеса: '3'}
+`` `
