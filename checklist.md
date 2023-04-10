@@ -1,7 +1,7 @@
 1. [VARIABLES] - use variables for the main values so that you'll be able to reuse them and give them descriptive names.
 2. [CODE STYLE] - use correct check for property presence in object. Some properties can be present, but still contain falsy value.
 
-GOOD EXAMPLE: 
+GOOD EXAMPLE:
 ```
 if (key in robot) {
 ```
@@ -31,7 +31,7 @@ if (condition) {
   return y;
 }
 ```
-GOOD EXAMPLE: 
+GOOD EXAMPLE:
 ```
 if (condition) {
   return x;
