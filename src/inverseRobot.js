@@ -6,12 +6,11 @@
  * @return {object}
 */
 function inverseRobot(robot) {
-  let fixedRobot = {};
+  const fixedRobot = {};
 
   for (const keys in robot) {
     if (fixedRobot.hasOwnProperty(robot[keys])) {
-      fixedRobot = null;
-      break;
+      return null;
     }
 
     fixedRobot[robot[keys]] = keys;
