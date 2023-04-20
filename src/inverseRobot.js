@@ -9,23 +9,11 @@
 function inverseRobot(robot) {
   const result = {};
 
-  const arrKeys = [];
-
   for (const key in robot) {
-    arrKeys.push(key);
-  }
-
-  const arrValues = [];
-
-  for (const key in robot) {
-    arrValues.push(robot[key]);
-  }
-
-  for (let i = 0; i < arrKeys.length; i++) {
-    if (arrValues[i] in result) {
+    if (robot[key] in result) {
       return null;
     }
-    result[arrValues[i]] = arrKeys[i];
+    result[robot[key]] = key;
   }
 
   return result;
