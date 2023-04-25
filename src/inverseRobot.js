@@ -10,7 +10,7 @@ function inverseRobot(robot) {
 
   for (const key in robot) {
     if (result.hasOwnProperty(robot[key])) {
-      return null; // if a duplicate key exists, return null
+      return null;
     }
     result[robot[key]] = key;
   }
