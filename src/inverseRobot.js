@@ -9,15 +9,12 @@
 function inverseRobot(robot) {
   const inverse = {};
 
-  const values = [];
-
   for (const [key, value] of Object.entries(robot)) {
-    if (values.includes(value)) {
+    if (inverse.hasOwnProperty(value)) {
       return null;
-    } else {
-      inverse[value] = key;
-      values.push(value);
     }
+
+    inverse[value] = key;
   }
 
   return inverse;
