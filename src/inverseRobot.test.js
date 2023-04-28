@@ -141,4 +141,25 @@ describe('inverseRobot', () => {
       })
     ).toEqual(null);
   });
+
+  it(`input: null
+    expected output: Error`, () => {
+    expect(
+      () => inverseRobot(null)
+    ).toThrow(Error);
+  });
+
+  it(`input: []
+    expected output: Error`, () => {
+    expect(
+      () => inverseRobot([])
+    ).toThrow(Error);
+  });
+
+  it(`input: 'not an object'
+    expected output: Error`, () => {
+    expect(
+      () => inverseRobot('not an object')
+    ).toThrow(Error);
+  });
 });
