@@ -11,17 +11,17 @@ function inverseRobot(robot) {
     throw new Error('Input must be an object');
   }
 
-  const inverted = {};
+  const invertedRobot = {};
 
   for (const key in robot) {
-    if (inverted[robot[key]]) {
+    if (invertedRobot[robot[key]]) {
       return null;
     }
 
-    inverted[robot[key]] = key;
+    invertedRobot[robot[key]] = key;
   }
 
-  return inverted;
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
