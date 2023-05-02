@@ -7,7 +7,21 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  if (typeof robot !== 'object' || robot === null || Array.isArray(robot)) {
+    throw new Error('Input must be an object');
+  }
+
+  const invertedRobot = {};
+
+  for (const key in robot) {
+    if (invertedRobot[robot[key]]) {
+      return null;
+    }
+
+    invertedRobot[robot[key]] = key;
+  }
+
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
