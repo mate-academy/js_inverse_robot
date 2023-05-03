@@ -7,19 +7,20 @@
 */
 
 function inverseRobot(robot) {
-  const result = {};
+  const inputRobot = robot;
+  const invertedRobot = {};
 
-  for (const robotKey in robot) {
-    const robotValue = robot[robotKey];
+  for (const inputRobotKey in inputRobot) {
+    const inputRobotValue = inputRobot[inputRobotKey];
 
-    if (result[robotValue] !== undefined) {
+    if (invertedRobot[inputRobotValue] !== undefined) {
       return null;
     }
 
-    result[robotValue] = robotKey;
+    invertedRobot[inputRobotValue] = inputRobotKey;
   }
 
-  return result;
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
