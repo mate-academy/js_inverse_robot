@@ -7,7 +7,17 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const mirror = {};
+
+  for (const part in robot) {
+    if (!mirror[robot[part]]) {
+      mirror[robot[part]] = part;
+    } else {
+      return null;
+    }
+  }
+
+  return mirror;
 }
 
 module.exports = inverseRobot;
