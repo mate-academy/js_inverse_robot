@@ -8,19 +8,17 @@
 
 function inverseRobot(robot) {
   // write code here
-  const robotValues = Object.values(robot).sort();
-
-  for (let i = 1; robotValues.length > i; i++) {
-    if (robotValues[i] === robotValues[i - 1]) {
-      return null;
-    }
-  }
-
+  const robotValues = Object.values(robot);
   const result = {};
 
-  Object.entries(robot).forEach(([key, value]) => {
-    result[value] = key;
-  });
+  if (robotValues.some(x =>
+    robotValues.indexOf(x) !== robotValues.lastIndexOf(x))) {
+    return null;
+  } else {
+    Object.entries(robot).forEach(([key, value]) => {
+      result[value] = key;
+    });
+  }
 
   return result;
 }
