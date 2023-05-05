@@ -8,19 +8,17 @@
 
 function inverseRobot(robot) {
   // write code here
-  const robotValues = Object.values(robot);
-  const result = {};
+  const newRobot = {};
 
-  if (robotValues.some(x =>
-    robotValues.indexOf(x) !== robotValues.lastIndexOf(x))) {
-    return null;
-  } else {
-    Object.entries(robot).forEach(([key, value]) => {
-      result[value] = key;
-    });
+  for (const key in robot) {
+    if (!newRobot.hasOwnProperty(robot[key])) {
+      newRobot[robot[key]] = key;
+    } else {
+      return null;
+    }
   }
 
-  return result;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
