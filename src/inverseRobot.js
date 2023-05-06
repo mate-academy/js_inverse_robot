@@ -9,11 +9,11 @@
 function inverseRobot(robot) {
   let newRobot = {};
 
-  const maxElement = Object.values(robot);
+  const allRobotValues = Object.values(robot);
 
-  for (let i = 0; i < maxElement.length; i++) {
-    for (let j = i + 1; j < maxElement.length; j++) {
-      if (maxElement[i] === maxElement[j]) {
+  for (let i = 0; i < allRobotValues.length; i++) {
+    for (let j = i + 1; j < allRobotValues.length; j++) {
+      if (allRobotValues[i] === allRobotValues[j]) {
         newRobot = null;
 
         return newRobot;
