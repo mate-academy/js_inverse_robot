@@ -19,8 +19,4 @@ function inverseRobot(robot) {
   return inverse;
 }
 
-// inverseRobot({
-//   Robert: 'name', 123: 'chipVer', 113: 'chipVer',
-// });
-
 module.exports = inverseRobot;
