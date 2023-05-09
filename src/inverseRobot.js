@@ -9,11 +9,12 @@
 function inverseRobot(robot) {
   const invented = {};
 
-  for (const [key, value] of Object.entries(robot)) {
-    if (invented[value] !== undefined) {
+  for (const key in robot) {
+    if (invented.hasOwnProperty(robot[key])) {
       return null;
     }
-    invented[value] = key;
+
+    invented[robot[key]] = key;
   }
 
   return invented;
