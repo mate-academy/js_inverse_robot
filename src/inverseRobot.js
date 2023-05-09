@@ -10,7 +10,7 @@ function inverseRobot(robot) {
   const reversedRobot = {};
 
   for (const key in robot) {
-    if (Object.keys(reversedRobot).includes(robot[key])) {
+    if (reversedRobot[robot[key]]) {
       return null;
     }
 
