@@ -7,7 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const reverseObj = Object.entries(robot).reduce((acc, [key, value]) => ({
+    ...acc,
+    [value]: key,
+  }), {});
+
+  return Object.keys(reverseObj).length < Object.values(robot).length
+    ? null
+    : reverseObj;
 }
 
 module.exports = inverseRobot;
