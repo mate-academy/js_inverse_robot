@@ -8,7 +8,7 @@
 
 function inverseRobot(robot) {
   // write code here
-  const result = {};
+  const inversedRobot = {};
   const valueList = [];
 
   for (const key in robot) {
@@ -20,10 +20,10 @@ function inverseRobot(robot) {
 
     valueList.push(value);
 
-    result[value] = key;
+    inversedRobot[value] = key;
   }
 
-  return result;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
