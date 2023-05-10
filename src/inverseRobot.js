@@ -25,4 +25,5 @@ function inverseRobot(robot) {
   return inversedRobot;
 }
 
+
 module.exports = inverseRobot;
