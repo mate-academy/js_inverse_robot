@@ -9,17 +9,13 @@
 function inverseRobot(robot) {
   // write code here
   const inversedRobot = {};
-  const valueList = [];
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (valueList.includes(value)) {
+    if (inversedRobot.hasOwnProperty(value)) {
       return null;
     }
-
-    valueList.push(value);
-
     inversedRobot[value] = key;
   }
 
