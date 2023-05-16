@@ -10,17 +10,15 @@
 function inverseRobot(robot) {
   // write code here
   const res = {};
-  const valuesArr = Object.values(robot);
-  const isValuesRepeated = valuesArr.some(
-    (item, index) => valuesArr.indexOf(item) !== index
-  );
-
-  if (isValuesRepeated) {
-    return null;
-  }
 
   for (const key in robot) {
-    res[robot[key]] = key;
+    const newKey = robot[key];
+
+    if (res.hasOwnProperty(newKey)) {
+      return null;
+    }
+
+    res[newKey] = key;
   }
 
   return res;
