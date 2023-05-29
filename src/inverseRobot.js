@@ -9,12 +9,12 @@
 function inverseRobot(robot) {
   const exchangedKeyValueObj = {};
 
-  for (const key in robot) {
-    if (exchangedKeyValueObj.hasOwnProperty(robot[key])) {
+  for (const [key, value] of Object.entries(robot)) {
+    if (exchangedKeyValueObj.hasOwnProperty(value)) {
       return null;
     }
 
-    exchangedKeyValueObj[robot[key]] = key;
+    exchangedKeyValueObj[value] = key;
   }
 
   return exchangedKeyValueObj;
