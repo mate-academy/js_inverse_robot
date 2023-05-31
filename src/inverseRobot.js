@@ -7,7 +7,21 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const values = Object.values(robot);
+  const keys = Object.keys(robot);
+  const inverse = {};
+
+  const filter = new Set(values);
+
+  if (filter.size !== values.length) {
+    return null;
+  }
+
+  for (const i in values) {
+    inverse[values[i]] = keys[i];
+  }
+
+  return inverse;
 }
 
 module.exports = inverseRobot;
