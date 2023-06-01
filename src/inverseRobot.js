@@ -8,19 +8,13 @@
 
 function inverseRobot(oldRobot) {
   const newRobot = {};
-  let newRobotValue = '';
-  let newRobotKey = '';
   const oldRobotValues = [];
 
   for (const oldKey in oldRobot) {
-    for (const oldValue of oldRobotValues) {
-      if (oldValue === oldRobot[oldKey]) {
-        return null;
-      }
+    if (newRobot[oldRobot[oldKey]]) {
+      return null;
     }
-    newRobotValue = oldKey;
-    newRobotKey = oldRobot[oldKey];
-    newRobot[newRobotKey] = newRobotValue;
+    newRobot[oldRobot[oldKey]] = oldKey;
     oldRobotValues.push(oldRobot[oldKey]);
   }
 
