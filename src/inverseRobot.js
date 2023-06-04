@@ -11,7 +11,7 @@ function inverseRobot(robot) {
   let hasDublicate = false;
 
   for (const key in robot) {
-    if (swap[robot[key]]) { //
+    if (swap[robot[key]]) {
       hasDublicate = true;
     } else {
       swap[robot[key]] = key;
