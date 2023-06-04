@@ -8,10 +8,10 @@
 
 function inverseRobot(robot) {
   const result = {};
-  const massKeys = dublicate(Object.keys(robot));
-  const massValues = dublicate(Object.values(robot));
+  const massKeys = duplicate(Object.keys(robot));
+  const massValues = duplicate(Object.values(robot));
 
-  if (massKeys || massValues === null) {
+  if (massKeys === null || massValues === null) {
     return null;
   }
 
@@ -22,10 +22,10 @@ function inverseRobot(robot) {
   return result;
 }
 
-function dublicate(mass) {
+function duplicate(array) {
   const result = {};
 
-  mass.forEach(element => {
+  array.forEach(element => {
     result[element] = (result[element] || 0) + 1;
   });
 
