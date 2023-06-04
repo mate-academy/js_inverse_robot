@@ -7,7 +7,18 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const swap = {};
+  let hasDublicate = false;
+
+  for (const key in robot) {
+    if (swap[robot[key]]) {
+      hasDublicate = true;
+    } else {
+      swap[robot[key]] = key;
+    }
+  }
+
+  return hasDublicate ? null : swap;
 }
 
 module.exports = inverseRobot;
