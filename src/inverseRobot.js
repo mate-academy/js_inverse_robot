@@ -17,5 +17,4 @@ function inverseRobot(robot) {
 
   return resObj;
 }
-
 module.exports = inverseRobot;
