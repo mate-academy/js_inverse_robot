@@ -9,7 +9,6 @@
     "lint": "mate-scripts lint",
     "test:only": "mate-scripts test",
     "update": "mate-scripts update",
-    "postinstall": "npm run update",
     "test": "npm run lint && npm run test:only"
   },
   "author": "Mate academy",
