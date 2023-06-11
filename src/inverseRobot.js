@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * @param {object} robot
@@ -19,19 +19,19 @@ function inverseRobot(robot) {
     }
   }
 
-  const values = Object.values(obj).some((item) => item > 1);
+  const values = Object.values(obj).some((num) => num > 1);
 
   if (values) {
     return null;
   }
 
-  const array = Object.fromEntries(
+  const invertObj = Object.fromEntries(
     Object.entries(robot)
       .reverse()
       .map((item) => item.reverse())
   );
 
-  return array;
+  return invertObj;
 }
 
 module.exports = inverseRobot;
