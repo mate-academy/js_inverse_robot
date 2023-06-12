@@ -6,22 +6,22 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const keys = Object.values(robot);
-  const obj = {};
+  const robotKeys = Object.values(robot);
+  const countObj = {};
 
-  for (let i = 0; i < keys.length; i++) {
-    const elem = keys[i];
+  for (let i = 0; i < robotKeys.length; i++) {
+    const elem = robotKeys[i];
 
-    if (!obj[elem]) {
-      obj[elem] = 1;
+    if (!countObj[elem]) {
+      countObj[elem] = 1;
     } else {
-      obj[elem] += 1;
+      countObj[elem] += 1;
     }
   }
 
-  const values = Object.values(obj).some((num) => num > 1);
+  const robotValues = Object.values(countObj).some((num) => num > 1);
 
-  if (values) {
+  if (robotValues) {
     return null;
   }
 
