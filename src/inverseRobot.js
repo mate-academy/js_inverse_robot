@@ -7,21 +7,16 @@
 */
 
 function inverseRobot(robot) {
-  const arrayRobotValue = [];
   const newRobotObject = {};
 
-  for (const key in robot) {
-    arrayRobotValue.push(robot[key]);
-  }
+  for (const value in robot) {
+    const realKey = robot[value];
 
-  for (const value of arrayRobotValue) {
-    if (arrayRobotValue.indexOf(value) !== arrayRobotValue.lastIndexOf(value)) {
+    if (realKey in newRobotObject) {
       return null;
     }
-  }
 
-  for (const item in robot) {
-    newRobotObject[robot[item]] = item;
+    newRobotObject[realKey] = value;
   }
 
   return newRobotObject;
