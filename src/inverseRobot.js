@@ -15,13 +15,13 @@ function inverseRobot(robot) {
     return null;
   }
 
-  const newObject = {};
+  const inversedRobot = {};
 
   for (const key in robot) {
-    newObject[robot[key]] = key;
+    inversedRobot[robot[key]] = key;
   }
 
-  return newObject;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
