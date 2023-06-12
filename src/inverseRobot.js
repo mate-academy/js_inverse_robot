@@ -7,7 +7,21 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const resultObject = {};
+
+  //  now we are iterating the object
+  for (const keys in robot) {
+    //  here we need to check
+    //  if the resultObject has the same key as our iterator
+    if (resultObject.hasOwnProperty(robot[keys])) {
+      //  if yes, the fuction will return null
+      return null;
+    };
+    //  if no, the function will write the key and its value
+    resultObject[robot[keys]] = keys;
+  };
+
+  return resultObject;
 }
 
 module.exports = inverseRobot;
