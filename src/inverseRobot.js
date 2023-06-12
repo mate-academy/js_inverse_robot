@@ -13,7 +13,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const value = robot[key];
 
-    if (value in reapiredRobot) {
+    if (reapiredRobot.hasOwnProperty(value)) {
       return null;
     }
     reapiredRobot[value] = key;
