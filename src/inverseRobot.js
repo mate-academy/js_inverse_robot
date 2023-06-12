@@ -7,23 +7,16 @@
 */
 
 function inverseRobot(robot) {
-  const ROBOT_VALUES = Object.values(robot);
-  const invertedObject = {};
-
-  // check for repeated items
-  for (let i = 0; i < ROBOT_VALUES.length; i++) {
-    for (let j = i + 1; j < ROBOT_VALUES.length; j++) {
-      if (ROBOT_VALUES[i] === ROBOT_VALUES[j]) {
-        return null;
-      }
-    }
-  }
+  const inverseObject = {};
 
   for (const key in robot) {
-    invertedObject[robot[key]] = key;
+    if (Object.prototype.hasOwnProperty.call(inverseObject, robot[key])) {
+      return null;
+    }
+    inverseObject[robot[key]] = key;
   }
 
-  return invertedObject;
+  return inverseObject;
 }
 
 module.exports = inverseRobot;
