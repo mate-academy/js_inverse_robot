@@ -7,15 +7,21 @@
 */
 
 function inverseRobot(robot) {
-  const entries = Object.entries(robot).map(([key, value]) => [value, key]);
-  const allElements = entries.flatMap(arr => [...arr]);
-  const filteredArray = [...new Set(allElements)];
+  const inversed = {};
 
-  if (filteredArray.length === allElements.length) {
-    return Object.fromEntries(entries);
+  const keys = Object.values(robot);
+  const filteredKeys = [...new Set(keys)];
+  const values = Object.keys(robot);
+
+  if (filteredKeys.length !== keys.length) {
+    return null;
   }
 
-  return null;
+  for (let i = 0; i < filteredKeys.length; i++) {
+    inversed[filteredKeys[i]] = values[i];
+  }
+
+  return inversed;
 }
 
 module.exports = inverseRobot;
