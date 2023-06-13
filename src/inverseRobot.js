@@ -7,7 +7,6 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
   const values = Object.values(robot);
   const uniqueValues = [...new Set(values)];
 
