@@ -7,15 +7,16 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
   const resultInverse = {};
 
-  for (const property in robot) {
-    if (resultInverse.hasOwnProperty(robot[property])) {
+  for (const key in robot) {
+    const property = robot[key];
+
+    if (resultInverse.hasOwnProperty(property)) {
       return null;
     }
 
-    resultInverse[robot[property]] = property;
+    resultInverse[property] = key;
   }
 
   return resultInverse;
