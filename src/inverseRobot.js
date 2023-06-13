@@ -8,8 +8,8 @@
 
 function inverseRobot(robot) {
   // write code here
-  const ONE_VALUE_IN_OBJECT = 1;
-  let countsObj = {};
+  const INITIAL_COUNT = 1;
+  const countsObj = {};
 
   const resObj = {};
 
@@ -17,23 +17,17 @@ function inverseRobot(robot) {
     return {};
   }
 
-  for (const key in robot) {
-    if (countsObj[robot[key]] !== undefined) {
-      countsObj[robot[key]]++;
+  for (const [key, value] of Object.entries(robot)) {
+    if (countsObj[value] !== undefined) {
+      countsObj[value]++;
     } else {
-      countsObj[robot[key]] = ONE_VALUE_IN_OBJECT;
+      countsObj[value] = INITIAL_COUNT;
     }
 
-    countsObj = Object.assign(countsObj, countsObj[robot[key]]);
-  }
-
-  for (const key in countsObj) {
-    if (countsObj[key] > ONE_VALUE_IN_OBJECT) {
+    if (countsObj[value] > INITIAL_COUNT) {
       return null;
     } else {
-      for (const key2 in robot) {
-        resObj[robot[key2]] = key2;
-      }
+      resObj[value] = key;
     }
   }
 
