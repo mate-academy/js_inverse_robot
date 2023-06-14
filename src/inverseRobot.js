@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * @param {object} robot
@@ -6,32 +6,29 @@
  * @return {object}
  */
 function inverseRobot(robot) {
-  const robotKeys = Object.values(robot);
-  const countObj = {};
+  const robotFinal = {};
+  const robotCount = {};
+  const robotValues = Object.values(robot);
 
-  for (let i = 0; i < robotKeys.length; i++) {
-    const elem = robotKeys[i];
-
-    if (!countObj[elem]) {
-      countObj[elem] = 1;
+  for (const value of robotValues) {
+    if (!robotCount[value]) {
+      robotCount[value] = 1;
     } else {
-      countObj[elem] += 1;
+      robotCount[value] += 1;
     }
   }
 
-  const robotValues = Object.values(countObj).some((num) => num > 1);
+  const robotAfterValues = Object.values(robotCount).some((num) => num > 1);
 
-  if (robotValues) {
+  if (robotAfterValues) {
     return null;
   }
 
-  const invertObj = Object.fromEntries(
-    Object.entries(robot)
-      .reverse()
-      .map((item) => item.reverse())
-  );
+  Object.entries(robot).forEach(([key, value]) => {
+    robotFinal[value] = key;
+  });
 
-  return invertObj;
+  return robotFinal;
 }
 
 module.exports = inverseRobot;
