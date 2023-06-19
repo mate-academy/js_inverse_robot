@@ -4,10 +4,20 @@
  * @param {object} robot
  *
  * @return {object}
-*/
+ */
 
 function inverseRobot(robot) {
-  // write code here
+  const output = {};
+
+  for (const key in robot) {
+    if (output.hasOwnProperty(robot[key])) {
+      return null;
+    }
+
+    output[robot[key]] = key;
+  }
+
+  return output;
 }
 
 module.exports = inverseRobot;
