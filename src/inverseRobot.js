@@ -14,10 +14,10 @@ function inverseRobot(robot) {
     const newKey = robot[oldKey];
 
     // check for valid key:
-    if ((reparedRobot.hasOwnProperty(newKey)
+    if ((reparedRobot.hasOwnProperty(newKey))
         || (newKey === null)
         || (newKey === undefined)
-        || (newKey === ''))) {
+        || (newKey === '')) {
       return null;
     }
 
