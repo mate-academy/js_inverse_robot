@@ -8,9 +8,8 @@
 
 function inverseRobot(robot) {
   const reparedRobot = {};
-  const oldKeys = Object.keys(robot);
 
-  for (const oldKey of oldKeys) {
+  for (const oldKey in robot) {
     const newKey = robot[oldKey];
 
     // check for valid key:
