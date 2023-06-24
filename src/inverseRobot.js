@@ -7,7 +7,23 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const reparedRobot = {};
+
+  for (const oldKey in robot) {
+    const newKey = robot[oldKey];
+
+    // check for valid key:
+    if ((reparedRobot.hasOwnProperty(newKey))
+        || (newKey === null)
+        || (newKey === undefined)
+        || (newKey === '')) {
+      return null;
+    }
+
+    reparedRobot[newKey] = oldKey;
+  }
+
+  return reparedRobot;
 }
 
 module.exports = inverseRobot;
