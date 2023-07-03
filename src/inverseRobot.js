@@ -8,16 +8,14 @@
 
 function inverseRobot(robot) {
   const swappedObj = {};
-  const seenValues = new Set();
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (seenValues.has(value)) {
+    if (swappedObj.hasOwnProperty(value)) {
       return null;
     }
     swappedObj[value] = key;
-    seenValues.add(value);
   }
 
   return swappedObj;
