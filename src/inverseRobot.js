@@ -11,15 +11,23 @@ function inverseRobot(robot) {
   const inversRobot = {};
   const ckeck = [];
 
-  for (let i = 0; i < Object.values(robot).length; i++) {
+  // for (let i = 0; i < Object.values(robot).length; i++) {
+  //   if (ckeck.includes(Object.values(robot)[i])) {
+  //     return null;
+  //   };
+
+  //   ckeck.push(Object.values(robot)[i]);
+
+  //   inversRobot[Object.values(robot)[i]] = Object.keys(robot)[i];
+  // }
+
+  for (let i = Object.keys(robot).length - 1; i >= 0; i--) {
     if (ckeck.includes(Object.values(robot)[i])) {
       return null;
     };
 
     ckeck.push(Object.values(robot)[i]);
-  }
 
-  for (let i = Object.keys(robot).length - 1; i >= 0; i--) {
     inversRobot[Object.values(robot)[i]] = Object.keys(robot)[i];
   }
 
@@ -27,3 +35,10 @@ function inverseRobot(robot) {
 };
 
 module.exports = inverseRobot;
+// const str = {
+//   Kolli: 'name',
+//   123: 'chipVer',
+//   3: 'wheels',
+// };
+
+// console.log(inverseRobot(str));
