@@ -5,7 +5,6 @@
  *
  * @return {object}
 */
-
 function inverseRobot(robot) {
   const values = Object.values(robot);
   const arr = [];
