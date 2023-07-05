@@ -7,7 +7,21 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const resultObject = {};
+  const valueSet = new Set();
+
+  for (const key in robot) {
+    const value = robot[key];
+
+    if (valueSet.has(value)) {
+      return null;
+    }
+
+    resultObject[value] = key;
+    valueSet.add(value);
+  }
+
+  return resultObject;
 }
 
 module.exports = inverseRobot;
