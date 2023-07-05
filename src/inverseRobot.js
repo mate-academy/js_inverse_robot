@@ -5,9 +5,20 @@
  *
  * @return {object}
 */
-
 function inverseRobot(robot) {
-  // write code here
+  const newObject = {};
+
+  for (const key in robot) {
+    const value = robot[key];
+
+    if (newObject.hasOwnProperty(value)) {
+      return null;
+    }
+
+    newObject[value] = key;
+  }
+
+  return newObject;
 }
 
 module.exports = inverseRobot;
