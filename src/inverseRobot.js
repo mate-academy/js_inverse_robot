@@ -7,29 +7,19 @@
 */
 
 function inverseRobot(robot) {
-  // Масив з усіма ключами робота
-  const robotKeys = Object.keys(robot);
-  // Масив з усіма значеннями ключів робота
-  const robotValues = Object.values(robot);
-  // Новий об'єкт для повернення
-  const repairedRobot = {};
+  const invertedRobot = {};
 
-  // Перебір всіх індексів масиву зі значеннями
-  for (let i = 0; i < robotValues.length; i++) {
-    // Підстановка в масив -
-    // ключів зі значень 'хворого' робота та значень із ключів.
-    repairedRobot[robotValues[i]] = robotKeys[i];
+  for (const key in robot) {
+    const value = robot[key];
 
-    // Перебір всіх індексів масиву після "i"
-    for (let j = i + 1; j < robotValues.length; j++) {
-      // Якщо якісь елементи масиву '===' то повертаю null
-      if (robotValues[i] === robotValues[j]) {
-        return null;
-      }
+    if (invertedRobot[value] !== undefined) {
+      return null;
     }
+
+    invertedRobot[value] = key;
   }
 
-  return repairedRobot;
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
