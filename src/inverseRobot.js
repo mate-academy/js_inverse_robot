@@ -18,7 +18,6 @@ function inverseRobot(robot) {
   for (let i = 0; i < robotValues.length; i++) {
     // Підстановка в масив -
     // ключів зі значень 'хворого' робота та значень із ключів.
-    // (На мою думку, мало спрацювати XD)
     repairedRobot[robotValues[i]] = robotKeys[i];
 
     // Перебір всіх індексів масиву після "i"
