@@ -6,19 +6,6 @@
  *
  * @return {object}
 */
-const kolli = {
-  Kolli: 'name',
-  123: 'chipVer',
-  3: 'wheels',
-};
-// const robert = {
-//   Robert: 'name',
-//   123: 'chipVer',
-//   113: 'chipVer',
-// };
-//  inverseRobot(robert) === null
-//  inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
-
 function inverseRobot(robot) {
   const newRobot = {};
 
@@ -32,5 +19,4 @@ function inverseRobot(robot) {
   return newRobot;
 }
 
-inverseRobot(kolli);
 module.exports = inverseRobot;
