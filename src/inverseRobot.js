@@ -8,17 +8,15 @@
 
 function inverseRobot(robot) {
   const newRobot = {};
-  const valueTracker = [];
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (valueTracker.includes(value)) {
+    if (newRobot.hasOwnProperty(value)) {
       return null;
     }
 
     newRobot[value] = key;
-    valueTracker.push(value);
   }
 
   return newRobot;
