@@ -8,19 +8,12 @@
 
 function inverseRobot(robot) {
   const newRobot = {};
-  let checkDoubleProper = false;
 
-  Object.entries(robot).forEach((key) => {
-    if (newRobot.hasOwnProperty(key[1])) {
-      checkDoubleProper = null;
-
-      return;
+  for (const key in robot) {
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
     }
-    newRobot[key[1]] = key[0];
-  });
-
-  if (checkDoubleProper === null) {
-    return null;
+    newRobot[robot[key]] = key;
   }
 
   return newRobot;
