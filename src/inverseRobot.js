@@ -3,11 +3,25 @@
 /*
  * @param {object} robot
  *
- * @return {object}
+ * @return {object | null}
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const fixed = {};
+  const valuesSet = new Set();
+
+  for (const key in robot) {
+    const value = robot[key];
+
+    if (valuesSet.has(value)) {
+      return null;
+    }
+
+    fixed[value] = key;
+    valuesSet.add(value);
+  }
+
+  return fixed;
 }
 
 module.exports = inverseRobot;
