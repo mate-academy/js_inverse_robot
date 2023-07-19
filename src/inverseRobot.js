@@ -24,7 +24,6 @@ function inverseRobot(robot) {
   }
 
   return newRobot;
-  // write code here
 }
 
 module.exports = inverseRobot;
