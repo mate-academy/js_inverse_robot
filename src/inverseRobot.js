@@ -11,19 +11,19 @@ function inverseRobot(robot) {
     return null;
   }
 
-  const formatted = {};
+  const formattedRobot = {};
 
   for (const key in robot) {
     const newKey = robot[key];
 
-    if (formatted[newKey]) {
+    if (formattedRobot.hasOwnProperty(newKey)) {
       return null;
     }
 
-    formatted[newKey] = key;
+    formattedRobot[newKey] = key;
   }
 
-  return formatted;
+  return formattedRobot;
 }
 
 module.exports = inverseRobot;
