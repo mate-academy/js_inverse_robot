@@ -14,9 +14,9 @@ function inverseRobot(robot) {
 
     if (invertedRobot.hasOwnProperty(value)) {
       return null;
-    } else {
-      invertedRobot[value] = key;
     }
+
+    invertedRobot[value] = key;
   }
 
   return invertedRobot;
