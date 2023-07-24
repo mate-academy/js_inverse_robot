@@ -1,27 +1,31 @@
 'use strict';
 
-/*
+/**
  * @param {object} robot
  *
  * @return {object | null}
-*/
+ */
 
 function inverseRobot(robot) {
-  const fixed = {};
+  const invertedRobotMap = new Map();
   const valuesSet = new Set();
 
   for (const key in robot) {
-    const value = robot[key];
+    if (robot.hasOwnProperty(key)) {
+      const value = robot[key];
 
-    if (valuesSet.has(value)) {
-      return null;
+      if (valuesSet.has(value)) {
+        return null;
+      }
+
+      invertedRobotMap.set(value, key);
+      valuesSet.add(value);
     }
-
-    fixed[value] = key;
-    valuesSet.add(value);
   }
 
-  return fixed;
+  const invertedRobot = Object.fromEntries(invertedRobotMap.entries());
+
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
