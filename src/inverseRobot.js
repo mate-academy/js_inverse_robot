@@ -9,20 +9,19 @@
 function inverseRobot(robot) {
   const inverse = {};
   const propertyValues = Object.values(robot);
-  let current;
 
   for (let i = 0; i < propertyValues.length; i++) {
-    current = propertyValues[i];
-
-    for (let j = i + 1; j < propertyValues.length; j++) {
-      if (current === propertyValues[j]) {
-        return null;
-      }
+    if (propertyValues.includes(propertyValues[i], i + 1)) {
+      return null;
     }
   }
 
   for (const key in robot) {
-    inverse[robot[key]] = key;
+    const objPropertyValue = robot[key];
+
+    if (!inverse.includes(objPropertyValue)) {
+      inverse[objPropertyValue] = key;
+    }
   }
 
   return inverse;
