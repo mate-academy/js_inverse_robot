@@ -7,7 +7,19 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
+  const correctRobot = {};
+
+  for (const key in robot) {
+    const KEY_IS_DUPLICATED = robot[key] in correctRobot;
+
+    if (KEY_IS_DUPLICATED) {
+      return null;
+    }
+
+    correctRobot[robot[key]] = key;
+  }
+
+  return correctRobot;
 }
 
 module.exports = inverseRobot;
