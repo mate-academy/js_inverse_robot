@@ -8,13 +8,15 @@
 
 function inverseRobot(robot) {
   const inverse = {};
+  let roboKey;
 
   for (const key in robot) {
-    if (`${robot[key]}` in inverse) {
+    roboKey = robot[key];
+
+    if (inverse.hasOwnProperty(roboKey)) {
       return null;
-    } else {
-      inverse[`${robot[key]}`] = key;
     }
+    inverse[roboKey] = key;
   }
 
   return inverse;
