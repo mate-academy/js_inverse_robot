@@ -7,23 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  function checkForRepetition(object) {
-    const objectValues = Object.values(object);
-    const setOfValues = new Set(objectValues);
-
-    return Array.from(setOfValues).length === objectValues.length;
-  }
-
-  if (!checkForRepetition(robot)) {
-    return null;
-  }
-
   const newRobot = {};
 
   for (const key in robot) {
-    if (robot.hasOwnProperty(key)) {
-      newRobot[robot[key]] = key;
+    if (newRobot.hasOwnProperty(robot[key])) {
+      return null;
     }
+
+    newRobot[robot[key]] = key;
   }
 
   return newRobot;
