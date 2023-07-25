@@ -19,7 +19,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const objPropertyValue = robot[key];
 
-    if (!inverse.includes(objPropertyValue)) {
+    if (!inverse.hasOwnProperty(objPropertyValue)) {
       inverse[objPropertyValue] = key;
     }
   }
