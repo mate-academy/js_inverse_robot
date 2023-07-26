@@ -14,7 +14,7 @@ function inverseRobot(robot) {
 
     if (inverseRobotObj[value] !== undefined) {
       return null;
-    };
+    }
 
     inverseRobotObj[value] = key;
   }
