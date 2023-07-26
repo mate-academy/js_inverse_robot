@@ -10,9 +10,9 @@ function inverseRobot(robot) {
   const correctRobot = {};
 
   for (const key in robot) {
-    const KEY_IS_DUPLICATED = robot[key] in correctRobot;
+    const keyIsDuplicated = robot[key] in correctRobot;
 
-    if (KEY_IS_DUPLICATED) {
+    if (keyIsDuplicated) {
       return null;
     }
 
