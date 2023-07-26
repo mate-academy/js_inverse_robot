@@ -6,6 +6,8 @@
  * @return {object}
 */
 
+/* add func */
+
 function inverseRobot(robot) {
   const inverseRobotObj = {};
 
