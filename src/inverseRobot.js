@@ -8,17 +8,15 @@
 
 function inverseRobot(robot) {
   const inverseObj = {};
-  const repeatedVal = {};
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (repeatedVal[value]) {
+    if (inverseObj.hasOwnProperty(value)) {
       return null;
     }
 
     inverseObj[value] = key;
-    repeatedVal[value] = true;
   }
 
   return inverseObj;
