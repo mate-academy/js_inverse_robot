@@ -8,22 +8,22 @@
 
 function inverseRobot(robot) {
   const invertedRobotMap = new Map();
-  const valuesSet = new Set();
+  const valuesArray = [];
 
   for (const key in robot) {
     if (robot.hasOwnProperty(key)) {
       const value = robot[key];
 
-      if (valuesSet.has(value)) {
+      if (valuesArray.includes(value)) {
         return null;
       }
 
       invertedRobotMap.set(value, key);
-      valuesSet.add(value);
+      valuesArray.push(value);
     }
   }
 
-  const invertedRobot = Object.fromEntries(invertedRobotMap.entries());
+  const invertedRobot = Object.fromEntries(invertedRobotMap);
 
   return invertedRobot;
 }
