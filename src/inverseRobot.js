@@ -20,8 +20,10 @@ function inverseRobot(robot) {
     const INCOMING_ROBOT_KEY = key;
 
     // Check if there are already such values in the created object
-    const hasDoubleValue = turnedRobot.hasOwnProperty(INCOMING_ROBOT_VALUE);
-    const hasDoubleKey = turnedRobot.hasOwnProperty(INCOMING_ROBOT_KEY);
+    const hasDoubleValue
+      = {}.prototype.hasOwnProperty.call(turnedRobot, INCOMING_ROBOT_VALUE);
+    const hasDoubleKey
+      = {}.prototype.hasOwnProperty.call(turnedRobot, INCOMING_ROBOT_KEY);
 
     // if turnedRobot has double keys or values, return null
     if (hasDoubleValue || hasDoubleKey) {
