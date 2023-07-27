@@ -7,6 +7,11 @@
 */
 
 function inverseRobot(robot) {
+  // check if the robot is an object
+  if (typeof robot !== 'object' || robot === null) {
+    return null;
+  }
+
   // "robot"'s keys become values and values become "robot"'s keys
   const turnedRobot = {};
 
