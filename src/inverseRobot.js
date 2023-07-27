@@ -13,6 +13,11 @@ function inverseRobot(robot) {
     if (robot.hasOwnProperty(key)) {
       const value = robot[key];
 
+      if (swappedRobot.hasOwnProperty(value)) {
+
+        return null;
+      }
+
       swappedRobot[value] = key;
     }
   }
@@ -21,3 +26,4 @@ function inverseRobot(robot) {
 }
 
 module.exports = inverseRobot;
+
