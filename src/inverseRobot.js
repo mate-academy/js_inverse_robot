@@ -8,14 +8,14 @@
 
 function inverseRobot(robot) {
   const invertRobot = {};
-  let prewPseudoVallue = '';
+  let prevValue = '';
 
-  for (const pseudoVallue of Object.values(robot).sort()) {
-    if (prewPseudoVallue === pseudoVallue) {
+  for (const value of Object.values(robot).sort()) {
+    if (prevValue === value) {
       return null;
     }
 
-    prewPseudoVallue = pseudoVallue;
+    prevValue = value;
   }
 
   for (const key in robot) {
