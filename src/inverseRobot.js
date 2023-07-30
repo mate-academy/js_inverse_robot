@@ -6,13 +6,14 @@
  * @return {object}
 */
 
-function inverseRobot (robot) {
+function inverseRobot(robot) {
   const INVERSE_ROBOT = {};
   let COUNT = 0;
   let COUNT_INVERSE = 0;
 
   for (const key in robot) {
     INVERSE_ROBOT[robot[key]] = key;
+
     if (robot.hasOwnProperty(key)) {
       COUNT++;
     }
@@ -25,12 +26,10 @@ function inverseRobot (robot) {
   }
 
   if (COUNT !== COUNT_INVERSE) {
-    console.log(null); 
-    return;
+    return (null);
   }
 
-  console.log(INVERSE_ROBOT);
-
+  return (INVERSE_ROBOT);
 }
 
 module.exports = inverseRobot;
