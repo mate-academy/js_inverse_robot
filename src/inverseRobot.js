@@ -7,7 +7,7 @@
 */
 
 function inverseRobot(robot) {
-  const REVERSE_ROBOT = {};
+  const reverseRobot = {};
   const VALUES = Object.values(robot);
   const KEYS = Object.keys(robot);
   const REMOVE_DUBLICATE_VALUES = new Set(VALUES);
@@ -17,10 +17,10 @@ function inverseRobot(robot) {
   }
 
   for (let i = 0; i < KEYS.length; i++) {
-    REVERSE_ROBOT[VALUES[i]] = KEYS[i];
+    reverseRobot[VALUES[i]] = KEYS[i];
   }
 
-  return REVERSE_ROBOT;
+  return reverseRobot;
 }
 
 module.exports = inverseRobot;
