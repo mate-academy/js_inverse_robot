@@ -17,7 +17,11 @@ function inverseRobot(robot) {
     naturalRobot[robot[key]] = key;
   }
 
-  return objLength(naturalRobot) === objLength(robot) ? naturalRobot : null;
+  if (objLength(naturalRobot) === objLength(robot)) {
+    return naturalRobot;
+  }
+
+  return null;
 }
 
 module.exports = inverseRobot;
