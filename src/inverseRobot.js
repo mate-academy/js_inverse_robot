@@ -8,16 +8,15 @@
 
 function inverseRobot(robot) {
   const reverseRobot = {};
-  const VALUES = Object.values(robot);
-  const KEYS = Object.keys(robot);
-  const REMOVE_DUBLICATE_VALUES = new Set(VALUES);
 
-  if ([...REMOVE_DUBLICATE_VALUES].length !== VALUES.length) {
-    return null;
-  }
+  for (const key in robot) {
+    const robotValue = robot[key];
 
-  for (let i = 0; i < KEYS.length; i++) {
-    reverseRobot[VALUES[i]] = KEYS[i];
+    if (reverseRobot.hasOwnProperty(robotValue)) {
+      return null;
+    }
+
+    reverseRobot[robotValue] = key;
   }
 
   return reverseRobot;
