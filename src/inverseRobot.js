@@ -31,17 +31,11 @@ function inverseRobot(robot) {
   const fixedRobot = {};
 
   for (const key in robot) {
-    if (robot.hasOwnProperty(key)) {
-      const value = robot[key];
-      // we are getting the actual key name
-      // and we store it in variable, named 'value'
-
-      if (!fixedRobot.hasOwnProperty(value)) {
-        fixedRobot[value] = key;
-      } else {
-        return null;
-      }
+    if (!fixedRobot.hasOwnProperty(robot[key])) {
+      fixedRobot[robot[key]] = key;
     }
+
+    return;
   }
 
   return fixedRobot;
