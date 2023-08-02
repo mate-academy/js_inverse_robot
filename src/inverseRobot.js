@@ -6,10 +6,6 @@
  * @return {object}
 */
 
-// const objLength = (obj) => {
-//   return Object.keys(obj).length;
-// };
-
 function inverseRobot(robot) {
   const naturalRobot = {};
 
