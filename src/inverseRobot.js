@@ -7,19 +7,17 @@
 */
 
 function inverseRobot(robot) {
-  const prevValue = new Set();
   const copyRobot = {};
 
   for (const key in robot) {
-    if (robot.hasOwnProperty(key)) {
+    if (robot[key]) {
       const currentValue = robot[key];
 
-      if (prevValue.has(currentValue)) {
+      if (copyRobot.hasOwnProperty(currentValue)) {
         return null;
       }
 
       copyRobot[currentValue] = key;
-      prevValue.add(currentValue);
     }
   }
 
