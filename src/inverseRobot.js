@@ -7,19 +7,13 @@
 */
 
 function inverseRobot(robot) {
-  const values = Object.values(robot);
-  const uniqueValues = [];
   const inversedRobot = {};
 
-  for (const value of values) {
-    if (uniqueValues.indexOf(value) === -1) {
-      uniqueValues.push(value);
-    } else {
+  for (const key in robot) {
+    if (inversedRobot.hasOwnProperty(robot[key])) {
       return null;
     }
-  }
 
-  for (const key in robot) {
     inversedRobot[robot[key]] = key;
   }
 
