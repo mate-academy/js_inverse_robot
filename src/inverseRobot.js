@@ -7,21 +7,17 @@
 */
 
 function inverseRobot(robot) {
-  const arrayOfValues = Object.values(robot);
-  const uniqueValues = new Set(arrayOfValues);
-
-  if (arrayOfValues.length !== uniqueValues.size) {
-    return null;
-  }
-
-  const arrayOfKeys = Object.keys(robot);
   const inverseObj = {};
 
-  arrayOfKeys.forEach((key) => {
+  for (const key in robot) {
     const newKey = robot[key];
 
+    if (newKey in inverseObj) {
+      return null;
+    }
+
     inverseObj[newKey] = key;
-  });
+  }
 
   return inverseObj;
 }
