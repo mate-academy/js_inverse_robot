@@ -7,16 +7,15 @@
 */
 
 function inverseRobot(robot) {
-  const seenValues = {};
   const result = {};
 
   for (const key in robot) {
     const value = robot[key];
 
-    if (seenValues[value]) {
+    if (result[value]) {
       return null;
     }
-    seenValues[value] = true;
+    result[value] = true;
     result[robot[key]] = key;
   }
 
