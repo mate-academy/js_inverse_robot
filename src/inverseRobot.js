@@ -9,14 +9,14 @@
 function inverseRobot(robot) {
   const reversRobot = {};
 
-  for (const KEY in robot) {
-    const VALUE = robot[KEY];
+  for (const key in robot) {
+    const value = robot[key];
 
-    if (reversRobot[VALUE]) {
+    if (value in reversRobot) {
       return null;
     }
 
-    reversRobot[VALUE] = KEY;
+    reversRobot[value] = key;
   }
 
   return reversRobot;
