@@ -7,25 +7,14 @@
 */
 
 function inverseRobot(robot) {
-  const outRobot = { ...robot };
+  const incomeRobot = { ...robot };
   const newRobot = {};
-  const keysArr = [];
-  const valuesArr = [];
 
-  for (const key in outRobot) {
-    keysArr.push(key);
-  }
-
-  for (let i = 0; i < keysArr.length; i++) {
-    valuesArr.push(outRobot[keysArr[i]]);
-  }
-
-  for (let i = 0; i < valuesArr.length; i++) {
-    if (newRobot[valuesArr[i]]) {
+  for (const key in incomeRobot) {
+    if (newRobot[incomeRobot[key]]) {
       return null;
     }
-
-    newRobot[valuesArr[i]] = keysArr[i];
+    newRobot[incomeRobot[key]] = key;
   }
 
   return { ...newRobot };
