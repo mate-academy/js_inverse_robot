@@ -18,19 +18,20 @@ function inverseRobot(robot) {
 
   for (let i = 0; i < keysArr.length; i++) {
     valuesArr.push(outRobot[keysArr[i]]);
-
-    if (valuesArr.indexOf(valuesArr[i])
-      !== valuesArr.lastIndexOf(valuesArr[i])) {
-      return null;
-    }
   }
 
   for (let i = 0; i < valuesArr.length; i++) {
+    if (newRobot[valuesArr[i]]) {
+      return null;
+    }
+
     newRobot[valuesArr[i]] = keysArr[i];
   }
 
   return { ...newRobot };
 
+  //
+  // закомментированный код оставила на память))
   //   const robotValues = Object.values(robot);
   //   const robotKeys = Object.keys(robot);
   //   const newObj = {};
