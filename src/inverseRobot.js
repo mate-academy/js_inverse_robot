@@ -14,16 +14,19 @@
 */
 
 function inverseRobot(robot) {
-  const obj = {};
+  const newRobot = {};
 
   for (const key in robot) {
-    if (robot[key] in obj) {
+    const robotItem = robot[key];
+
+    if (newRobot.hasOwnProperty(robotItem)) {
       return null;
     }
-    Object.assign(obj, { [robot[key]]: key });
+
+    newRobot[robotItem] = key;
   }
 
-  return obj;
+  return newRobot;
 }
 
 module.exports = inverseRobot;
