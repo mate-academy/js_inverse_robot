@@ -1,32 +1,19 @@
 'use strict';
 
-/*
- * @param {object} robot
- *Example:
-```
- const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
- const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
- inverseRobot(robert) === null
- inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
-```
-
- * @return {object}
-*/
-
 function inverseRobot(robot) {
-  const newRobot = {};
+  const inversedRobot = {};
 
-  for (const key in robot) {
-    const robotItem = robot[key];
+  for (const value in robot) {
+    const valuesForTheRobot = robot[value];
 
-    if (newRobot.hasOwnProperty(robotItem)) {
+    if (inversedRobot.hasOwnProperty(valuesForTheRobot)) {
       return null;
     }
 
-    newRobot[robotItem] = key;
+    inversedRobot[valuesForTheRobot] = value;
   }
 
-  return newRobot;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
