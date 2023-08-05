@@ -12,11 +12,11 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const value = robot[key];
 
-    if (Object.keys(inverse).includes(value.toString())) {
+    if (value in inverse) {
       return null;
-    } else {
-      inverse[value] = key;
     }
+
+    inverse[value] = key;
   }
 
   return inverse;
