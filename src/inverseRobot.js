@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 'use strict';
 
 /*
@@ -9,23 +11,19 @@
 function inverseRobot(robot) {
   // write code here
 
-  const inverseRobotResult = {};
-  const arrayOfKeys = [];
+  const inversedRobot = {};
 
   for (const key in robot) {
-    inverseRobotResult[robot[key]] = key;
-    arrayOfKeys.push(robot[key]);
-  }
+    const keyValue = robot[key];
 
-  arrayOfKeys.sort();
-
-  for (let i = 0; i < arrayOfKeys.length; i++) {
-    if (arrayOfKeys[i] === arrayOfKeys[i + 1]) {
+    if (inversedRobot.hasOwnProperty(keyValue)) {
       return null;
     }
+
+    inversedRobot[keyValue] = key;
   }
 
-  return inverseRobotResult;
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
