@@ -8,18 +8,14 @@
 
 function inverseRobot(robot) {
   const correctedRobot = {};
-  const robotValues = Object.values(robot);
 
-  // Check if values are not repeated
-  for (const value of robotValues) {
-    if (robotValues.indexOf(value) !== robotValues.lastIndexOf(value)) {
-      return null;
-    }
-  }
-
-  // Change keys and values on places
+  // Check if keys are not repeated and change keys and values on places
   for (const key in robot) {
     const robotValue = robot[key];
+
+    if (correctedRobot[robotValue]) {
+      return null;
+    }
 
     correctedRobot[robotValue] = key;
   }
