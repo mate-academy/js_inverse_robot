@@ -7,27 +7,20 @@
 */
 
 function inverseRobot(robot) {
-  const INVERTED_ROBOT_ENTRIES_ARR = Object.entries(robot);
   const NORMALIZED_ROBOT_OBJECT = {};
+  const CONTROL_IF_KEY_DUBBED = [];
 
-  for (let i = 0; i < INVERTED_ROBOT_ENTRIES_ARR.length; i++) {
-    const el = INVERTED_ROBOT_ENTRIES_ARR[i];
-    const INVERTED_ROBOT_VALUE = el[1];
+  for (const key in robot) {
+    const RIGHT_WAY_ROBOT_KEY = robot[key];
+    const RIGHT_WAY_ROBOT_VALUE = key;
 
-    for (let a = i + 1; a < INVERTED_ROBOT_ENTRIES_ARR.length; a++) {
-      const elNext = INVERTED_ROBOT_ENTRIES_ARR[a];
-      const INVERTED_ROBOT_VALUE_NEXT = elNext[1];
+    NORMALIZED_ROBOT_OBJECT[RIGHT_WAY_ROBOT_KEY] = RIGHT_WAY_ROBOT_VALUE;
 
-      if (INVERTED_ROBOT_VALUE === INVERTED_ROBOT_VALUE_NEXT) {
-        return null;
-      }
+    if (!CONTROL_IF_KEY_DUBBED.includes(RIGHT_WAY_ROBOT_KEY)) {
+      CONTROL_IF_KEY_DUBBED.push(RIGHT_WAY_ROBOT_KEY);
+    } else {
+      return null;
     }
-  }
-
-  for (let b = 0; b < INVERTED_ROBOT_ENTRIES_ARR.length; b++) {
-    const elInWork = INVERTED_ROBOT_ENTRIES_ARR[b];
-
-    NORMALIZED_ROBOT_OBJECT[elInWork[1]] = elInWork[0];
   }
 
   return NORMALIZED_ROBOT_OBJECT;
