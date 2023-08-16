@@ -14,9 +14,9 @@ function inverseRobot(robot) {
   for (const value of allValues) {
     if (uniqValue.includes(value)) {
       return null;
-    } else {
-      uniqValue += value;
     }
+
+    uniqValue += value;
   }
 
   for (const key in robot) {
