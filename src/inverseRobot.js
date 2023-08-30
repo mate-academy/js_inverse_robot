@@ -10,10 +10,13 @@ function inverseRobot(robot) {
   const res = {};
 
   for (const key in robot) {
+    if (res[robot[key]]) {
+      return null;
+    }
     res[robot[key]] = key;
   }
 
-  return Object.keys(robot).length === Object.keys(res).length ? res : null;
+  return res;
 }
 
 module.exports = inverseRobot;
