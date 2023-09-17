@@ -12,7 +12,7 @@ function inverseRobot(robot) {
   for (const key in robot) {
     const values = robot[key];
 
-    if (robot[key] === 'name') {
+    if (key === 'name') {
       return null;
     }
 
