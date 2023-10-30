@@ -6,7 +6,7 @@ function inverseRobot(robot) {
     const value = robot[key];
 
     if (inverse[value] !== undefined) {
-      return null;
+      return null; // Value is repeated, return null
     }
 
     inverse[value] = key;
@@ -14,11 +14,5 @@ function inverseRobot(robot) {
 
   return inverse;
 }
-
-const kolli = { Kolli: "name", 123: "chipVer", 3: "wheels" };
-const robert = { Robert: "name", 123: "chipVer", 113: "chipVer" };
-
-const resultKolli = inverseRobot(kolli);
-const resultRobert = inverseRobot(robert);
 
 module.exports = inverseRobot;
