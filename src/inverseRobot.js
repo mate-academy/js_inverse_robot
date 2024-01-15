@@ -1,13 +1,20 @@
 'use strict';
 
-/*
- * @param {object} robot
- *
- * @return {object}
-*/
-
 function inverseRobot(robot) {
-  // write code here
+  const correctObj = {};
+  let value;
+
+  for (const keys in robot) {
+    value = robot[keys];
+
+    if (correctObj.hasOwnProperty(value)) {
+      return null;
+    }
+
+    correctObj[value] = keys;
+  }
+
+  return correctObj;
 }
 
 module.exports = inverseRobot;
