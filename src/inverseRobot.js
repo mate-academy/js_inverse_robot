@@ -1,11 +1,5 @@
 'use strict';
 
-/*
- * @param {object} robot
- *
- * @return {object}
- */
-
 function inverseRobot(robot) {
   const obj = {};
 
@@ -13,17 +7,14 @@ function inverseRobot(robot) {
     const key = robot[robotKey];
     const value = robotKey;
 
+    if (obj.hasOwnProperty(key)) {
+      return null;
+    }
+
     obj[key] = value;
   }
 
-  const robotLength = Object.keys(robot).length;
-  const objLength = Object.keys(obj).length;
-
-  if (robotLength === objLength) {
-    return obj;
-  }
-
-  return null;
+  return obj;
 }
 
 module.exports = inverseRobot;
