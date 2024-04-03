@@ -1,13 +1,26 @@
 'use strict';
 
-/*
+/**
  * @param {object} robot
  *
- * @return {object}
-*/
-
+ * @return {object | null}
+ */
 function inverseRobot(robot) {
-  // write code here
+  const invertedRobot = {};
+  const invertedValues = [];
+
+  for (const key in robot) {
+    const value = robot[key];
+
+    if (invertedValues.indexOf(value) !== -1) {
+      return null;
+    }
+
+    invertedRobot[value] = key;
+    invertedValues.push(value);
+  }
+
+  return invertedRobot;
 }
 
 module.exports = inverseRobot;
