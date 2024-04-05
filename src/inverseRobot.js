@@ -1,43 +1,25 @@
 'use strict';
 
-/**
- * Situs inversus
- * Transposition of internal organs is a variant of internal anatomy, when
- * the organs are located in a mirror image.
- * Something similar happened to our robot Kolli. His keys became values,
- * and values became keys. Help to repair the robot. Create a 'inverseRobot'
- * function that takes 'robot' as a parameter and returns a new object in which
- * keys will change places with values.
- *
- * If any of the object values are repeated, return 'null'.
- *
- * Example:
- *
- * const kolli = { Kolli: 'name', 123: 'chipVer', 3: 'wheels' };
- * const robert = { Robert: 'name', 123: 'chipVer', 113: 'chipVer' };
- * inverseRobot(robert) === null
- * inverseRobot(kolli) === { name: 'Kolli', chipVer: '123', wheels: '3' }
- *
- *
+/*
  * @param {object} robot
  *
  * @return {object}
- */
+*/
+
 function inverseRobot(robot) {
-  let duplicate = Object.values(robot);
-  const obj = {};
+  // write code here
+  const inversedRobot = {};
 
-  duplicate = duplicate.some((e, i, a) => a.indexOf(e) !== a.lastIndexOf(e));
+  for (const key in robot) {
+    const inversedKey = robot[key];
 
-  if (duplicate) {
-    return null;
-  } else {
-    Object.keys(robot).forEach(e => {
-      obj[robot[e]] = e;
-    });
-
-    return obj;
+    if (inversedRobot.hasOwnProperty(inversedKey)) {
+      return null;
+    }
+    inversedRobot[inversedKey] = key;
   }
+
+  return inversedRobot;
 }
 
 module.exports = inverseRobot;
