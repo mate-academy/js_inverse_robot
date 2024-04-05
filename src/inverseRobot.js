@@ -7,17 +7,20 @@
 */
 
 function inverseRobot(robot) {
-  const inversedRobot = {};
+  const KEYS = Object.values(robot);
+  const VALUES = Object.keys(robot);
+  const INVERSED_ROBOT = {};
+  const UNIQUE_KEYS = [ ...new Set(KEYS) ];
 
-  for (const key in robot) {
-    if (!inversedRobot[robot[key]]) {
-      inversedRobot[robot[key]] = key;
-    } else {
-      return null;
-    }
+  if (UNIQUE_KEYS.length !== VALUES.length) {
+    return null;
   }
 
-  return inversedRobot;
+  for (let i = 0; i < KEYS.length; i++) {
+    INVERSED_ROBOT[KEYS[i]] = VALUES[i];
+  }
+
+  return INVERSED_ROBOT;
 }
 
 module.exports = inverseRobot;
