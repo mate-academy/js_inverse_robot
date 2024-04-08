@@ -7,28 +7,25 @@
 */
 
 function inverseRobot(robot) {
-  // write code here
-  let tempKyesRobot = {};
-  let tempValueRobot = {};
+  const inverse = {};
+  const propertyValues = Object.values(robot);
+  let current;
 
-  tempKyesRobot = Object.keys(robot);
-  tempValueRobot = Object.values(robot);
+  for (let i = 0; i < propertyValues.length; i++) {
+    current = propertyValues[i];
 
-  for (let i = 0; i < tempValueRobot.length; i++) {
-    if (tempValueRobot.indexOf(tempValueRobot[i]) !== i) {
-      return null;
+    for (let j = i + 1; j < propertyValues.length; j++) {
+      if (current === propertyValues[j]) {
+        return null;
+      }
     }
   }
 
   for (const key in robot) {
-    delete robot[key];
+    inverse[robot[key]] = key;
   }
 
-  for (const i in tempKyesRobot) {
-    robot[tempValueRobot[i]] = tempKyesRobot[i];
-  }
-
-  return robot;
+  return inverse;
 }
 
 module.exports = inverseRobot;
