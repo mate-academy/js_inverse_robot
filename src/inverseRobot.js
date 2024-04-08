@@ -7,20 +7,28 @@
 */
 
 function inverseRobot(robot) {
-  const REVERSE_ROBOT = {};
-  const VALUES = Object.values(robot);
-  const KEYS = Object.keys(robot);
-  const REMOVE_DUBLICATE_VALUES = new Set(VALUES);
+  // write code here
+  let tempKyesRobot = {};
+  let tempValueRobot = {};
 
-  if ([...REMOVE_DUBLICATE_VALUES].length !== VALUES.length) {
-    return null;
+  tempKyesRobot = Object.keys(robot);
+  tempValueRobot = Object.values(robot);
+
+  for (let i = 0; i < tempValueRobot.length; i++) {
+    if (tempValueRobot.indexOf(tempValueRobot[i]) !== i) {
+      return null;
+    }
   }
 
-  for (let i = 0; i < KEYS.length; i++) {
-    REVERSE_ROBOT[VALUES[i]] = KEYS[i];
+  for (const key in robot) {
+    delete robot[key];
   }
 
-  return REVERSE_ROBOT;
+  for (const i in tempKyesRobot) {
+    robot[tempValueRobot[i]] = tempKyesRobot[i];
+  }
+
+  return robot;
 }
 
 module.exports = inverseRobot;
