@@ -10,11 +10,11 @@ function inverseRobot(robot) {
   const invertedRobot = {};
 
   for (const key in robot) {
-    if (Object.prototype.hasOwnProperty.call(invertedRobot, robot[key])) {
+    if (robot[key] in invertedRobot) {
       return null;
     }
 
-    invertedRobot[String(robot[key])] = key;
+    invertedRobot[robot[key]] = key;
   }
 
   return invertedRobot;
