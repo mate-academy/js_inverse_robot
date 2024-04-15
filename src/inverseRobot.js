@@ -14,7 +14,7 @@ function inverseRobot(robot) {
       return null;
     }
 
-    invertedRobot[`${robot[key]}`] = key;
+    invertedRobot[String(robot[key])] = key;
   }
 
   return invertedRobot;
